@@ -8,9 +8,10 @@ La página presenta el programa, muestra el precio y lleva al visitante a un for
 
 | | |
 |---|---|
-| Formato | 8 clases prácticas en vivo, de 60 minutos |
-| Modalidad | Virtual |
-| Acompañamiento | Chat de soporte grupal |
+| Formación | 16 horas en vivo: 8 sesiones de 2 horas con el docente |
+| Mentoría | 2 horas semanales de mentoría grupal |
+| Modalidad | Virtual en vivo |
+| Recursos | Plantillas y recursos prácticos, comunidad NOVA y canal de apoyo |
 | Certificación | Campuslands, sujeta a los requisitos académicos |
 | Inversión | $600.000 COP por participante |
 | Inicio previsto | 9 de noviembre de 2026 |
@@ -18,17 +19,16 @@ La página presenta el programa, muestra el precio y lleva al visitante a un for
 ## Secciones de la página
 
 1. **Portada:** mensaje principal y botón al formulario.
-2. **Datos clave:** 8 clases, 60 minutos, virtual y certificado.
-3. **Para quién:** pestañas para tres perfiles (idea de negocio, negocio activo, empleado o profesional).
+2. **Datos clave:** 16 horas, 8 sesiones, 2 horas de mentoría semanal y precio.
+3. **Para quién:** pestañas con foto para tres perfiles (idea de negocio, negocio activo, empleado o profesional).
 4. **Propuesta de valor:** aplicar la IA, no coleccionar herramientas.
 5. **¿Es para ti?:** autocalificación y requisitos.
-6. **Qué incluye:** clases, chat de soporte y certificación.
-7. **Programa:** línea de tiempo con las 8 sesiones.
-8. **Herramientas:** agrupadas por necesidad.
-9. **Formador.**
-10. **Inversión:** precio y lo que incluye.
-11. **Preguntas frecuentes.**
-12. **Registro:** formulario de interés.
+6. **Programa:** línea de tiempo con las 8 sesiones.
+7. **Herramientas:** agrupadas por necesidad.
+8. **Formador.**
+9. **Inversión:** $600.000 COP y seis beneficios incluidos, con llamado a inscribirse.
+10. **Preguntas frecuentes.**
+11. **Registro:** formulario de interés.
 
 ## Tecnología
 
@@ -49,8 +49,23 @@ Es un sitio estático: un solo archivo `index.html`, sin proceso de compilación
 ├── logo-full-transparent.png  Logo completo
 ├── logo-small.jpg             Logo en formato pequeño
 ├── imagen logo.jpeg           Imagen para compartir en redes (Open Graph)
-└── foto.jpg                   Foto del formador
+├── foto.jpg                   Foto del formador
+└── assets/
+    ├── perfil-idea.jpg        Foto del perfil "idea de negocio"
+    ├── perfil-negocio.jpg     Foto del perfil "negocio activo"
+    ├── perfil-empresa.jpg     Foto del perfil "trabajo en una empresa"
+    └── credits.json           Autor, licencia y fuente de cada foto
 ```
+
+### Créditos de imágenes
+
+Las fotos de los perfiles vienen de Wikimedia Commons y se citan en el pie de la página:
+
+- "Woman writing on a notebook with a pen", Kristin Hardwick, CC0.
+- "Bags for sale, Street scene in Cartagena, Colombia", Joe Ross, CC BY-SA 2.0.
+- "Toong Coworking Space in Hanoi", Ann0611, CC BY-SA 4.0.
+
+Son fotos ilustrativas del entorno de cada perfil, no de participantes del programa.
 
 ## Ver la página en tu computador
 

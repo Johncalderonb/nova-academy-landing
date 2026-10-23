@@ -4,27 +4,27 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NOVA ACADEMY · Aprende a aplicar la IA en tu negocio, tu idea o tu trabajo</title>
-<meta name="description" content="Formación práctica en inteligencia artificial: 8 clases en vivo de 60 minutos, chat de soporte y certificación de Campuslands. Para emprendedores, negocios y profesionales. Sin programar." />
+<meta name="description" content="Formación práctica en inteligencia artificial: 16 horas en vivo, mentoría grupal semanal y certificación de Campuslands. Para emprendedores, negocios y profesionales. Sin programar." />
 <meta name="theme-color" content="#0D0D1B" />
 
 <!-- Open Graph / redes sociales -->
-<meta property="og:type" content="website" />
-<meta property="og:title" content="NOVA ACADEMY · Aprende a aplicar la IA a lo que haces" />
-<meta property="og:description" content="8 clases prácticas en vivo, chat de soporte y certificación de Campuslands. Inicio previsto: 9 de noviembre de 2026." />
 <!-- Si cambias de dominio, actualiza og:url, og:image, twitter:image y canonical. -->
 <link rel="canonical" href="https://johncalderonb.github.io/nova-academy-landing/" />
+<meta property="og:type" content="website" />
 <meta property="og:url" content="https://johncalderonb.github.io/nova-academy-landing/" />
 <meta property="og:site_name" content="NOVA ACADEMY" />
 <meta property="og:locale" content="es_CO" />
+<meta property="og:title" content="NOVA ACADEMY · Aprende a aplicar la IA a lo que haces" />
+<meta property="og:description" content="16 horas de formación en vivo, mentoría grupal semanal y certificación de Campuslands. Inicio previsto: 9 de noviembre de 2026." />
 <meta property="og:image" content="https://johncalderonb.github.io/nova-academy-landing/imagen%20logo.jpeg" />
 <meta property="og:image:alt" content="Logo de NOVA ACADEMY" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="NOVA ACADEMY · Aprende a aplicar la IA a lo que haces" />
-<meta name="twitter:description" content="8 clases prácticas en vivo, chat de soporte y certificación de Campuslands." />
+<meta name="twitter:description" content="16 horas de formación en vivo, mentoría grupal semanal y certificación de Campuslands." />
 <meta name="twitter:image" content="https://johncalderonb.github.io/nova-academy-landing/imagen%20logo.jpeg" />
 
 <link rel="icon" href="logo-mark.png" />
-<link rel="preload" as="image" href="logo-mark.png" />
+<link rel="preload" as="image" href="bg-tech.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
@@ -37,20 +37,22 @@
     theme: {
       extend: {
         colors: {
-          base:    '#0D0D1B',
-          base2:   '#13132A',
-          surface: '#171A2E',
-          line:    '#30364C',
-          ink:     '#F3F4F8',
-          soft:    '#B9BCCD',
-          muted:   '#8A90A6',
-          accent:  '#3475EF',
-          accent2: '#8CACFF',
+          night:    '#0D0D1B',
+          night2:   '#121327',
+          surface:  '#191B33',
+          surface2: '#22264A',
+          line:     '#30364C',
+          ink:      '#F3F4F8',
+          soft:     '#C4C7D6',
+          muted:    '#9AA0B5',
+          accent:   '#2E66E0',
+          accent2:  '#8CACFF',
         },
         fontFamily: {
           heading: ['Outfit', 'system-ui', 'sans-serif'],
           body: ['"Work Sans"', 'system-ui', 'sans-serif'],
         },
+        fontSize: { xs: ['13px', '1.45'] },
         borderRadius: { card: '20px' },
         maxWidth: { page: '1200px' },
       },
@@ -59,12 +61,13 @@
 </script>
 
 <style>
-  :root { --accent: #3475EF; --accent2: #8CACFF; --base: #0D0D1B; }
-  html { scroll-behavior: smooth; scroll-padding-top: 84px; }
+  :root { --accent: #2E66E0; --accent-press: #2554BE; --accent2: #8CACFF; --base: #0D0D1B; --ease: cubic-bezier(.16,1,.3,1); }
+  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
   body { background: var(--base); overflow-x: clip; }
   [hidden] { display: none !important; }
   ::selection { background: var(--accent); color: #fff; }
-  .section { padding-block: clamp(72px, 10vw, 128px); }
+  .section { padding-block: clamp(80px, 11vw, 144px); }
+  .num { font-variant-numeric: tabular-nums; }
 
   /* Fondo geométrico de marca, girado hacia el azul del acento */
   .brand-bg { filter: hue-rotate(-28deg) saturate(.85); }
@@ -76,33 +79,20 @@
     @keyframes grow { to { transform: scaleX(1); } }
   }
 
-  /* Revelado al hacer scroll */
-  .reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.16,1,.3,1), transform .8s cubic-bezier(.16,1,.3,1); }
+  /* Entrada de cada pieza al aparecer su sección */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
   .reveal.is-visible { opacity: 1; transform: none; }
-
-  /* Entrada del hero */
   @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
-  .rise { animation: rise .9s cubic-bezier(.16,1,.3,1) both; }
+  .rise { animation: rise .9s var(--ease) both; }
 
-  /* Visual del hero: anillo giratorio + logo flotante */
+  /* Visual del hero: discos concéntricos, punto en órbita y logo flotante */
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  .ring { background: conic-gradient(from 0deg, transparent 0 55%, rgba(140,172,255,.9) 75%, transparent 80%);
-          -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-                  mask: radial-gradient(farthest-side, transparent calc(100% - 2px), #000 calc(100% - 1px));
-          animation: spin 9s linear infinite; }
-  .ring-slow { animation-duration: 16s; animation-direction: reverse; opacity: .5; }
+  .orbit { animation: spin 14s linear infinite; }
+  .orbit-rev { animation: spin 22s linear infinite reverse; }
   .floaty { animation: float 6s ease-in-out infinite; }
   .floaty-2 { animation: float 7s ease-in-out -2s infinite; }
   .floaty-3 { animation: float 8s ease-in-out -4s infinite; }
-
-  /* Tarjetas con borde iluminado bajo el cursor */
-  .spot { position: relative; isolation: isolate; }
-  .spot::before { content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; z-index: -1;
-    background: radial-gradient(260px circle at var(--x, 50%) var(--y, 0%), rgba(140,172,255,.55), transparent 60%);
-    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite: xor; mask-composite: exclude;
-    opacity: 0; transition: opacity .3s ease; }
-  .spot:hover::before { opacity: 1; }
 
   /* Línea de tiempo: se llena al recorrerla */
   .tl-fill { transform-origin: top; transform: scaleY(1); }
@@ -110,12 +100,15 @@
     .tl-fill { animation: fill linear both; animation-timeline: view(); animation-range: entry 40% exit 60%; }
     @keyframes fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
   }
-  .tl-item .dot { transition: background-color .4s ease, color .4s ease, border-color .4s ease, transform .4s cubic-bezier(.16,1,.3,1); }
-  .tl-item.is-visible .dot { background: var(--accent); color: #fff; border-color: var(--accent); transform: scale(1.06); }
+  .tl-item .dot { transition: background-color .4s ease, color .4s ease, transform .4s var(--ease); }
+  .tl-item.is-visible .dot { background: var(--accent); color: #fff; transform: scale(1.06); }
 
   /* Pestañas de públicos */
-  .tab[aria-selected="true"] { background: var(--accent); color: #fff; border-color: var(--accent); }
-  .panel { animation: rise .55s cubic-bezier(.16,1,.3,1) both; }
+  .tab { transition: background-color .2s ease, color .2s ease, transform .2s var(--ease); }
+  .tab:hover { background: #22264A; color: #F3F4F8; }
+  .tab:active { transform: scale(.97); }
+  .tab[aria-selected="true"] { background: var(--accent); color: #fff; }
+  .panel { animation: rise .55s var(--ease) both; }
 
   /* Menú móvil y barra CTA */
   #mobile-menu { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
@@ -125,59 +118,64 @@
   #menu-btn.open span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
   #menu-btn.open span:nth-child(2) { opacity: 0; }
   #menu-btn.open span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-  #mobile-cta { transform: translateY(110%); transition: transform .4s cubic-bezier(.16,1,.3,1); }
+  #mobile-cta { transform: translateY(110%); transition: transform .4s var(--ease); }
   #mobile-cta.show { transform: none; }
 
-  /* Botones: respuesta táctil */
-  .btn { transition: transform .2s cubic-bezier(.16,1,.3,1), background-color .2s ease, box-shadow .2s ease; }
+  /* Botones planos: un color, respuesta al tacto */
+  .btn { transition: transform .2s var(--ease), background-color .2s ease; }
   .btn:hover { transform: translateY(-2px); }
-  .btn:active { transform: translateY(0) scale(.98); }
-  .btn-primary { background: var(--accent); box-shadow: 0 8px 20px -8px rgba(5,6,15,.8), inset 0 1px 0 rgba(255,255,255,.18); }
-  .btn-primary:hover { background: #4583F5; }
-  .btn .ph { transition: transform .25s cubic-bezier(.16,1,.3,1); }
+  .btn:active { transform: translateY(0) scale(.97); }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-press); }
+  .btn-ghost { background: #191B33; color: #F3F4F8; }
+  .btn-ghost:hover { background: #22264A; }
+  .btn .ph { transition: transform .25s var(--ease); }
   .btn:hover .ph-arrow-right { transform: translateX(3px); }
+  .link-arrow .ph { transition: transform .25s var(--ease); }
+  .link-arrow:hover .ph { transform: translateX(3px); }
+
+  /* Tarjetas de beneficios: elevación suave al pasar el cursor */
+  .benefit { transition: transform .35s var(--ease), background-color .25s ease; }
+  @media (hover: hover) { .benefit:hover { transform: translateY(-4px); } }
 
   /* FAQ */
   details summary::-webkit-details-marker { display: none; }
   details[open] .faq-icon { transform: rotate(45deg); }
+  details summary { transition: color .2s ease; }
+  details summary:hover { color: #fff; }
 
   /* Formulario */
-  .field { width: 100%; border-radius: 12px; background: rgba(255,255,255,.04); border: 1px solid #30364C; padding: 12px 14px; font-size: 15px; color: #F3F4F8; transition: border-color .2s, box-shadow .2s; }
+  .field { width: 100%; border-radius: 12px; background: #121327; border: 1px solid #30364C; padding: 12px 14px; font-size: 16px; color: #F3F4F8; transition: border-color .2s, box-shadow .2s; }
   .field::placeholder { color: #8A90A6; }
-  .field:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(52,117,239,.3); }
+  .field:focus { outline: none; border-color: var(--accent2); box-shadow: 0 0 0 3px rgba(46,102,224,.35); }
   .field:user-invalid { border-color: #F07A7A; }
-  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B9BCCD' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-  select.field option { background: #171A2E; }
+  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C4C7D6' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  select.field option { background: #191B33; }
 
   :focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
     .reveal, .rise, .panel { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
-    .ring, .floaty, .floaty-2, .floaty-3, .tl-fill, .progress { animation: none !important; }
+    .orbit, .orbit-rev, .floaty, .floaty-2, .floaty-3, .tl-fill, .progress { animation: none !important; }
     .tl-fill { transform: none; }
+    .benefit:hover, .btn:hover { transform: none; }
   }
 </style>
 </head>
 
 <body class="font-body text-ink antialiased">
 
-<!-- Fondo fijo de marca -->
-<div class="fixed inset-0 -z-10 pointer-events-none" aria-hidden="true">
-  <img src="bg-tech.jpg" alt="" class="brand-bg w-full h-full object-cover opacity-[.22]" />
-  <div class="absolute inset-0 bg-gradient-to-b from-base/60 via-base/85 to-base"></div>
-</div>
-
 <!-- ================= HEADER ================= -->
-<header id="top" class="fixed top-0 inset-x-0 z-50 border-b border-white/[.06] bg-base/70 backdrop-blur-xl">
-  <div class="progress absolute left-0 bottom-0 h-[2px] w-full bg-accent"></div>
-  <div class="max-w-page mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-6">
+<header id="top" class="fixed top-0 inset-x-0 z-50 bg-night">
+  <div class="progress absolute left-0 bottom-0 h-[2px] w-full bg-accent2"></div>
+  <div class="max-w-page mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
     <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="NOVA ACADEMY, inicio">
       <img src="logo-mark.png" alt="" class="h-9 w-9 object-contain" />
-      <span class="font-heading font-bold tracking-[.14em] text-sm">NOVA <span class="text-soft font-medium">ACADEMY</span></span>
+      <span class="font-heading font-bold text-base">NOVA <span class="text-soft font-medium">Academy</span></span>
     </a>
 
-    <nav class="hidden lg:flex items-center gap-7 text-sm text-soft" aria-label="Secciones">
+    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-soft" aria-label="Secciones">
       <a href="#para-quien" class="hover:text-ink transition">Para quién</a>
       <a href="#programa" class="hover:text-ink transition">Programa</a>
       <a href="#formador" class="hover:text-ink transition">Formador</a>
@@ -185,26 +183,26 @@
       <a href="#preguntas" class="hover:text-ink transition">Preguntas</a>
     </nav>
 
-    <a href="#registro" class="btn btn-primary hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white whitespace-nowrap">
+    <a href="#registro" class="btn btn-primary hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-semibold whitespace-nowrap">
       Quiero conocer el programa <i class="ph ph-arrow-right"></i>
     </a>
 
-    <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden flex flex-col justify-center gap-1.5 h-10 w-10 rounded-full border border-white/15 bg-white/5 sm:ml-0 ml-auto">
+    <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden flex flex-col justify-center gap-1.5 h-11 w-11 rounded-full bg-surface ml-auto sm:ml-0">
       <span class="block h-0.5 w-4 mx-auto bg-ink rounded-full"></span>
       <span class="block h-0.5 w-4 mx-auto bg-ink rounded-full"></span>
       <span class="block h-0.5 w-4 mx-auto bg-ink rounded-full"></span>
     </button>
   </div>
 
-  <nav id="mobile-menu" class="lg:hidden border-t border-white/[.06] bg-base/95" aria-label="Menú móvil">
+  <nav id="mobile-menu" class="lg:hidden bg-night" aria-label="Menú móvil">
     <div>
-      <div class="px-4 sm:px-6 py-4 flex flex-col text-base">
-        <a href="#para-quien" class="py-3 text-soft border-b border-white/[.06]">Para quién</a>
-        <a href="#programa" class="py-3 text-soft border-b border-white/[.06]">Programa</a>
-        <a href="#formador" class="py-3 text-soft border-b border-white/[.06]">Formador</a>
-        <a href="#inversion" class="py-3 text-soft border-b border-white/[.06]">Inversión</a>
+      <div class="px-5 sm:px-8 pt-2 pb-5 flex flex-col text-lg">
+        <a href="#para-quien" class="py-3 text-soft">Para quién</a>
+        <a href="#programa" class="py-3 text-soft">Programa</a>
+        <a href="#formador" class="py-3 text-soft">Formador</a>
+        <a href="#inversion" class="py-3 text-soft">Inversión</a>
         <a href="#preguntas" class="py-3 text-soft">Preguntas</a>
-        <a href="#registro" class="btn btn-primary mt-3 inline-flex justify-center items-center gap-2 rounded-full px-5 py-3.5 font-semibold text-white">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+        <a href="#registro" class="btn btn-primary mt-3 inline-flex justify-center items-center gap-2 rounded-full px-5 py-3.5 font-semibold">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
   </nav>
@@ -213,509 +211,457 @@
 <main>
 
 <!-- ================= HERO ================= -->
-<section id="hero" class="relative min-h-[100dvh] flex items-center pt-24 pb-14 px-4 sm:px-6">
-  <div class="absolute -top-32 -left-32 h-[28rem] w-[28rem] rounded-full bg-accent/20 blur-[120px] -z-10" aria-hidden="true"></div>
+<section id="hero" class="relative isolate overflow-hidden min-h-[100dvh] flex items-center pt-24 pb-16 px-5 sm:px-8">
+  <img src="bg-tech.jpg" alt="" class="brand-bg absolute inset-0 -z-20 w-full h-full object-cover opacity-50" fetchpriority="high" />
+  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/85 to-night/40" aria-hidden="true"></div>
+  <div class="absolute inset-x-0 bottom-0 h-40 -z-10 bg-gradient-to-t from-night to-transparent" aria-hidden="true"></div>
 
-  <div class="max-w-page mx-auto w-full grid lg:grid-cols-[1.1fr_.9fr] gap-12 lg:gap-8 items-center">
+  <div class="max-w-page mx-auto w-full grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-10 items-center">
     <div>
-      <p class="rise inline-flex items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-4 py-1.5 text-xs sm:text-[13px] font-semibold text-accent2">
-        <i class="ph ph-calendar-blank"></i> Primera cohorte · Inicio previsto: 9 de noviembre
-      </p>
-
-      <h1 class="rise font-heading font-extrabold text-[2.6rem] leading-[1.05] sm:text-6xl lg:text-[4.2rem] tracking-tight mt-6" style="animation-delay:.08s">
-        Aprende a aplicar la IA <span class="text-accent2">a lo que haces.</span>
+      <h1 class="rise font-heading font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem] tracking-[-0.03em]">
+        Aprende a aplicar la IA a lo que haces.
       </h1>
 
-      <p class="rise mt-6 text-lg sm:text-xl text-soft max-w-[34rem] leading-relaxed" style="animation-delay:.16s">
-        8 clases prácticas en vivo, chat de soporte y certificación de Campuslands. Para emprender, crecer tu negocio o trabajar mejor.
+      <p class="rise mt-8 text-lg sm:text-xl text-soft max-w-[36rem] leading-relaxed" style="animation-delay:.1s">
+        16 horas de formación en vivo, mentoría grupal cada semana y certificación de Campuslands. Primera cohorte: inicio previsto el 9 de noviembre.
       </p>
 
-      <div class="rise mt-9 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4" style="animation-delay:.24s">
-        <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 font-semibold text-white whitespace-nowrap">
+      <div class="rise mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4" style="animation-delay:.2s">
+        <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap">
           Quiero conocer el programa <i class="ph ph-arrow-right"></i>
         </a>
-        <a href="#programa" class="btn inline-flex justify-center items-center gap-2 rounded-full border border-white/15 bg-white/[.04] px-7 py-4 font-semibold text-ink hover:bg-white/[.08] whitespace-nowrap">
+        <a href="#programa" class="btn btn-ghost inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold whitespace-nowrap">
           Ver las 8 sesiones
         </a>
       </div>
     </div>
 
     <!-- Visual del hero -->
-    <div class="relative mx-auto w-full max-w-[300px] sm:max-w-[440px] aspect-square rise" style="animation-delay:.2s" aria-hidden="true">
-      <div class="absolute inset-[6%] rounded-full bg-accent/15 blur-3xl"></div>
-      <div class="absolute inset-[4%] rounded-full border border-white/[.06]"></div>
-      <div class="ring absolute inset-[4%] rounded-full"></div>
-      <div class="ring ring-slow absolute inset-[16%] rounded-full"></div>
-      <div class="absolute inset-[16%] rounded-full border border-white/[.05]"></div>
-      <img src="logo-mark.png" alt="" class="floaty absolute inset-[25%] w-1/2 h-1/2 object-contain drop-shadow-[0_20px_50px_rgba(52,117,239,.45)]" />
+    <div class="relative mx-auto w-full max-w-[300px] sm:max-w-[440px] aspect-square rise" style="animation-delay:.15s" aria-hidden="true">
+      <div class="absolute inset-[3%] rounded-full bg-surface/50"></div>
+      <div class="absolute inset-[17%] rounded-full bg-surface/80"></div>
+      <div class="absolute inset-[30%] rounded-full bg-surface2/80"></div>
+      <div class="orbit absolute inset-[3%]"><span class="absolute left-1/2 -top-1.5 h-3 w-3 -ml-1.5 rounded-full bg-accent2"></span></div>
+      <div class="orbit-rev absolute inset-[17%]"><span class="absolute left-1/2 -bottom-1 h-2 w-2 -ml-1 rounded-full bg-accent"></span></div>
+      <img src="logo-mark.png" alt="" class="floaty absolute inset-[27%] w-[46%] h-[46%] object-contain" />
 
-      <div class="floaty-2 hidden sm:flex absolute top-[6%] -left-[6%] items-center gap-3 rounded-2xl border border-white/10 bg-surface/80 backdrop-blur-md px-4 py-3 shadow-2xl">
-        <span class="h-9 w-9 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-lightbulb text-xl"></i></span>
-        <span class="text-sm font-semibold">Emprender</span>
+      <div class="floaty-2 hidden sm:flex absolute top-[5%] -left-[8%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
+        <i class="ph ph-lightbulb text-xl text-accent2"></i><span class="text-[15px] font-semibold">Emprender</span>
       </div>
-      <div class="floaty-3 hidden sm:flex absolute top-[44%] -right-[8%] items-center gap-3 rounded-2xl border border-white/10 bg-surface/80 backdrop-blur-md px-4 py-3 shadow-2xl">
-        <span class="h-9 w-9 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-storefront text-xl"></i></span>
-        <span class="text-sm font-semibold">Mejorar tu negocio</span>
+      <div class="floaty-3 hidden sm:flex absolute top-[45%] -right-[10%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
+        <i class="ph ph-storefront text-xl text-accent2"></i><span class="text-[15px] font-semibold">Mejorar tu negocio</span>
       </div>
-      <div class="floaty hidden sm:flex absolute bottom-[4%] left-[2%] items-center gap-3 rounded-2xl border border-white/10 bg-surface/80 backdrop-blur-md px-4 py-3 shadow-2xl">
-        <span class="h-9 w-9 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-briefcase text-xl"></i></span>
-        <span class="text-sm font-semibold">Potenciar tu trabajo</span>
+      <div class="floaty hidden sm:flex absolute bottom-[3%] left-[0%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
+        <i class="ph ph-briefcase text-xl text-accent2"></i><span class="text-[15px] font-semibold">Potenciar tu trabajo</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= DATOS CLAVE ================= -->
-<section class="px-4 sm:px-6" aria-label="Datos clave del programa">
-  <div class="max-w-page mx-auto reveal">
-    <dl class="grid grid-cols-2 lg:grid-cols-4 rounded-card border border-line bg-surface/60 backdrop-blur-md overflow-hidden">
-      <div class="p-5 sm:p-7 border-b lg:border-b-0 border-r border-line">
-        <i class="ph ph-chalkboard-teacher text-2xl text-accent2"></i>
-        <dt class="mt-3 font-heading font-bold text-2xl sm:text-3xl">8 clases</dt>
-        <dd class="text-sm text-soft mt-1">prácticas y en vivo</dd>
+<section class="px-5 sm:px-8" aria-labelledby="datos-titulo">
+  <div class="max-w-page mx-auto">
+    <h2 id="datos-titulo" class="sr-only">El programa en cifras</h2>
+    <dl class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <div class="reveal rounded-card bg-accent p-6 sm:p-8">
+        <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num">16 h</dt>
+        <dd class="mt-2 text-[15px] sm:text-base text-white/90">de formación en vivo</dd>
       </div>
-      <div class="p-5 sm:p-7 border-b lg:border-b-0 lg:border-r border-line">
-        <i class="ph ph-clock text-2xl text-accent2"></i>
-        <dt class="mt-3 font-heading font-bold text-2xl sm:text-3xl">60 min</dt>
-        <dd class="text-sm text-soft mt-1">por sesión</dd>
+      <div class="reveal rounded-card bg-surface p-6 sm:p-8">
+        <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num">8</dt>
+        <dd class="mt-2 text-[15px] sm:text-base text-soft">sesiones de 2 horas</dd>
       </div>
-      <div class="p-5 sm:p-7 border-r border-line">
-        <i class="ph ph-video-camera text-2xl text-accent2"></i>
-        <dt class="mt-3 font-heading font-bold text-2xl sm:text-3xl">Virtual</dt>
-        <dd class="text-sm text-soft mt-1">desde donde estés</dd>
+      <div class="reveal rounded-card bg-surface p-6 sm:p-8">
+        <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num text-accent2">2 h</dt>
+        <dd class="mt-2 text-[15px] sm:text-base text-soft">de mentoría grupal cada semana</dd>
       </div>
-      <div class="p-5 sm:p-7">
-        <i class="ph ph-seal-check text-2xl text-accent2"></i>
-        <dt class="mt-3 font-heading font-bold text-2xl sm:text-3xl">Certificado</dt>
-        <dd class="text-sm text-soft mt-1">de Campuslands</dd>
+      <div class="reveal rounded-card bg-surface p-6 sm:p-8">
+        <dt class="font-heading font-extrabold text-[1.9rem] leading-[1.2] sm:text-5xl lg:text-[3.25rem] tracking-[-0.03em] num">$600.000</dt>
+        <dd class="mt-2 text-[15px] sm:text-base text-soft">COP por participante</dd>
       </div>
     </dl>
   </div>
 </section>
 
 <!-- ================= PARA QUIÉN (pestañas) ================= -->
-<section id="para-quien" class="section px-4 sm:px-6">
-  <div class="max-w-page mx-auto">
-    <div class="max-w-2xl reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Sea cual sea tu punto de partida, hay un lugar para ti.</h2>
-      <p class="mt-5 text-soft text-lg max-w-[60ch]">Elige tu situación y descubre cómo te ayuda la formación.</p>
-    </div>
+<section id="para-quien" class="section px-5 sm:px-8">
+  <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-start">
+    <div>
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Hay un lugar para ti.</h2>
+      <p class="reveal mt-6 text-lg text-soft max-w-[44ch]">Sea cual sea tu punto de partida. Elige tu situación y mira cómo te ayuda la formación.</p>
 
-    <div class="mt-10 reveal">
-      <div role="tablist" aria-label="Elige tu perfil" class="flex flex-wrap gap-2">
-        <button role="tab" id="tab-idea" aria-controls="panel-idea" aria-selected="true" class="tab snap-start shrink-0 inline-flex items-center gap-2 rounded-full border border-line bg-white/[.03] px-5 py-3 text-sm font-semibold text-soft transition">
-          <i class="ph ph-lightbulb text-lg"></i> Estoy empezando
+      <div role="tablist" aria-label="Elige tu perfil" class="reveal mt-8 flex flex-col gap-2 max-w-sm">
+        <button role="tab" id="tab-idea" aria-controls="panel-idea" aria-selected="true" class="tab flex items-center gap-3 rounded-2xl bg-surface px-5 py-4 text-left text-base font-semibold text-soft">
+          <i class="ph ph-lightbulb text-xl"></i> Estoy empezando con una idea
         </button>
-        <button role="tab" id="tab-negocio" aria-controls="panel-negocio" aria-selected="false" tabindex="-1" class="tab snap-start shrink-0 inline-flex items-center gap-2 rounded-full border border-line bg-white/[.03] px-5 py-3 text-sm font-semibold text-soft transition">
-          <i class="ph ph-storefront text-lg"></i> Ya tengo un negocio
+        <button role="tab" id="tab-negocio" aria-controls="panel-negocio" aria-selected="false" tabindex="-1" class="tab flex items-center gap-3 rounded-2xl bg-surface px-5 py-4 text-left text-base font-semibold text-soft">
+          <i class="ph ph-storefront text-xl"></i> Ya tengo un negocio
         </button>
-        <button role="tab" id="tab-empresa" aria-controls="panel-empresa" aria-selected="false" tabindex="-1" class="tab snap-start shrink-0 inline-flex items-center gap-2 rounded-full border border-line bg-white/[.03] px-5 py-3 text-sm font-semibold text-soft transition">
-          <i class="ph ph-briefcase text-lg"></i> Trabajo en una empresa
+        <button role="tab" id="tab-empresa" aria-controls="panel-empresa" aria-selected="false" tabindex="-1" class="tab flex items-center gap-3 rounded-2xl bg-surface px-5 py-4 text-left text-base font-semibold text-soft">
+          <i class="ph ph-briefcase text-xl"></i> Trabajo en una empresa
         </button>
       </div>
+    </div>
 
-      <div class="mt-6 rounded-card border border-line bg-surface/70 backdrop-blur-md overflow-hidden">
-        <div role="tabpanel" id="panel-idea" aria-labelledby="tab-idea" class="panel grid md:grid-cols-[1.2fr_1fr]">
-          <div class="p-7 sm:p-10">
-            <h3 class="font-heading font-bold text-2xl sm:text-3xl">Convierte tu idea en una oportunidad más clara</h3>
-            <p class="mt-4 text-soft leading-relaxed max-w-[52ch]">Tienes una idea de negocio y quieres darle estructura. Aprende a usar IA para investigar, validar y organizar tu propuesta antes de invertir más tiempo o dinero.</p>
-          </div>
-          <div class="p-7 sm:p-10 bg-accent/[.07] border-t md:border-t-0 md:border-l border-line">
-            <p class="text-sm font-semibold text-accent2">Usarás la IA para</p>
-            <ul class="mt-4 space-y-3 text-soft">
-              <li class="flex gap-3"><i class="ph ph-magnifying-glass text-xl text-accent2 shrink-0"></i>Investigar tu mercado y tus clientes</li>
-              <li class="flex gap-3"><i class="ph ph-tree-structure text-xl text-accent2 shrink-0"></i>Organizar y estructurar tu idea</li>
-              <li class="flex gap-3"><i class="ph ph-target text-xl text-accent2 shrink-0"></i>Definir tu propuesta de valor</li>
-            </ul>
-          </div>
+    <div class="reveal rounded-card bg-surface overflow-hidden">
+      <div role="tabpanel" id="panel-idea" aria-labelledby="tab-idea" class="panel">
+        <img src="assets/perfil-idea.jpg" alt="Persona escribiendo ideas en una libreta" class="w-full aspect-[16/7] object-cover" loading="lazy" />
+        <div class="p-8 sm:p-12">
+          <h3 class="font-heading font-bold text-2xl sm:text-[2rem] tracking-[-0.02em] leading-tight">Dale estructura a tu idea</h3>
+          <p class="mt-4 text-soft text-lg leading-relaxed max-w-[52ch]">Usa la IA para investigar, validar y organizar tu propuesta antes de invertir más tiempo o dinero.</p>
         </div>
+        <ul class="bg-surface2 p-8 sm:px-12 sm:py-10 grid sm:grid-cols-3 gap-6 text-ink">
+          <li><i class="ph ph-magnifying-glass text-2xl text-accent2"></i><p class="mt-3">Investigar tu mercado y tus clientes</p></li>
+          <li><i class="ph ph-tree-structure text-2xl text-accent2"></i><p class="mt-3">Ordenar y estructurar tu idea</p></li>
+          <li><i class="ph ph-target text-2xl text-accent2"></i><p class="mt-3">Definir tu propuesta de valor</p></li>
+        </ul>
+      </div>
 
-        <div role="tabpanel" id="panel-negocio" aria-labelledby="tab-negocio" class="panel grid md:grid-cols-[1.2fr_1fr]" hidden>
-          <div class="p-7 sm:p-10">
-            <h3 class="font-heading font-bold text-2xl sm:text-3xl">Impulsa tu negocio con apoyo de la IA</h3>
-            <p class="mt-4 text-soft leading-relaxed max-w-[52ch]">Si ya vendes o estás operando, descubre cómo usar IA para crear contenido, apoyar tus ventas, mejorar la atención al cliente y optimizar tareas del día a día.</p>
-          </div>
-          <div class="p-7 sm:p-10 bg-accent/[.07] border-t md:border-t-0 md:border-l border-line">
-            <p class="text-sm font-semibold text-accent2">Usarás la IA para</p>
-            <ul class="mt-4 space-y-3 text-soft">
-              <li class="flex gap-3"><i class="ph ph-megaphone text-xl text-accent2 shrink-0"></i>Crear contenido y mejorar tus mensajes</li>
-              <li class="flex gap-3"><i class="ph ph-handshake text-xl text-accent2 shrink-0"></i>Apoyar tus ventas y tu atención al cliente</li>
-              <li class="flex gap-3"><i class="ph ph-lightning text-xl text-accent2 shrink-0"></i>Ganar tiempo en tareas repetitivas</li>
-            </ul>
-          </div>
+      <div role="tabpanel" id="panel-negocio" aria-labelledby="tab-negocio" class="panel" hidden>
+        <img src="assets/perfil-negocio.jpg" alt="Tienda de mochilas artesanales en una calle de Cartagena" class="w-full aspect-[16/7] object-cover" loading="lazy" />
+        <div class="p-8 sm:p-12">
+          <h3 class="font-heading font-bold text-2xl sm:text-[2rem] tracking-[-0.02em] leading-tight">Impulsa tu negocio con IA</h3>
+          <p class="mt-4 text-soft text-lg leading-relaxed max-w-[52ch]">Si ya vendes, descubre cómo usar IA para crear contenido, apoyar tus ventas, atender mejor y ganar tiempo.</p>
         </div>
+        <ul class="bg-surface2 p-8 sm:px-12 sm:py-10 grid sm:grid-cols-3 gap-6 text-ink">
+          <li><i class="ph ph-megaphone text-2xl text-accent2"></i><p class="mt-3">Crear contenido y mejores mensajes</p></li>
+          <li><i class="ph ph-handshake text-2xl text-accent2"></i><p class="mt-3">Apoyar ventas y atención al cliente</p></li>
+          <li><i class="ph ph-lightning text-2xl text-accent2"></i><p class="mt-3">Ganar tiempo en tareas repetitivas</p></li>
+        </ul>
+      </div>
 
-        <div role="tabpanel" id="panel-empresa" aria-labelledby="tab-empresa" class="panel grid md:grid-cols-[1.2fr_1fr]" hidden>
-          <div class="p-7 sm:p-10">
-            <h3 class="font-heading font-bold text-2xl sm:text-3xl">Mejora tu trabajo y fortalece tus procesos</h3>
-            <p class="mt-4 text-soft leading-relaxed max-w-[52ch]">Si quieres ser más productivo y aportar más valor, aprende a usar IA para organizar información, optimizar tareas y desarrollar habilidades aplicables en tu trabajo.</p>
-          </div>
-          <div class="p-7 sm:p-10 bg-accent/[.07] border-t md:border-t-0 md:border-l border-line">
-            <p class="text-sm font-semibold text-accent2">Usarás la IA para</p>
-            <ul class="mt-4 space-y-3 text-soft">
-              <li class="flex gap-3"><i class="ph ph-files text-xl text-accent2 shrink-0"></i>Organizar y resumir información</li>
-              <li class="flex gap-3"><i class="ph ph-chats-circle text-xl text-accent2 shrink-0"></i>Comunicar con más claridad</li>
-              <li class="flex gap-3"><i class="ph ph-gear-six text-xl text-accent2 shrink-0"></i>Identificar mejoras en tus procesos</li>
-            </ul>
-          </div>
+      <div role="tabpanel" id="panel-empresa" aria-labelledby="tab-empresa" class="panel" hidden>
+        <img src="assets/perfil-empresa.jpg" alt="Personas trabajando con portátiles en una oficina compartida" class="w-full aspect-[16/7] object-cover" loading="lazy" />
+        <div class="p-8 sm:p-12">
+          <h3 class="font-heading font-bold text-2xl sm:text-[2rem] tracking-[-0.02em] leading-tight">Mejora tu trabajo y tus procesos</h3>
+          <p class="mt-4 text-soft text-lg leading-relaxed max-w-[52ch]">Sé más productivo: usa la IA para organizar información, optimizar tareas y aportar más valor.</p>
         </div>
+        <ul class="bg-surface2 p-8 sm:px-12 sm:py-10 grid sm:grid-cols-3 gap-6 text-ink">
+          <li><i class="ph ph-files text-2xl text-accent2"></i><p class="mt-3">Organizar y resumir información</p></li>
+          <li><i class="ph ph-chats-circle text-2xl text-accent2"></i><p class="mt-3">Comunicar con más claridad</p></li>
+          <li><i class="ph ph-gear-six text-2xl text-accent2"></i><p class="mt-3">Identificar mejoras en tus procesos</p></li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ================= PROPUESTA DE VALOR (manifiesto) ================= -->
-<section class="section px-4 sm:px-6 border-y border-white/[.06] bg-base2/50">
-  <div class="max-w-4xl mx-auto text-center reveal">
-    <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.1]">
-      No necesitas conocer más herramientas de IA. <span class="text-accent2">Necesitas aprender a aprovecharlas.</span>
-    </h2>
-    <p class="mt-6 text-soft text-lg max-w-[60ch] mx-auto">Internet está lleno de tutoriales. Pero conocer una herramienta no es lo mismo que saber usarla para tus objetivos. Aquí la aplicas a situaciones reales.</p>
-  </div>
+<!-- ================= PROPUESTA DE VALOR ================= -->
+<section class="section px-5 sm:px-8 bg-night2">
+  <div class="max-w-page mx-auto">
+    <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1.05] max-w-4xl">Aplicar la IA vale más que conocerla.</h2>
+    <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[58ch]">Internet está lleno de tutoriales. Aquí no coleccionas herramientas: aprendes a usarlas en situaciones reales de tu vida laboral.</p>
 
-  <div class="max-w-4xl mx-auto mt-14 grid grid-cols-1 sm:grid-cols-[1fr_auto_1fr_auto_1fr] items-center gap-4 sm:gap-3 reveal">
-    <div class="spot rounded-card border border-line bg-surface/70 p-6 text-center">
-      <i class="ph ph-lightbulb text-3xl text-accent2"></i>
-      <p class="mt-3 font-heading font-bold text-lg">Emprender</p>
-    </div>
-    <i class="ph ph-plus text-muted text-xl mx-auto" aria-hidden="true"></i>
-    <div class="spot rounded-card border border-line bg-surface/70 p-6 text-center">
-      <i class="ph ph-storefront text-3xl text-accent2"></i>
-      <p class="mt-3 font-heading font-bold text-lg">Mejorar tu negocio</p>
-    </div>
-    <i class="ph ph-plus text-muted text-xl mx-auto" aria-hidden="true"></i>
-    <div class="spot rounded-card border border-line bg-surface/70 p-6 text-center">
-      <i class="ph ph-briefcase text-3xl text-accent2"></i>
-      <p class="mt-3 font-heading font-bold text-lg">Potenciar tu trabajo</p>
-    </div>
-  </div>
-
-  <p class="max-w-2xl mx-auto mt-12 text-center font-heading font-semibold text-xl sm:text-2xl leading-snug reveal">
-    El valor de la IA no está en cuántas herramientas conoces, sino en lo que aprendes a hacer con ellas.
-  </p>
-  <div class="mt-9 text-center reveal">
-    <a href="#registro" class="btn btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-white whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+    <ul class="mt-14 grid md:grid-cols-3 gap-3 sm:gap-4">
+      <li class="reveal rounded-card bg-surface p-8 sm:p-10 min-h-[200px] flex flex-col justify-between">
+        <i class="ph ph-lightbulb text-3xl text-accent2"></i>
+        <p class="mt-10 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Emprender con más claridad</p>
+      </li>
+      <li class="reveal rounded-card bg-surface2 p-8 sm:p-10 min-h-[200px] flex flex-col justify-between md:translate-y-8">
+        <i class="ph ph-storefront text-3xl text-accent2"></i>
+        <p class="mt-10 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Mejorar tu negocio</p>
+      </li>
+      <li class="reveal rounded-card bg-accent p-8 sm:p-10 min-h-[200px] flex flex-col justify-between md:translate-y-16">
+        <i class="ph ph-briefcase text-3xl text-white"></i>
+        <p class="mt-10 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Potenciar tu trabajo</p>
+      </li>
+    </ul>
   </div>
 </section>
 
 <!-- ================= ¿ES PARA TI? ================= -->
-<section class="section px-4 sm:px-6">
+<section class="section px-5 sm:px-8">
   <div class="max-w-page mx-auto">
-    <div class="max-w-2xl reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">¿Es esta formación para ti?</h2>
-      <p class="mt-5 text-soft text-lg max-w-[60ch]">No necesitas ser experto en tecnología. Necesitas ganas de aprender y de aplicar la IA a tus objetivos.</p>
-    </div>
+    <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">¿Es esta formación para ti?</h2>
+    <p class="reveal mt-6 text-lg text-soft max-w-[58ch]">No necesitas ser experto en tecnología. Necesitas ganas de aprender y de aplicar la IA a tus objetivos.</p>
 
-    <div class="mt-12 grid lg:grid-cols-[1.6fr_1fr] gap-6">
-      <div class="grid sm:grid-cols-2 gap-x-8 gap-y-8 reveal">
-        <div class="flex gap-4">
-          <span class="h-10 w-10 shrink-0 rounded-full bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-check text-lg"></i></span>
-          <div><h3 class="font-heading font-bold text-lg">Quieres desarrollar una idea</h3><p class="mt-1.5 text-soft text-[15px]">Y usar IA para investigarla, organizarla y darle estructura.</p></div>
-        </div>
-        <div class="flex gap-4">
-          <span class="h-10 w-10 shrink-0 rounded-full bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-check text-lg"></i></span>
-          <div><h3 class="font-heading font-bold text-lg">Ya tienes un emprendimiento</h3><p class="mt-1.5 text-soft text-[15px]">Y buscas aplicar IA en contenido, ventas, atención o productividad.</p></div>
-        </div>
-        <div class="flex gap-4">
-          <span class="h-10 w-10 shrink-0 rounded-full bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-check text-lg"></i></span>
-          <div><h3 class="font-heading font-bold text-lg">Trabajas en una empresa</h3><p class="mt-1.5 text-soft text-[15px]">Y quieres fortalecer habilidades, organizar información y mejorar procesos.</p></div>
-        </div>
-        <div class="flex gap-4">
-          <span class="h-10 w-10 shrink-0 rounded-full bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-check text-lg"></i></span>
-          <div><h3 class="font-heading font-bold text-lg">Quieres pasar a la práctica</h3><p class="mt-1.5 text-soft text-[15px]">Y dejar la curiosidad para usar la IA en situaciones reales.</p></div>
-        </div>
+    <div class="mt-12 grid lg:grid-cols-[1.5fr_1fr] gap-4">
+      <div class="reveal grid sm:grid-cols-2 gap-x-10 gap-y-10 rounded-card bg-surface p-8 sm:p-10">
+        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Quieres desarrollar una idea</h3><p class="mt-2 text-soft">Y usar IA para investigarla, organizarla y darle estructura.</p></div>
+        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Ya tienes un emprendimiento</h3><p class="mt-2 text-soft">Y buscas aplicar IA en contenido, ventas, atención o productividad.</p></div>
+        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Trabajas en una empresa</h3><p class="mt-2 text-soft">Y quieres organizar información y mejorar procesos.</p></div>
+        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Quieres pasar a la práctica</h3><p class="mt-2 text-soft">Y dejar la curiosidad para usar la IA en situaciones reales.</p></div>
       </div>
 
-      <aside class="rounded-card border border-line bg-surface/70 backdrop-blur-md p-7 reveal">
-        <h3 class="font-heading font-bold text-lg">Qué necesitas para aprovecharla</h3>
-        <ul class="mt-5 space-y-4 text-[15px] text-soft">
-          <li class="flex gap-3"><i class="ph ph-laptop text-xl text-accent2 shrink-0"></i>Computador, internet y conocimientos digitales básicos</li>
-          <li class="flex gap-3"><i class="ph ph-calendar-check text-xl text-accent2 shrink-0"></i>Tiempo para asistir a las clases y hacer los ejercicios</li>
-          <li class="flex gap-3"><i class="ph ph-brain text-xl text-accent2 shrink-0"></i>Disposición para practicar y revisar lo que produce la IA</li>
+      <aside class="reveal rounded-card bg-surface2 p-8 sm:p-10 flex flex-col">
+        <h3 class="font-heading font-bold text-xl">Qué necesitas para aprovecharla</h3>
+        <ul class="mt-6 space-y-5 text-ink">
+          <li class="flex gap-3"><i class="ph ph-laptop text-2xl text-accent2 shrink-0"></i>Computador, internet y conocimientos digitales básicos</li>
+          <li class="flex gap-3"><i class="ph ph-calendar-check text-2xl text-accent2 shrink-0"></i>Tiempo para asistir a las clases y hacer los ejercicios</li>
+          <li class="flex gap-3"><i class="ph ph-brain text-2xl text-accent2 shrink-0"></i>Disposición para practicar y revisar lo que produce la IA</li>
         </ul>
-        <a href="#registro" class="mt-7 inline-flex items-center gap-2 text-sm font-semibold text-accent2 hover:text-ink transition">Déjanos tus datos y un asesor te explica todo <i class="ph ph-arrow-right"></i></a>
+        <a href="#registro" class="link-arrow mt-auto pt-8 inline-flex items-center gap-2 font-semibold text-accent2 hover:text-ink transition">Un asesor te explica todo <i class="ph ph-arrow-right"></i></a>
       </aside>
-    </div>
-  </div>
-</section>
-
-<!-- ================= QUÉ INCLUYE (bento) ================= -->
-<section class="section px-4 sm:px-6 border-y border-white/[.06] bg-base2/50">
-  <div class="max-w-page mx-auto">
-    <div class="max-w-3xl reveal">
-      <p class="text-xs font-bold uppercase tracking-[.18em] text-accent2">Más que una formación</p>
-      <h2 class="mt-4 font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">No solo aprendes IA. Te acompañamos a ponerla en práctica.</h2>
-    </div>
-
-    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 lg:grid-rows-2 gap-5">
-      <!-- Celda grande -->
-      <article class="spot relative overflow-hidden rounded-card border border-line md:col-span-2 lg:row-span-2 min-h-[340px] p-8 sm:p-10 flex flex-col justify-end reveal">
-        <img src="bg-tech.jpg" alt="" class="brand-bg absolute inset-0 -z-10 w-full h-full object-cover opacity-90" loading="lazy" />
-        <div class="absolute inset-0 -z-10 bg-gradient-to-t from-base via-base/70 to-transparent"></div>
-        <span class="font-heading font-extrabold text-7xl sm:text-8xl text-white/95 leading-none">8</span>
-        <h3 class="mt-4 font-heading font-bold text-2xl sm:text-3xl">Clases prácticas con respaldo académico</h3>
-        <p class="mt-3 text-soft max-w-[48ch]">Ocho sesiones de 60 minutos sobre aplicaciones de IA en ideas de negocio, marketing, ventas, productividad y procesos.</p>
-      </article>
-
-      <article class="spot rounded-card border border-accent/40 bg-gradient-to-br from-accent/25 via-accent/10 to-transparent p-8 reveal">
-        <span class="h-12 w-12 rounded-2xl bg-accent text-white grid place-items-center"><i class="ph ph-chats-teardrop text-2xl"></i></span>
-        <h3 class="mt-6 font-heading font-bold text-xl">Chat de soporte</h3>
-        <p class="mt-2 text-soft text-[15px]">No tienes que resolver todas tus dudas solo. Un canal grupal para aclarar inquietudes y avanzar en tus ejercicios.</p>
-      </article>
-
-      <article class="spot rounded-card border border-line bg-surface/80 p-8 reveal" style="background-image: radial-gradient(rgba(140,172,255,.12) 1px, transparent 1px); background-size: 18px 18px;">
-        <span class="h-12 w-12 rounded-2xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-certificate text-2xl"></i></span>
-        <h3 class="mt-6 font-heading font-bold text-xl">Certificación de Campuslands</h3>
-        <p class="mt-2 text-soft text-[15px]">Respaldo académico, sujeto a los requisitos académicos y de participación del programa.</p>
-      </article>
     </div>
   </div>
 </section>
 
 <!-- ================= RUTA DE 8 SESIONES ================= -->
 <!-- Ruta comercial propuesta. Debe contrastarse con el temario aprobado por Campuslands. -->
-<section id="programa" class="section px-4 sm:px-6">
+<section id="programa" class="section px-5 sm:px-8 bg-night2">
   <div class="max-w-page mx-auto grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-16">
-    <div class="lg:sticky lg:top-28 self-start reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Lo que aprenderás en 8 sesiones.</h2>
-      <p class="mt-5 text-soft text-lg max-w-[46ch]">Una ruta clara y progresiva para aplicar la IA a tu idea, tu negocio o tu trabajo.</p>
-      <div class="mt-8 flex flex-wrap gap-2 text-sm">
-        <span class="inline-flex items-center gap-2 rounded-full border border-line bg-white/[.03] px-4 py-2 text-soft"><i class="ph ph-clock text-accent2"></i>60 min por sesión</span>
-        <span class="inline-flex items-center gap-2 rounded-full border border-line bg-white/[.03] px-4 py-2 text-soft"><i class="ph ph-chats-teardrop text-accent2"></i>Chat de soporte</span>
-      </div>
-      <a href="#registro" class="btn btn-primary mt-9 hidden lg:inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-white whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+    <div class="lg:sticky lg:top-28 self-start">
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Lo que aprenderás en 8 sesiones.</h2>
+      <p class="reveal mt-6 text-lg text-soft max-w-[44ch]">Una ruta clara y progresiva para aplicar la IA a tu idea, tu negocio o tu trabajo.</p>
+      <dl class="reveal mt-8 grid grid-cols-2 gap-3 max-w-sm">
+        <div class="rounded-2xl bg-surface p-5"><dt class="font-heading font-extrabold text-3xl num">2 h</dt><dd class="text-soft text-[15px] mt-1">por sesión en vivo</dd></div>
+        <div class="rounded-2xl bg-surface p-5"><dt class="font-heading font-extrabold text-3xl num text-accent2">+2 h</dt><dd class="text-soft text-[15px] mt-1">de mentoría semanal</dd></div>
+      </dl>
+      <a href="#registro" class="btn btn-primary mt-9 hidden lg:inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
     </div>
 
     <ol class="relative">
-      <div class="absolute left-[19px] top-3 bottom-3 w-px bg-line" aria-hidden="true"></div>
-      <div class="tl-fill absolute left-[19px] top-3 bottom-3 w-px bg-accent" aria-hidden="true"></div>
+      <div class="absolute left-[21px] top-3 bottom-3 w-[2px] bg-surface2" aria-hidden="true"></div>
+      <div class="tl-fill absolute left-[21px] top-3 bottom-3 w-[2px] bg-accent" aria-hidden="true"></div>
 
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">1</span>
-        <h3 class="font-heading font-bold text-xl">IA para emprender y trabajar mejor</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">1</span>
+        <h3 class="font-heading font-bold text-xl pt-2">IA para emprender y trabajar mejor</h3>
         <p class="mt-2 text-soft">Cómo la IA puede ayudarte en tu negocio, en una idea o en tus actividades profesionales.</p>
       </li>
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">2</span>
-        <h3 class="font-heading font-bold text-xl">Cómo pedir mejores resultados a la IA</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">2</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Cómo pedir mejores resultados a la IA</h3>
         <p class="mt-2 text-soft">Instrucciones claras para obtener respuestas más precisas y alineadas con tus objetivos.</p>
       </li>
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">3</span>
-        <h3 class="font-heading font-bold text-xl">Investiga y organiza mejor tu información</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">3</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Investiga y organiza tu información</h3>
         <p class="mt-2 text-soft">Usa IA para investigar, resumir, estructurar ideas y ordenar información importante.</p>
       </li>
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">4</span>
-        <h3 class="font-heading font-bold text-xl">Marketing y contenido con apoyo de IA</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">4</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Marketing y contenido con IA</h3>
         <p class="mt-2 text-soft">Crea ideas, mejora tus mensajes y fortalece tu comunicación con clientes.</p>
       </li>
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">5</span>
-        <h3 class="font-heading font-bold text-xl">Ventas y comunicación comercial</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">5</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Ventas y comunicación comercial</h3>
         <p class="mt-2 text-soft">Prepara propuestas, haz seguimiento y apoya tu proceso comercial con IA.</p>
       </li>
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">6</span>
-        <h3 class="font-heading font-bold text-xl">Procesos y oportunidades de mejora</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">6</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Procesos y oportunidades de mejora</h3>
         <p class="mt-2 text-soft">Identifica tareas repetitivas y oportunidades para optimizarlas con IA.</p>
       </li>
       <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">7</span>
-        <h3 class="font-heading font-bold text-xl">Diseña tu caso práctico</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">7</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Diseña tu caso práctico</h3>
         <p class="mt-2 text-soft">Define una necesidad real, elige herramientas y estructura cómo usar la IA.</p>
       </li>
       <li class="tl-item reveal relative pl-16">
-        <span class="dot absolute left-0 top-0 h-10 w-10 rounded-full border border-line bg-base text-accent2 font-heading font-bold grid place-items-center">8</span>
-        <h3 class="font-heading font-bold text-xl">Presenta avances y define tu siguiente paso</h3>
+        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">8</span>
+        <h3 class="font-heading font-bold text-xl pt-2">Presenta avances y tu siguiente paso</h3>
         <p class="mt-2 text-soft">Revisa lo aprendido y arma una hoja de ruta para seguir aplicando la IA.</p>
       </li>
     </ol>
   </div>
-  <div class="mt-12 text-center lg:hidden">
-    <a href="#registro" class="btn btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold text-white whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+  <div class="mt-14 text-center lg:hidden">
+    <a href="#registro" class="btn btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- ================= HERRAMIENTAS ================= -->
 <!-- Lista final pendiente de aprobación académica. -->
-<section class="section px-4 sm:px-6 border-y border-white/[.06] bg-base2/50">
+<section class="section px-5 sm:px-8">
   <div class="max-w-page mx-auto">
-    <div class="max-w-3xl reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Herramientas con propósito.</h2>
-      <p class="mt-5 text-soft text-lg max-w-[60ch]">No se trata de conocer más herramientas, sino de saber qué hacer con ellas. Organizadas por lo que necesitas resolver:</p>
-    </div>
+    <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Herramientas con propósito.</h2>
+    <p class="reveal mt-6 text-lg text-soft max-w-[58ch]">No se trata de conocer más herramientas, sino de saber qué hacer con ellas. Están organizadas por lo que necesitas resolver.</p>
 
-    <div class="mt-12 grid md:grid-cols-2 gap-px rounded-card overflow-hidden border border-line bg-line reveal">
-      <div class="spot bg-surface p-7 sm:p-9">
-        <div class="flex items-center gap-3"><i class="ph ph-sparkle text-2xl text-accent2"></i><h3 class="font-heading font-bold text-lg">Crear y resolver</h3></div>
-        <p class="mt-3 text-soft text-[15px]">Ideas, redacción, planificación y apoyo para resolver tareas.</p>
-        <div class="mt-5 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">ChatGPT</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Gemini</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Claude</span></div>
+    <div class="mt-12 grid md:grid-cols-2 gap-3 sm:gap-4">
+      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
+        <h3 class="font-heading font-bold text-2xl">Crear y resolver</h3>
+        <p class="mt-2 text-soft">Ideas, redacción, planificación y apoyo para resolver tareas.</p>
+        <p class="mt-6 font-heading font-semibold text-xl text-accent2">ChatGPT, Gemini, Claude</p>
       </div>
-      <div class="spot bg-surface p-7 sm:p-9">
-        <div class="flex items-center gap-3"><i class="ph ph-books text-2xl text-accent2"></i><h3 class="font-heading font-bold text-lg">Investigar y aprender</h3></div>
-        <p class="mt-3 text-soft text-[15px]">Investigación, organización de documentos y análisis de información.</p>
-        <div class="mt-5 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">NotebookLM</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Asistentes de IA</span></div>
+      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
+        <h3 class="font-heading font-bold text-2xl">Investigar y aprender</h3>
+        <p class="mt-2 text-soft">Investigación, organización de documentos y análisis de información.</p>
+        <p class="mt-6 font-heading font-semibold text-xl text-accent2">NotebookLM y asistentes de IA</p>
       </div>
-      <div class="spot bg-surface p-7 sm:p-9">
-        <div class="flex items-center gap-3"><i class="ph ph-palette text-2xl text-accent2"></i><h3 class="font-heading font-bold text-lg">Diseñar y comunicar</h3></div>
-        <p class="mt-3 text-soft text-[15px]">Contenido, material visual y presentaciones.</p>
-        <div class="mt-5 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Canva AI</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Gamma</span></div>
+      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
+        <h3 class="font-heading font-bold text-2xl">Diseñar y comunicar</h3>
+        <p class="mt-2 text-soft">Contenido, material visual y presentaciones.</p>
+        <p class="mt-6 font-heading font-semibold text-xl text-accent2">Canva AI, Gamma</p>
       </div>
-      <div class="spot bg-surface p-7 sm:p-9">
-        <div class="flex items-center gap-3"><i class="ph ph-flow-arrow text-2xl text-accent2"></i><h3 class="font-heading font-bold text-lg">Organizar y optimizar</h3></div>
-        <p class="mt-3 text-soft text-[15px]">Análisis básico de datos y exploración de automatizaciones.</p>
-        <div class="mt-5 flex flex-wrap gap-2 text-sm"><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Excel con IA</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Make</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">Zapier</span><span class="rounded-full bg-accent/15 text-accent2 px-3 py-1.5 font-semibold">n8n</span></div>
+      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
+        <h3 class="font-heading font-bold text-2xl">Organizar y optimizar</h3>
+        <p class="mt-2 text-soft">Análisis básico de datos y exploración de automatizaciones.</p>
+        <p class="mt-6 font-heading font-semibold text-xl text-accent2">Excel con IA, Make, Zapier, n8n</p>
       </div>
     </div>
-    <p class="mt-6 text-sm text-muted max-w-[70ch] reveal">Aprenderás a elegir herramientas según tus necesidades. Las herramientas específicas y su profundidad dependen del contenido final del programa.</p>
+    <p class="reveal mt-8 text-[15px] text-muted max-w-[70ch]">Las herramientas específicas y su profundidad dependen del contenido final del programa.</p>
   </div>
 </section>
 
 <!-- ================= FORMADOR ================= -->
 <!-- PENDIENTE: confirmar asignación definitiva, credenciales, autorización de fotografía y enlace de LinkedIn. -->
-<section id="formador" class="section px-4 sm:px-6">
-  <div class="max-w-page mx-auto grid md:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-center">
-    <div class="relative max-w-[360px] w-full mx-auto md:mx-0 reveal">
-      <div class="absolute -inset-4 rounded-[28px] bg-accent/20 blur-2xl" aria-hidden="true"></div>
-      <img src="foto.jpg" alt="Javier Cuadros Picón" class="relative w-full aspect-[4/5] object-cover rounded-card border border-line" loading="lazy" />
+<section id="formador" class="section px-5 sm:px-8 bg-night2">
+  <div class="max-w-page mx-auto grid md:grid-cols-[.85fr_1.15fr] gap-10 lg:gap-16 items-center">
+    <div class="reveal max-w-[400px] w-full mx-auto md:mx-0">
+      <img src="foto.jpg" alt="Javier Cuadros Picón" class="w-full aspect-[4/5] object-cover rounded-card" loading="lazy" />
     </div>
 
-    <div class="reveal">
-      <p class="text-xs font-bold uppercase tracking-[.18em] text-accent2">Conoce a tu formador</p>
-      <h2 class="mt-4 font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">IA con visión tecnológica y empresarial.</h2>
-      <p class="mt-6 font-heading font-bold text-xl">Javier Cuadros Picón</p>
-      <p class="text-accent2 font-semibold">MSc. Big Data, AI &amp; BI</p>
-      <p class="mt-5 text-soft text-lg max-w-[56ch]">Su enfoque combina tecnología, datos e inteligencia artificial para llevar la IA a aplicaciones prácticas en negocios y actividades profesionales.</p>
+    <div>
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Conoce a tu formador.</h2>
+      <p class="reveal mt-5 font-heading font-bold text-2xl">Javier Cuadros Picón</p>
+      <p class="reveal mt-1 font-heading font-semibold text-xl text-accent2">MSc. Big Data, AI &amp; BI</p>
+      <p class="reveal mt-6 text-lg text-soft max-w-[54ch]">Combina tecnología, datos e inteligencia artificial para llevar la IA a aplicaciones prácticas en negocios y actividades profesionales. En cada sesión verás demostraciones en vivo y harás ejercicios aplicados.</p>
 
-      <div class="mt-8 grid sm:grid-cols-3 gap-4">
-        <div class="rounded-2xl border border-line bg-surface/70 p-4"><i class="ph ph-presentation-chart text-xl text-accent2"></i><p class="mt-2 text-sm font-semibold">8 sesiones de 60 min</p></div>
-        <div class="rounded-2xl border border-line bg-surface/70 p-4"><i class="ph ph-hand-pointing text-xl text-accent2"></i><p class="mt-2 text-sm font-semibold">Demostraciones y ejercicios</p></div>
-        <div class="rounded-2xl border border-line bg-surface/70 p-4"><i class="ph ph-chats-teardrop text-xl text-accent2"></i><p class="mt-2 text-sm font-semibold">Chat de soporte NOVA</p></div>
-      </div>
+      <blockquote class="reveal mt-10 font-heading font-semibold text-2xl sm:text-3xl tracking-[-0.02em] leading-snug max-w-[24ch]">“Tecnología, datos y visión que transforman.”</blockquote>
 
-      <blockquote class="mt-8 border-l-2 border-accent pl-4 text-soft italic">“Tecnología, datos y visión que transforman.”</blockquote>
-
-      <a href="https://www.linkedin.com/in/javier-humberto-c-ab725416b/" target="_blank" rel="noopener" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent2 hover:text-ink transition">
-        <i class="ph-fill ph-linkedin-logo text-lg"></i> Ver perfil de LinkedIn
+      <a href="https://www.linkedin.com/in/javier-humberto-c-ab725416b/" target="_blank" rel="noopener" class="reveal link-arrow mt-8 inline-flex items-center gap-2 font-semibold text-accent2 hover:text-ink transition">
+        <i class="ph-fill ph-linkedin-logo text-xl"></i> Ver perfil de LinkedIn
       </a>
     </div>
   </div>
 </section>
 
 <!-- ================= INVERSIÓN ================= -->
-<section id="inversion" class="section px-4 sm:px-6 border-y border-white/[.06] bg-base2/50">
+<section id="inversion" class="section px-5 sm:px-8">
   <div class="max-w-page mx-auto">
-    <div class="max-w-3xl mx-auto text-center reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Invierte en habilidades de IA que puedes aplicar desde tu realidad.</h2>
+    <h2 class="reveal font-heading font-extrabold text-[1.75rem] sm:text-[2.6rem] lg:text-[3rem] tracking-[-0.03em] leading-[1.08] max-w-[22ch] lg:max-w-[28ch]">Aprende inteligencia artificial y cuenta con apoyo para ponerla en práctica.</h2>
+    <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[62ch]">Una experiencia que combina formación en vivo, acompañamiento técnico, recursos prácticos y comunidad para ayudarte a aplicar IA en tu negocio, emprendimiento o trabajo.</p>
+
+    <!-- Precio -->
+    <div class="reveal mt-12 rounded-card bg-surface p-8 sm:p-10 lg:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+      <div>
+        <p class="font-heading font-extrabold text-[3.25rem] sm:text-7xl lg:text-8xl tracking-[-0.04em] leading-none num">$600.000</p>
+        <p class="mt-3 font-heading font-bold text-xl sm:text-2xl text-soft">COP por participante</p>
+        <p class="mt-5 text-ink">Primera cohorte, virtual en vivo. Inicio previsto: <strong>9 de noviembre de 2026</strong>.</p>
+      </div>
+      <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
     </div>
 
-    <div class="mt-12 max-w-5xl mx-auto rounded-card border border-accent/40 bg-surface/80 backdrop-blur-md overflow-hidden grid lg:grid-cols-[.9fr_1.1fr] reveal">
-      <div class="relative p-8 sm:p-10 bg-gradient-to-br from-accent/25 via-accent/[.08] to-transparent border-b lg:border-b-0 lg:border-r border-line flex flex-col">
-        <p class="text-sm font-semibold text-accent2">Inversión por participante</p>
-        <p class="mt-3 font-heading font-extrabold text-5xl sm:text-6xl tracking-tight">$600.000</p>
-        <p class="mt-1 text-soft font-semibold">COP · Primera cohorte</p>
+    <!-- Beneficios -->
+    <h3 class="reveal mt-20 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Todo lo que incluye tu inversión</h3>
+    <ul class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
+      <li class="benefit reveal rounded-card bg-accent p-8 flex flex-col">
+        <i class="ph ph-video-camera text-3xl text-white"></i>
+        <p class="mt-8 font-heading font-extrabold text-6xl tracking-[-0.04em] leading-none num">16 h</p>
+        <h4 class="mt-3 font-heading font-bold text-xl">de formación en vivo</h4>
+        <p class="mt-2 text-white/90">8 sesiones de 2 horas con el docente, orientadas al aprendizaje práctico de IA.</p>
+      </li>
+      <li class="benefit reveal rounded-card bg-surface2 p-8 flex flex-col">
+        <i class="ph ph-users-three text-3xl text-accent2"></i>
+        <p class="mt-8 font-heading font-extrabold text-6xl tracking-[-0.04em] leading-none num text-accent2">2 h</p>
+        <h4 class="mt-3 font-heading font-bold text-xl">semanales de mentoría grupal</h4>
+        <p class="mt-2 text-soft">Acompañamiento técnico para resolver dudas, recibir orientación y avanzar en lo aprendido.</p>
+      </li>
+      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
+        <i class="ph ph-certificate text-3xl text-accent2"></i>
+        <h4 class="mt-8 font-heading font-bold text-xl">Certificación de Campuslands</h4>
+        <p class="mt-2 text-soft">Certificación académica conforme a los requisitos establecidos para el programa.</p>
+      </li>
+      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
+        <i class="ph ph-files text-3xl text-accent2"></i>
+        <h4 class="mt-8 font-heading font-bold text-xl">Plantillas y recursos prácticos</h4>
+        <p class="mt-2 text-soft">Materiales base para estructurar instrucciones de IA y empezar a diseñar asistentes o agentes a tu medida.</p>
+      </li>
+      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
+        <i class="ph ph-users text-3xl text-accent2"></i>
+        <h4 class="mt-8 font-heading font-bold text-xl">Acceso a la comunidad NOVA</h4>
+        <p class="mt-2 text-soft">Un espacio de intercambio y aprendizaje compartido entre participantes.</p>
+      </li>
+      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
+        <i class="ph ph-chats-teardrop text-3xl text-accent2"></i>
+        <h4 class="mt-8 font-heading font-bold text-xl">Canal de apoyo durante la formación</h4>
+        <p class="mt-2 text-soft">Un espacio grupal para plantear inquietudes sobre las clases y los ejercicios.</p>
+      </li>
+    </ul>
 
-        <dl class="mt-8 space-y-4 text-[15px]">
-          <div class="flex items-center gap-3"><i class="ph ph-calendar-blank text-xl text-accent2"></i><div><dt class="sr-only">Inicio</dt><dd>Inicio previsto: <strong>9 de noviembre de 2026</strong></dd></div></div>
-          <div class="flex items-center gap-3"><i class="ph ph-video-camera text-xl text-accent2"></i><div><dt class="sr-only">Modalidad</dt><dd>Virtual en vivo</dd></div></div>
-          <div class="flex items-center gap-3"><i class="ph ph-hourglass-medium text-xl text-accent2"></i><div><dt class="sr-only">Duración</dt><dd>8 horas de formación académica</dd></div></div>
-        </dl>
-
-        <div class="mt-auto pt-9">
-          <a href="#registro" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 font-semibold text-white whitespace-nowrap">Quiero reservar mi cupo <i class="ph ph-arrow-right"></i></a>
-          <p class="mt-3 text-xs text-muted text-center">Un asesor te contactará para explicarte el proceso de matrícula.</p>
-        </div>
+    <!-- Frase destacada y cierre -->
+    <div class="reveal mt-20 rounded-card bg-surface2 p-8 sm:p-12 lg:p-16 grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
+      <div>
+        <p class="font-heading font-extrabold text-2xl sm:text-[2rem] lg:text-4xl tracking-[-0.03em] leading-[1.15]">No tienes que aprenderlo todo por tu cuenta.</p>
+        <p class="mt-5 text-lg text-soft max-w-[48ch]">Aprende con un docente, practica con recursos y cuenta con un espacio de apoyo para avanzar.</p>
       </div>
-
-      <div class="p-8 sm:p-10">
-        <h3 class="font-heading font-bold text-xl">Todo lo que incluye tu formación</h3>
-        <ul class="mt-7 space-y-6">
-          <li class="flex gap-4"><span class="h-10 w-10 shrink-0 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-chalkboard-teacher text-xl"></i></span><div><p class="font-semibold">8 clases prácticas en vivo</p><p class="text-sm text-soft mt-1">Sesiones de 60 minutos con formación académica de Campuslands.</p></div></li>
-          <li class="flex gap-4"><span class="h-10 w-10 shrink-0 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-chats-teardrop text-xl"></i></span><div><p class="font-semibold">Chat de soporte</p><p class="text-sm text-soft mt-1">Acompañamiento grupal para dudas sobre contenidos y ejercicios.</p></div></li>
-          <li class="flex gap-4"><span class="h-10 w-10 shrink-0 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-certificate text-xl"></i></span><div><p class="font-semibold">Certificación de Campuslands</p><p class="text-sm text-soft mt-1">Sujeta al cumplimiento de los requisitos académicos.</p></div></li>
-          <li class="flex gap-4"><span class="h-10 w-10 shrink-0 rounded-xl bg-accent/15 text-accent2 grid place-items-center"><i class="ph ph-puzzle-piece text-xl"></i></span><div><p class="font-semibold">Aprendizaje aplicable</p><p class="text-sm text-soft mt-1">Ejercicios orientados a emprendimiento, negocios y trabajo.</p></div></li>
-        </ul>
-        <p class="mt-8 pt-6 border-t border-line text-xs text-muted">El registro de interés no constituye una reserva confirmada ni garantiza disponibilidad. La matrícula se confirma con el proceso oficial de inscripción y pago.</p>
+      <div class="lg:justify-self-end w-full lg:w-auto">
+        <a href="#registro" class="btn btn-primary w-full lg:w-auto inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
+        <p class="mt-4 text-[15px] text-soft max-w-[34ch]">El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
       </div>
     </div>
   </div>
 </section>
 
 <!-- ================= PREGUNTAS FRECUENTES ================= -->
-<section id="preguntas" class="section px-4 sm:px-6">
+<section id="preguntas" class="section px-5 sm:px-8 bg-night2">
   <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
-    <div class="lg:sticky lg:top-28 self-start reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Preguntas frecuentes.</h2>
-      <p class="mt-5 text-soft text-lg">¿Tienes otra duda? Un asesor te la resuelve.</p>
-      <a href="#registro" class="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-accent2 hover:text-ink transition">Ir al formulario <i class="ph ph-arrow-right"></i></a>
+    <div>
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Preguntas frecuentes.</h2>
+      <p class="reveal mt-6 text-lg text-soft">¿Tienes otra duda? Un asesor te la resuelve.</p>
+      <a href="#registro" class="reveal link-arrow mt-6 inline-flex items-center gap-2 font-semibold text-accent2 hover:text-ink transition">Ir al formulario <i class="ph ph-arrow-right"></i></a>
     </div>
 
     <div class="space-y-3">
-      <details class="faq reveal group rounded-2xl border border-line bg-surface/70 backdrop-blur-md open:border-accent/40">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-5 sm:p-6 font-heading font-semibold text-lg">¿Necesito conocimientos de programación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-5 sm:px-6 pb-6 -mt-1 text-soft">No necesitas saber programar. Se recomienda contar con conocimientos digitales básicos.</p>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Necesito conocimientos de programación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">No necesitas saber programar. Se recomienda contar con conocimientos digitales básicos.</p>
       </details>
-      <details class="faq reveal group rounded-2xl border border-line bg-surface/70 backdrop-blur-md open:border-accent/40">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-5 sm:p-6 font-heading font-semibold text-lg">¿La formación es virtual? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-5 sm:px-6 pb-6 -mt-1 text-soft">Sí. Las sesiones se desarrollan en modalidad virtual en vivo.</p>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Cuánto dura la formación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">16 horas en vivo: 8 sesiones de 2 horas con el docente, más 2 horas semanales de mentoría grupal.</p>
       </details>
-      <details class="faq reveal group rounded-2xl border border-line bg-surface/70 backdrop-blur-md open:border-accent/40">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-5 sm:p-6 font-heading font-semibold text-lg">¿Recibiré certificado? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-5 sm:px-6 pb-6 -mt-1 text-soft">Sí. Campuslands entrega la certificación conforme a los requisitos académicos establecidos.</p>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿La formación es virtual? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">Sí. Las sesiones se desarrollan en modalidad virtual en vivo.</p>
       </details>
-      <details class="faq reveal group rounded-2xl border border-line bg-surface/70 backdrop-blur-md open:border-accent/40">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-5 sm:p-6 font-heading font-semibold text-lg">¿Tendré apoyo si tengo dudas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-5 sm:px-6 pb-6 -mt-1 text-soft">La formación incluye un chat grupal para resolver dudas sobre los contenidos y ejercicios, según las condiciones del servicio.</p>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Recibiré certificado? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">Sí. Campuslands entrega la certificación conforme a los requisitos académicos establecidos.</p>
       </details>
-      <details class="faq reveal group rounded-2xl border border-line bg-surface/70 backdrop-blur-md open:border-accent/40">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-5 sm:p-6 font-heading font-semibold text-lg">¿Puedo pagar en cuotas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-5 sm:px-6 pb-6 -mt-1 text-soft">Consulta con un asesor las condiciones de pago vigentes.</p>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Tendré apoyo si tengo dudas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">Sí. Cuentas con 2 horas semanales de mentoría grupal y un canal de apoyo para dudas sobre las clases y los ejercicios.</p>
       </details>
-      <details class="faq reveal group rounded-2xl border border-line bg-surface/70 backdrop-blur-md open:border-accent/40">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-5 sm:p-6 font-heading font-semibold text-lg">¿Registrarme significa que mi cupo queda reservado? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-5 sm:px-6 pb-6 -mt-1 text-soft">No. El formulario sirve para manifestar tu interés. La matrícula se confirma mediante el proceso oficial de inscripción y pago.</p>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Puedo pagar en cuotas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">Consulta con un asesor las condiciones de pago vigentes.</p>
+      </details>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Registrarme reserva mi cupo? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">No. El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
       </details>
     </div>
   </div>
 </section>
 
 <!-- ================= REGISTRO ================= -->
-<section id="registro" class="section px-4 sm:px-6 border-t border-white/[.06] bg-base2/50">
+<section id="registro" class="section px-5 sm:px-8">
   <div class="max-w-page mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-16 items-start">
-    <div class="reveal">
-      <h2 class="font-heading font-extrabold text-3xl sm:text-5xl tracking-tight leading-[1.08]">Tu siguiente paso comienza aquí.</h2>
-      <p class="mt-5 text-soft text-lg max-w-[50ch]">Déjanos tus datos y un asesor te explicará el contenido, la inversión y cómo participar.</p>
+    <div>
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Tu siguiente paso comienza aquí.</h2>
+      <p class="reveal mt-6 text-lg text-soft max-w-[48ch]">Déjanos tus datos y un asesor te explicará el contenido, la inversión y cómo participar.</p>
 
-      <ol class="mt-10 space-y-6">
-        <li class="flex gap-4"><span class="h-11 w-11 shrink-0 rounded-full bg-accent text-white grid place-items-center"><i class="ph ph-note-pencil text-xl"></i></span><div><p class="font-semibold">Completa el formulario</p><p class="text-sm text-soft mt-1">Toma menos de un minuto.</p></div></li>
-        <li class="flex gap-4"><span class="h-11 w-11 shrink-0 rounded-full border border-accent/50 text-accent2 grid place-items-center"><i class="ph ph-whatsapp-logo text-xl"></i></span><div><p class="font-semibold">Un asesor te contacta</p><p class="text-sm text-soft mt-1">Por WhatsApp o correo, en el horario que prefieras.</p></div></li>
-        <li class="flex gap-4"><span class="h-11 w-11 shrink-0 rounded-full border border-accent/50 text-accent2 grid place-items-center"><i class="ph ph-seal-check text-xl"></i></span><div><p class="font-semibold">Confirmas tu matrícula</p><p class="text-sm text-soft mt-1">Te explicamos el proceso de inscripción y pago.</p></div></li>
+      <ol class="mt-12 space-y-7">
+        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-accent text-white grid place-items-center"><i class="ph ph-note-pencil text-xl"></i></span><div><h3 class="font-heading font-bold text-lg">Completa el formulario</h3><p class="text-soft mt-1">Toma menos de un minuto.</p></div></li>
+        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-whatsapp-logo text-xl"></i></span><div><h3 class="font-heading font-bold text-lg">Un asesor te contacta</h3><p class="text-soft mt-1">Por WhatsApp o correo, en el horario que prefieras.</p></div></li>
+        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-seal-check text-xl"></i></span><div><h3 class="font-heading font-bold text-lg">Confirmas tu matrícula</h3><p class="text-soft mt-1">Te explicamos el proceso de inscripción y pago.</p></div></li>
       </ol>
     </div>
 
     <div class="reveal">
       <!-- Envía los datos a Google Sheets mediante Google Apps Script.
            Los atributos name existentes se conservan para no romper las columnas ya mapeadas. -->
-      <form id="lead-form" novalidate class="rounded-card border border-line bg-surface/80 backdrop-blur-md p-6 sm:p-9 space-y-5">
+      <form id="lead-form" novalidate class="rounded-card bg-surface p-6 sm:p-10 space-y-5">
         <div>
-          <label for="f-nombre" class="block text-sm font-medium text-soft mb-2">Nombre completo *</label>
+          <label for="f-nombre" class="block text-[15px] font-medium text-soft mb-2">Nombre completo *</label>
           <input id="f-nombre" type="text" name="nombre" required autocomplete="name" class="field" />
         </div>
 
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
-            <label for="f-whatsapp" class="block text-sm font-medium text-soft mb-2">WhatsApp *</label>
+            <label for="f-whatsapp" class="block text-[15px] font-medium text-soft mb-2">WhatsApp *</label>
             <input id="f-whatsapp" type="tel" name="whatsapp" required autocomplete="tel" inputmode="tel" pattern="[\d\s\+\(\)\-]{7,}" placeholder="300 123 4567" class="field" />
           </div>
           <div>
-            <label for="f-correo" class="block text-sm font-medium text-soft mb-2">Correo electrónico *</label>
+            <label for="f-correo" class="block text-[15px] font-medium text-soft mb-2">Correo electrónico *</label>
             <input id="f-correo" type="email" name="correo" required autocomplete="email" placeholder="tucorreo@ejemplo.com" class="field" />
           </div>
         </div>
 
         <div>
-          <label for="f-etapa" class="block text-sm font-medium text-soft mb-2">¿Cuál es tu situación actual? *</label>
+          <label for="f-etapa" class="block text-[15px] font-medium text-soft mb-2">¿Cuál es tu situación actual? *</label>
           <select id="f-etapa" name="etapa" required class="field">
             <option value="">Selecciona una opción</option>
             <option>Tengo una idea de negocio</option>
@@ -726,13 +672,13 @@
         </div>
 
         <div>
-          <label for="f-negocio" class="block text-sm font-medium text-soft mb-2">Cuéntanos brevemente tu idea, negocio o cargo</label>
+          <label for="f-negocio" class="block text-[15px] font-medium text-soft mb-2">Cuéntanos brevemente tu idea, negocio o cargo</label>
           <input id="f-negocio" type="text" name="negocio" placeholder="Ej.: tienda online, consultoría, analista de ventas" class="field" />
         </div>
 
         <div class="grid sm:grid-cols-2 gap-5">
           <div>
-            <label for="f-objetivo" class="block text-sm font-medium text-soft mb-2">¿Dónde quieres aplicar la IA?</label>
+            <label for="f-objetivo" class="block text-[15px] font-medium text-soft mb-2">¿Dónde quieres aplicar la IA?</label>
             <select id="f-objetivo" name="objetivo" class="field">
               <option value="">Selecciona una opción</option>
               <option>Investigar o validar una idea</option>
@@ -744,7 +690,7 @@
           </div>
           <!-- Se conserva name="asistencia" para no romper la columna de la hoja; ahora guarda el horario de contacto preferido. -->
           <div>
-            <label for="f-horario" class="block text-sm font-medium text-soft mb-2">¿Cuándo te contactamos?</label>
+            <label for="f-horario" class="block text-[15px] font-medium text-soft mb-2">¿Cuándo te contactamos?</label>
             <select id="f-horario" name="asistencia" class="field">
               <option value="">Selecciona una opción</option>
               <option>Mañana</option>
@@ -756,20 +702,20 @@
         </div>
 
         <!-- PENDIENTE: enlazar la política de tratamiento de datos cuando esté publicada. -->
-        <label class="flex gap-3 items-start text-sm text-soft cursor-pointer">
-          <input type="checkbox" name="autorizacion" value="Sí" required class="mt-0.5 h-5 w-5 shrink-0 rounded border-line accent-[#3475EF]" />
+        <label class="flex gap-3 items-start text-[15px] text-soft cursor-pointer">
+          <input type="checkbox" name="autorizacion" value="Sí" required class="mt-0.5 h-5 w-5 shrink-0 accent-[#2E66E0]" />
           <span>Autorizo a NOVA ACADEMY a contactarme y a tratar mis datos para enviarme información sobre el programa. *</span>
         </label>
 
-        <p id="form-error" role="alert" class="hidden rounded-xl border border-[#F07A7A]/40 bg-[#F07A7A]/10 px-4 py-3 text-sm text-[#FFB4B4]"></p>
+        <p id="form-error" role="alert" class="hidden rounded-xl bg-[#F07A7A]/15 px-4 py-3 text-[15px] text-[#FFC2C2]"></p>
 
-        <button type="submit" id="form-btn" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 font-semibold text-white disabled:opacity-60 disabled:pointer-events-none">
+        <button type="submit" id="form-btn" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold disabled:opacity-60 disabled:pointer-events-none">
           Enviar mis datos <i class="ph ph-paper-plane-tilt"></i>
         </button>
-        <p class="text-xs text-muted text-center">El registro manifiesta tu interés; no constituye una reserva confirmada.</p>
+        <p class="text-[14px] text-soft text-center">El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
       </form>
 
-      <div id="form-success" class="hidden rounded-card border border-accent/40 bg-surface/80 backdrop-blur-md p-10 text-center" tabindex="-1">
+      <div id="form-success" class="hidden rounded-card bg-surface p-10 text-center" tabindex="-1">
         <span class="inline-grid place-items-center h-16 w-16 rounded-full bg-accent text-white"><i class="ph ph-check text-3xl"></i></span>
         <h3 class="mt-5 font-heading font-bold text-2xl">¡Recibimos tus datos!</h3>
         <p class="mt-3 text-soft max-w-[40ch] mx-auto">Un asesor te contactará por WhatsApp o correo para explicarte el programa y el proceso de matrícula.</p>
@@ -781,23 +727,30 @@
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="px-4 sm:px-6 pt-14 pb-28 sm:pb-12 border-t border-white/[.06]">
-  <div class="max-w-page mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 text-sm text-muted">
-    <div class="flex items-center gap-3">
-      <img src="logo-mark.png" alt="" class="h-9 w-9 object-contain" />
-      <div>
-        <p class="font-heading font-bold tracking-[.14em] text-ink">NOVA ACADEMY</p>
-        <p>Formación práctica en inteligencia artificial.</p>
+<footer class="px-5 sm:px-8 pt-20 pb-32 sm:pb-14 bg-night2 overflow-hidden">
+  <div class="max-w-page mx-auto">
+    <p class="font-heading font-extrabold tracking-[-0.04em] leading-[.9] text-[17vw] lg:text-[12.5rem] text-surface2 select-none" aria-hidden="true">NOVA</p>
+    <div class="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-6 text-[15px] text-soft">
+      <div class="flex items-center gap-3">
+        <img src="logo-mark.png" alt="" class="h-10 w-10 object-contain" />
+        <div>
+          <p class="font-heading font-bold text-ink text-lg">NOVA ACADEMY</p>
+          <p>Formación práctica en inteligencia artificial.</p>
+        </div>
       </div>
+      <p>Formación con respaldo académico de Campuslands.</p>
+      <p>© <span id="year">2026</span> NOVA ACADEMY</p>
     </div>
-    <p>Formación con respaldo académico de Campuslands.</p>
-    <p>© <span id="year">2026</span> NOVA ACADEMY</p>
+    <p class="mt-10 text-[14px] text-muted max-w-[90ch]">Fotografías de perfiles vía Wikimedia Commons:
+      <a class="underline hover:text-soft" href="https://commons.wikimedia.org/wiki/File:Woman_writing_on_a_notebook_with_a_pen.jpg">“Woman writing on a notebook with a pen”</a>, Kristin Hardwick, CC0;
+      <a class="underline hover:text-soft" href="https://commons.wikimedia.org/w/index.php?curid=63455027">“Bags for sale, Street scene in Cartagena, Colombia”</a>, Joe Ross, <a class="underline hover:text-soft" href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>;
+      <a class="underline hover:text-soft" href="https://commons.wikimedia.org/w/index.php?curid=63785226">“Toong Coworking Space in Hanoi”</a>, Ann0611, <a class="underline hover:text-soft" href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>. Imágenes redimensionadas.</p>
   </div>
 </footer>
 
 <!-- Barra CTA fija en móvil -->
-<div id="mobile-cta" class="sm:hidden fixed bottom-0 inset-x-0 z-40 border-t border-white/10 bg-base/90 backdrop-blur-xl px-4 py-3">
-  <a href="#registro" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-6 py-3.5 font-semibold text-white">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+<div id="mobile-cta" class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-night px-5 py-3">
+  <a href="#registro" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-6 py-3.5 font-semibold">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
 </div>
 
 <script>
@@ -805,8 +758,6 @@
   const CONFIG = {
     GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwcQAzPrJ8IPu59U9z1uU1YT9HVudC116q8fXAEvXuDsYzS9M5Gc81X2W9L9dXSsAH1/exec",
   };
-
-  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   // ---- Menú móvil ----
   const menuBtn = document.getElementById('menu-btn');
@@ -819,17 +770,21 @@
   menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
-  // ---- Revelado al hacer scroll ----
-  // Respaldo: si el observador no está disponible, todo se muestra de inmediato.
-  if (!('IntersectionObserver' in window)) document.querySelectorAll('.reveal').forEach(el => el.classList.add('is-visible'));
-  const io = new IntersectionObserver((entries) => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
-  document.querySelectorAll('.reveal').forEach((el) => {
-    const group = el.parentElement.querySelectorAll(':scope > .reveal');
-    if (group.length > 1) el.style.transitionDelay = (Array.prototype.indexOf.call(group, el) * 0.07) + 's';
-    io.observe(el);
-  });
+  // ---- Entrada escalonada al aparecer cada sección ----
+  const reveals = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window)) {
+    reveals.forEach(el => el.classList.add('is-visible'));
+  } else {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    reveals.forEach((el) => {
+      const section = el.closest('section') || document.body;
+      const group = Array.from(section.querySelectorAll('.reveal'));
+      el.style.transitionDelay = Math.min(group.indexOf(el) % 6, 5) * 0.07 + 's';
+      io.observe(el);
+    });
+  }
 
   // ---- Barra CTA móvil: visible fuera del hero y del formulario ----
   const cta = document.getElementById('mobile-cta');
@@ -854,22 +809,14 @@
   tabs.forEach((tab, i) => {
     tab.addEventListener('click', () => selectTab(tab));
     tab.addEventListener('keydown', (e) => {
-      if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
-      const next = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+      const keys = ['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft'];
+      if (!keys.includes(e.key)) return;
+      e.preventDefault();
+      const step = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : tabs.length - 1;
+      const next = tabs[(i + step) % tabs.length];
       selectTab(next); next.focus();
     });
   });
-
-  // ---- Borde iluminado bajo el cursor (solo dispositivos con mouse) ----
-  if (window.matchMedia('(hover: hover)').matches && !reduceMotion) {
-    document.querySelectorAll('.spot').forEach(card => {
-      card.addEventListener('pointermove', (e) => {
-        const r = card.getBoundingClientRect();
-        card.style.setProperty('--x', (e.clientX - r.left) + 'px');
-        card.style.setProperty('--y', (e.clientY - r.top) + 'px');
-      });
-    });
-  }
 
   // ---- FAQ: solo una pregunta abierta a la vez ----
   document.querySelectorAll('details.faq').forEach(d => {
