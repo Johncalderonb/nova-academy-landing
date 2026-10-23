@@ -1,0 +1,17 @@
+# Documentos internos (no publicar)
+*.pdf
+_respaldo/
+
+# Imágenes originales sin optimizar o sin uso en la página
+martin-martz-Wa-3T6d0rBo-unsplash.jpg
+giorgio-trovato-VzusBjHlKM8-unsplash.jpg
+foto-trabajo.jpg
+hero-bg-small.jpg
+
+# Sistema y editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.claude/
+.impeccable/
