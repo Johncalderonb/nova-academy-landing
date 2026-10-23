@@ -72,11 +72,15 @@ La hoja debe tener una columna con cada uno de esos nombres en la primera fila. 
 
 > Apps Script no devuelve una respuesta legible desde el navegador. La página muestra el mensaje de éxito cuando no hay error de red, pero no puede confirmar que la fila se guardó.
 
-## Publicar
+## Publicación
 
-Al ser un sitio estático, se puede publicar en GitHub Pages, Netlify o Vercel subiendo la carpeta tal cual.
+La página está publicada con GitHub Pages desde la rama `main`:
 
-Antes de publicar, reemplaza en `index.html` las rutas de `og:image`, `twitter:image` y `og:url` por URLs completas del dominio final, para que la vista previa funcione al compartir el enlace.
+**<https://johncalderonb.github.io/nova-academy-landing/>**
+
+Cada cambio que se sube a `main` se publica solo en uno o dos minutos.
+
+Si más adelante usas un dominio propio, actualiza en `index.html` las etiquetas `canonical`, `og:url`, `og:image` y `twitter:image`, que hoy apuntan a la dirección de GitHub Pages.
 
 ## Pendientes
 
