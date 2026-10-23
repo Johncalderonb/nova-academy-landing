@@ -59,13 +59,13 @@ Es un sitio estático: un solo archivo `index.html`, sin proceso de compilación
 
 ### Créditos de imágenes
 
-Las fotos de los perfiles vienen de Wikimedia Commons y se citan en el pie de la página:
+Las fotos de los perfiles vienen de Wikimedia Commons. El enlace "Créditos de imágenes" del pie de la página lleva a esta lista. Todas fueron redimensionadas.
 
-- "Woman writing on a notebook with a pen", Kristin Hardwick, CC0.
-- "Bags for sale, Street scene in Cartagena, Colombia", Joe Ross, CC BY-SA 2.0.
-- "Toong Coworking Space in Hanoi", Ann0611, CC BY-SA 4.0.
+- [“Woman writing on a notebook with a pen”](https://commons.wikimedia.org/wiki/File:Woman_writing_on_a_notebook_with_a_pen.jpg), Kristin Hardwick, [CC0](https://creativecommons.org/publicdomain/zero/1.0/deed.es).
+- [“Bags for sale, Street scene in Cartagena, Colombia”](https://commons.wikimedia.org/w/index.php?curid=63455027), Joe Ross, [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/).
+- [“Toong Coworking Space in Hanoi”](https://commons.wikimedia.org/w/index.php?curid=63785226), Ann0611, [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/).
 
-Son fotos ilustrativas del entorno de cada perfil, no de participantes del programa.
+Son fotos ilustrativas del entorno de cada perfil, no de participantes del programa. Si se reemplazan por fotos propias, se puede quitar el enlace del pie.
 
 ## Ver la página en tu computador
 
