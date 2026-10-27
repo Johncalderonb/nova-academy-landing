@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>¡Gracias por registrarte! · NOVA ACADEMY</title>
+<meta name="description" content="Tu registro fue recibido. Únete a la comunidad NOVA en WhatsApp y a la master class gratuita." />
+<meta name="robots" content="noindex" />
+<meta name="theme-color" content="#0D0D1B" />
+<link rel="icon" href="logo-mark.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = {
+    theme: {
+      extend: {
+        colors: {
+          night: '#0D0D1B', night2: '#121327', surface: '#191B33', surface2: '#22264A',
+          ink: '#F3F4F8', soft: '#C4C7D6', muted: '#9AA0B5', accent: '#2E66E0', accent2: '#8CACFF',
+          wa: '#1F8F4E',
+        },
+        fontFamily: {
+          heading: ['Outfit', 'system-ui', 'sans-serif'],
+          body: ['"Work Sans"', 'system-ui', 'sans-serif'],
+        },
+        fontSize: { xs: ['13px', '1.45'] },
+        borderRadius: { card: '20px' },
+        maxWidth: { page: '1200px' },
+      },
+    },
+  };
+</script>
+
+<style>
+  :root { --accent: #2E66E0; --accent-press: #2554BE; --ease: cubic-bezier(.16,1,.3,1); }
+  body { background: #0D0D1B; overflow-x: clip; }
+  [hidden] { display: none !important; }
+  ::selection { background: var(--accent); color: #fff; }
+  .num { font-variant-numeric: tabular-nums; }
+  .brand-bg { filter: hue-rotate(-28deg) saturate(.85); }
+
+  @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  .rise { animation: rise .9s var(--ease) both; }
+  @keyframes pop { 0% { transform: scale(.4); opacity: 0; } 60% { transform: scale(1.08); opacity: 1; } 100% { transform: scale(1); } }
+  .pop { animation: pop .7s var(--ease) .1s both; }
+
+  .btn { transition: transform .2s var(--ease), background-color .2s ease; }
+  .btn:hover { transform: translateY(-2px); }
+  .btn:active { transform: translateY(0) scale(.97); }
+  .btn .ph-arrow-right, .btn .ph-arrow-up-right { transition: transform .25s var(--ease); }
+  .btn:hover .ph-arrow-right { transform: translateX(3px); }
+  .btn:hover .ph-arrow-up-right { transform: translate(2px,-2px); }
+  .btn-wa { background: #1F8F4E; color: #fff; }
+  .btn-wa:hover { background: #197A42; }
+  .btn-primary { background: var(--accent); color: #fff; }
+  .btn-primary:hover { background: var(--accent-press); }
+  .btn-ghost { background: #22264A; color: #F3F4F8; }
+  .btn-ghost:hover { background: #2B3060; }
+
+  :focus-visible { outline: 2px solid #8CACFF; outline-offset: 3px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .rise, .pop { animation: none !important; opacity: 1 !important; transform: none !important; }
+    .btn:hover { transform: none; }
+  }
+</style>
+</head>
+
+<body class="font-body text-ink antialiased">
+
+<header class="px-5 sm:px-8">
+  <div class="max-w-page mx-auto h-16 flex items-center">
+    <a href="./" class="flex items-center gap-2.5" aria-label="Volver a NOVA ACADEMY">
+      <img src="logo-mark.png" alt="" class="h-9 w-9 object-contain" />
+      <span class="font-heading font-bold text-base">NOVA <span class="text-soft font-medium">Academy</span></span>
+    </a>
+  </div>
+</header>
+
+<main class="px-5 sm:px-8 pb-24">
+
+  <!-- Confirmación -->
+  <section class="relative isolate overflow-hidden max-w-page mx-auto mt-4 rounded-card bg-surface px-6 py-14 sm:px-12 sm:py-20 text-center">
+    <img src="bg-tech.jpg" alt="" class="brand-bg absolute inset-0 -z-20 w-full h-full object-cover opacity-30" />
+    <div class="absolute inset-0 -z-10 bg-surface/70" aria-hidden="true"></div>
+
+    <span class="pop inline-grid place-items-center h-20 w-20 rounded-full bg-accent text-white"><i class="ph ph-check text-4xl"></i></span>
+    <h1 class="rise mt-8 font-heading font-extrabold text-[2.25rem] sm:text-6xl tracking-[-0.03em] leading-[1.05]" style="animation-delay:.15s">
+      ¡Gracias<span id="nombre"></span>!
+    </h1>
+    <p class="rise mt-5 text-lg sm:text-xl text-soft max-w-[46ch] mx-auto" style="animation-delay:.25s">
+      Recibimos tu registro. Un asesor te contactará por WhatsApp o correo para explicarte el programa y el proceso de matrícula.
+    </p>
+  </section>
+
+  <!-- Siguientes pasos -->
+  <section class="max-w-page mx-auto mt-4 grid lg:grid-cols-2 gap-4" aria-label="Tus siguientes pasos">
+
+    <!-- Comunidad WhatsApp -->
+    <article class="rise rounded-card bg-surface p-8 sm:p-10 flex flex-col" style="animation-delay:.35s">
+      <span class="h-14 w-14 rounded-2xl bg-wa text-white grid place-items-center"><i class="ph-fill ph-whatsapp-logo text-3xl"></i></span>
+      <h2 class="mt-8 font-heading font-extrabold text-[1.75rem] sm:text-4xl tracking-[-0.03em] leading-[1.1]">Únete a la comunidad NOVA</h2>
+      <p class="mt-4 text-lg text-soft max-w-[42ch]">Recibe novedades del programa, contenido práctico de IA y los avisos de la master class directamente en WhatsApp.</p>
+      <ul class="mt-6 space-y-3 text-ink">
+        <li class="flex gap-3"><i class="ph ph-lightning text-xl text-accent2 shrink-0"></i>Tips y ejemplos de IA aplicada</li>
+        <li class="flex gap-3"><i class="ph ph-bell-ringing text-xl text-accent2 shrink-0"></i>Recordatorios de la master class</li>
+        <li class="flex gap-3"><i class="ph ph-users-three text-xl text-accent2 shrink-0"></i>Personas con tus mismos intereses</li>
+      </ul>
+      <div class="mt-auto pt-10">
+        <a id="wa-link" href="#" target="_blank" rel="noopener" class="btn btn-wa w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap">
+          <i class="ph-fill ph-whatsapp-logo text-xl"></i> Unirme a la comunidad
+        </a>
+      </div>
+    </article>
+
+    <!-- Master class -->
+    <article id="masterclass" class="rise rounded-card bg-accent p-8 sm:p-10 flex flex-col" style="animation-delay:.45s">
+      <span class="h-14 w-14 rounded-2xl bg-white/15 text-white grid place-items-center"><i class="ph ph-presentation-chart text-3xl"></i></span>
+      <h2 class="mt-8 font-heading font-extrabold text-[1.75rem] sm:text-4xl tracking-[-0.03em] leading-[1.1]">Te invitamos a la master class</h2>
+      <p class="mt-4 text-lg text-white/90 max-w-[42ch]">Una sesión en vivo para que conozcas cómo aplicar la IA y resuelvas tus dudas sobre el programa.</p>
+
+      <dl class="mt-6 grid grid-cols-2 gap-3">
+        <div class="rounded-2xl bg-white/12 p-4" style="background:rgba(255,255,255,.12)"><dt class="text-[14px] text-white/80">Fecha</dt><dd class="mt-1 font-heading font-bold text-lg">Viernes 30 de octubre</dd></div>
+        <div class="rounded-2xl p-4" style="background:rgba(255,255,255,.12)"><dt class="text-[14px] text-white/80">Hora (Colombia)</dt><dd class="mt-1 font-heading font-bold text-lg">6:30 p. m.</dd></div>
+      </dl>
+
+      <div id="countdown" class="mt-6 flex gap-5" aria-live="polite">
+        <div><p id="cd-d" class="font-heading font-extrabold text-4xl num leading-none">--</p><p class="mt-1 text-[14px] text-white/80">días</p></div>
+        <div><p id="cd-h" class="font-heading font-extrabold text-4xl num leading-none">--</p><p class="mt-1 text-[14px] text-white/80">horas</p></div>
+        <div><p id="cd-m" class="font-heading font-extrabold text-4xl num leading-none">--</p><p class="mt-1 text-[14px] text-white/80">min</p></div>
+        <div><p id="cd-s" class="font-heading font-extrabold text-4xl num leading-none">--</p><p class="mt-1 text-[14px] text-white/80">seg</p></div>
+      </div>
+      <p id="live-now" class="mt-6 font-heading font-bold text-xl" hidden>¡La master class está en vivo ahora!</p>
+
+      <div class="mt-auto pt-10 flex flex-col sm:flex-row gap-3">
+        <a id="mc-link" href="#" target="_blank" rel="noopener" class="btn bg-white text-[#1B3F99] hover:bg-[#EEF2FF] w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap" hidden>
+          Ir a la master class <i class="ph ph-arrow-up-right"></i>
+        </a>
+        <a id="cal-link" href="#" target="_blank" rel="noopener" class="btn w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold whitespace-nowrap text-white" style="background:rgba(255,255,255,.16)">
+          <i class="ph ph-calendar-plus text-xl"></i> Agregar a mi calendario
+        </a>
+      </div>
+      <p id="mc-note" class="mt-4 text-[15px] text-white/85">El enlace de acceso lo compartimos en la comunidad de WhatsApp.</p>
+    </article>
+  </section>
+
+  <p class="max-w-page mx-auto mt-10 text-center text-[15px] text-soft">
+    Recuerda: el registro es de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.
+    <a href="./" class="ml-1 font-semibold text-accent2 hover:text-ink transition">Volver al inicio</a>
+  </p>
+</main>
+
+<script>
+  // ---- CONFIGURACIÓN ----
+  const CONFIG = {
+    WHATSAPP_COMMUNITY_URL: "https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC",
+    // PENDIENTE: pega aquí el enlace de la master class (Zoom, Meet, YouTube, etc.).
+    // Mientras esté vacío, el botón no se muestra y se indica que el enlace llega por WhatsApp.
+    MASTERCLASS_URL: "",
+    MASTERCLASS_TITLE: "Master class NOVA ACADEMY: IA aplicada",
+    // Viernes 30 de octubre de 2026, 6:30 p. m. hora de Colombia (UTC-5)
+    MASTERCLASS_START: "2026-10-30T18:30:00-05:00",
+    MASTERCLASS_MINUTES: 60, // duración estimada, solo para el evento de calendario
+  };
+
+  document.getElementById('wa-link').href = CONFIG.WHATSAPP_COMMUNITY_URL;
+
+  // Saludo con el primer nombre (guardado en la sesión por el formulario; nunca en la URL)
+  try {
+    const n = sessionStorage.getItem('nova_nombre');
+    if (n) document.getElementById('nombre').textContent = ', ' + n.trim().split(/\s+/)[0];
+  } catch (e) {}
+
+  const start = new Date(CONFIG.MASTERCLASS_START);
+  const end = new Date(start.getTime() + CONFIG.MASTERCLASS_MINUTES * 60000);
+
+  // Enlace de la master class
+  if (CONFIG.MASTERCLASS_URL) {
+    const mc = document.getElementById('mc-link');
+    mc.href = CONFIG.MASTERCLASS_URL; mc.hidden = false;
+    document.getElementById('mc-note').hidden = true;
+  }
+
+  // Evento de Google Calendar
+  const fmt = d => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  const details = 'Master class gratuita de NOVA ACADEMY.' + (CONFIG.MASTERCLASS_URL ? '\nEnlace: ' + CONFIG.MASTERCLASS_URL : '\nEl enlace de acceso se comparte en la comunidad de WhatsApp: ' + CONFIG.WHATSAPP_COMMUNITY_URL);
+  document.getElementById('cal-link').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(CONFIG.MASTERCLASS_TITLE)
+    + '&dates=' + fmt(start) + '/' + fmt(end)
+    + '&details=' + encodeURIComponent(details)
+    + '&ctz=America/Bogota';
+
+  // Cuenta regresiva; al terminar el evento se oculta la invitación
+  const pad = v => String(v).padStart(2, '0');
+  function tick() {
+    const now = Date.now();
+    if (now >= end.getTime()) { document.getElementById('masterclass').hidden = true; clearInterval(timer); return; }
+    if (now >= start.getTime()) {
+      document.getElementById('countdown').hidden = true;
+      document.getElementById('live-now').hidden = false;
+      document.getElementById('cal-link').hidden = true;
+      return;
+    }
+    const diff = start.getTime() - now;
+    document.getElementById('cd-d').textContent = Math.floor(diff / 86400000);
+    document.getElementById('cd-h').textContent = pad(Math.floor(diff % 86400000 / 3600000));
+    document.getElementById('cd-m').textContent = pad(Math.floor(diff % 3600000 / 60000));
+    document.getElementById('cd-s').textContent = pad(Math.floor(diff % 60000 / 1000));
+  }
+  tick();
+  const timer = setInterval(tick, 1000);
+</script>
+</body>
+</html>

@@ -856,10 +856,10 @@
     // Se asume éxito si no hay error de red.
     fetch(CONFIG.GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) })
       .then(() => {
-        form.classList.add('hidden');
-        const ok = document.getElementById('form-success');
-        ok.classList.remove('hidden');
-        ok.focus();
+        // Lleva a la página de gracias (comunidad de WhatsApp y master class).
+        // El nombre se guarda solo en la sesión del navegador, nunca en la URL.
+        try { sessionStorage.setItem('nova_nombre', data.nombre || ''); } catch (e) {}
+        window.location.href = 'gracias.html';
       })
       .catch(() => {
         showError('No pudimos enviar tus datos. Verifica tu conexión e inténtalo de nuevo.');

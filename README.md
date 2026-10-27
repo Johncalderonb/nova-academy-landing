@@ -44,6 +44,7 @@ Es un sitio estático: un solo archivo `index.html`, sin proceso de compilación
 
 ```
 ├── index.html                 Página completa (HTML, estilos y scripts)
+├── gracias.html               Página tras el registro: comunidad de WhatsApp y master class
 ├── bg-tech.jpg                Fondo geométrico de marca (optimizado)
 ├── logo-mark.png              Isotipo de NOVA ACADEMY
 ├── logo-full-transparent.png  Logo completo
@@ -84,6 +85,8 @@ El formulario envía los datos a una hoja de Google Sheets mediante un Google Ap
 Campos que envía: `fecha`, `nombre`, `whatsapp`, `correo`, `negocio`, `etapa`, `asistencia` (horario de contacto preferido), `objetivo` y `autorizacion`.
 
 La hoja debe tener una columna con cada uno de esos nombres en la primera fila. No cambies los atributos `name` del formulario sin actualizar también la hoja.
+
+Después de enviar, el visitante pasa a `gracias.html`, que lo invita a la comunidad de WhatsApp y a la master class con cuenta regresiva y botón para agregarla al calendario. Los enlaces y la fecha se cambian en el objeto `CONFIG` al final de `gracias.html` (`WHATSAPP_COMMUNITY_URL`, `MASTERCLASS_URL`, `MASTERCLASS_START`). Cuando la master class termina, su tarjeta se oculta sola.
 
 > Apps Script no devuelve una respuesta legible desde el navegador. La página muestra el mensaje de éxito cuando no hay error de red, pero no puede confirmar que la fila se guardó.
 
