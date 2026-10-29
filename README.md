@@ -51,12 +51,10 @@ Es un sitio estático: un solo archivo `index.html`, sin proceso de compilación
 ```
 ├── index.html                 Página completa (HTML, estilos y scripts)
 ├── gracias.html               Página tras el registro: comunidad de WhatsApp y master class
-├── bg-tech.jpg                Fondo geométrico de marca (optimizado)
-├── logo-mark.png              Isotipo de NOVA ACADEMY
-├── logo-full-transparent.png  Logo completo
-├── logo-small.jpg             Logo en formato pequeño
-├── imagen logo.jpeg           Imagen para compartir en redes (Open Graph)
-└── assets/
+└── assets/                    Todas las imágenes que usa la página
+    ├── fondo-tecnologico.jpg  Fondo geométrico de marca (optimizado)
+    ├── logo-nova.png          Isotipo de NOVA
+    ├── og-nova.jpg            Imagen para compartir en redes (Open Graph)
     ├── nova-campuslands.webp  Logo NOVA con Campuslands (portada)
     ├── campuslands-*.webp     Logos de Campuslands (formador)
     ├── masterclass.webp       Afiche de la master class
