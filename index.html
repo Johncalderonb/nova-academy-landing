@@ -4,7 +4,7 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <title>NOVA ACADEMY · Aprende a aplicar la IA en tu negocio, tu idea o tu trabajo</title>
-<meta name="description" content="Formación práctica en inteligencia artificial: 16 horas en vivo, mentoría grupal semanal y certificación de Campuslands. Para emprendedores, negocios y profesionales. Sin programar." />
+<meta name="description" content="Formación práctica en inteligencia artificial a cargo de Campuslands: 16 horas en vivo, mentoría grupal semanal y certificación. Para emprendedores, negocios y profesionales. Sin programar." />
 <meta name="theme-color" content="#0D0D1B" />
 
 <!-- Open Graph / redes sociales -->
@@ -61,8 +61,9 @@
 </script>
 
 <style>
-  :root { --accent: #2E66E0; --accent-press: #2554BE; --accent2: #8CACFF; --base: #0D0D1B; --ease: cubic-bezier(.16,1,.3,1); }
-  html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+  :root { --accent: #2E66E0; --accent-press: #2554BE; --accent2: #8CACFF; --base: #0D0D1B;
+          --ease: cubic-bezier(0.23, 1, 0.32, 1); --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); }
+  html { scroll-behavior: smooth; scroll-padding-top: 120px; }
   body { background: var(--base); overflow-x: clip; }
   [hidden] { display: none !important; }
   ::selection { background: var(--accent); color: #fff; }
@@ -80,10 +81,30 @@
   }
 
   /* Entrada de cada pieza al aparecer su sección */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .8s var(--ease), transform .8s var(--ease); }
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
   .reveal.is-visible { opacity: 1; transform: none; }
   @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
   .rise { animation: rise .9s var(--ease) both; }
+
+  /* Logo del hero: entra desde 0.94, nunca desde 0 */
+  @keyframes logo-in { from { opacity: 0; transform: translateY(16px) scale(.94); } to { opacity: 1; transform: none; } }
+  .logo-in { animation: logo-in 1s var(--ease) .15s both; }
+
+  /* Barra de la master class: baja al cargar la página */
+  @keyframes drop-in { from { transform: translateY(-100%); } to { transform: none; } }
+  .announce { animation: drop-in .5s var(--ease) .3s both; }
+  .announce a:hover .ph-arrow-right { transform: translateX(3px); }
+
+  /* Indicador "en vivo": estado real, solo visible durante el evento */
+  @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  .live-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+
+  /* Póster de la master class: flota despacio */
+  .poster { animation: float 7s ease-in-out infinite; }
+
+  /* Cuenta regresiva: cada cifra que cambia sube con suavidad */
+  @keyframes tick { from { opacity: .3; transform: translateY(35%); } to { opacity: 1; transform: none; } }
+  .tick { animation: tick .35s var(--ease) both; }
 
   /* Visual del hero: discos concéntricos, punto en órbita y logo flotante */
   @keyframes spin { to { transform: rotate(360deg); } }
@@ -122,9 +143,11 @@
   #mobile-cta.show { transform: none; }
 
   /* Botones planos: un color, respuesta al tacto */
-  .btn { transition: transform .2s var(--ease), background-color .2s ease; }
-  .btn:hover { transform: translateY(-2px); }
+  .btn { transition: transform .16s var(--ease), background-color .2s ease; }
+  @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-2px); } }
   .btn:active { transform: translateY(0) scale(.97); }
+  .btn-wa { background: #1F8F4E; color: #fff; }
+  .btn-wa:hover { background: #197A42; }
   .btn-primary { background: var(--accent); color: #fff; }
   .btn-primary:hover { background: var(--accent-press); }
   .btn-ghost { background: #191B33; color: #F3F4F8; }
@@ -135,8 +158,8 @@
   .link-arrow:hover .ph { transform: translateX(3px); }
 
   /* Tarjetas de beneficios: elevación suave al pasar el cursor */
-  .benefit { transition: transform .35s var(--ease), background-color .25s ease; }
-  @media (hover: hover) { .benefit:hover { transform: translateY(-4px); } }
+  .benefit { transition: transform .25s var(--ease), background-color .25s ease; }
+  @media (hover: hover) and (pointer: fine) { .benefit:hover { transform: translateY(-4px); } }
 
   /* FAQ */
   details summary::-webkit-details-marker { display: none; }
@@ -156,8 +179,10 @@
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    .reveal, .rise, .panel { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; }
-    .orbit, .orbit-rev, .floaty, .floaty-2, .floaty-3, .tl-fill, .progress { animation: none !important; }
+    /* Menos movimiento: se conserva el fundido, se quita el desplazamiento */
+    .reveal { transform: none !important; transition: opacity .3s ease !important; }
+    .rise, .panel, .logo-in, .announce, .tick { transform: none !important; animation: none !important; opacity: 1 !important; }
+    .orbit, .orbit-rev, .floaty, .floaty-2, .floaty-3, .tl-fill, .progress, .poster, .live-dot { animation: none !important; }
     .tl-fill { transform: none; }
     .benefit:hover, .btn:hover { transform: none; }
   }
@@ -168,6 +193,15 @@
 
 <!-- ================= HEADER ================= -->
 <header id="top" class="fixed top-0 inset-x-0 z-50 bg-night">
+  <!-- Barra de la master class: se oculta sola cuando termina el evento -->
+  <div id="mc-bar" class="announce bg-accent text-white">
+    <a href="#masterclass" class="max-w-page mx-auto px-5 sm:px-8 h-10 flex items-center justify-center gap-2 text-[14px] sm:text-[15px] font-semibold">
+      <i class="ph ph-presentation-chart text-lg"></i>
+      <span id="mc-bar-when" class="hidden sm:inline">Master class gratuita: viernes 30 de octubre, 6:30 p. m.</span>
+      <span id="mc-bar-short" class="sm:hidden">Master class gratis: viernes 30, 6:30 p. m.</span>
+      <i class="ph ph-arrow-right transition-transform"></i>
+    </a>
+  </div>
   <div class="progress absolute left-0 bottom-0 h-[2px] w-full bg-accent2"></div>
   <div class="max-w-page mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
     <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="NOVA ACADEMY, inicio">
@@ -176,6 +210,7 @@
     </a>
 
     <nav class="hidden lg:flex items-center gap-8 text-[15px] text-soft" aria-label="Secciones">
+      <a href="#masterclass" data-mc-only class="hover:text-ink transition">Master class</a>
       <a href="#para-quien" class="hover:text-ink transition">Para quién</a>
       <a href="#programa" class="hover:text-ink transition">Programa</a>
       <a href="#formador" class="hover:text-ink transition">Formador</a>
@@ -197,6 +232,7 @@
   <nav id="mobile-menu" class="lg:hidden bg-night" aria-label="Menú móvil">
     <div>
       <div class="px-5 sm:px-8 pt-2 pb-5 flex flex-col text-lg">
+        <a href="#masterclass" data-mc-only class="py-3 text-soft">Master class gratuita</a>
         <a href="#para-quien" class="py-3 text-soft">Para quién</a>
         <a href="#programa" class="py-3 text-soft">Programa</a>
         <a href="#formador" class="py-3 text-soft">Formador</a>
@@ -211,19 +247,19 @@
 <main>
 
 <!-- ================= HERO ================= -->
-<section id="hero" class="relative isolate overflow-hidden min-h-[100dvh] flex items-center pt-24 pb-16 px-5 sm:px-8">
+<section id="hero" class="relative isolate overflow-hidden min-h-[100dvh] flex items-center pt-32 pb-16 px-5 sm:px-8">
   <img src="bg-tech.jpg" alt="" class="brand-bg absolute inset-0 -z-20 w-full h-full object-cover opacity-50" fetchpriority="high" />
   <div class="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/85 to-night/40" aria-hidden="true"></div>
   <div class="absolute inset-x-0 bottom-0 h-40 -z-10 bg-gradient-to-t from-night to-transparent" aria-hidden="true"></div>
 
   <div class="max-w-page mx-auto w-full grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-10 items-center">
     <div>
-      <h1 class="rise font-heading font-extrabold text-[2.6rem] leading-[1.02] sm:text-6xl lg:text-[4.25rem] tracking-[-0.03em]">
+      <h1 class="rise font-heading font-extrabold text-[2.2rem] leading-[1.05] sm:text-6xl lg:text-[4.25rem] tracking-[-0.03em]">
         Aprende a aplicar la IA a lo que haces.
       </h1>
 
       <p class="rise mt-8 text-lg sm:text-xl text-soft max-w-[36rem] leading-relaxed" style="animation-delay:.1s">
-        16 horas de formación en vivo, mentoría grupal cada semana y certificación de Campuslands. Primera cohorte: inicio previsto el 9 de noviembre.
+        16 horas en vivo con los formadores de Campuslands, mentoría grupal cada semana y certificación. Primera cohorte: inicio previsto el 9 de noviembre.
       </p>
 
       <div class="rise mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4" style="animation-delay:.2s">
@@ -237,21 +273,20 @@
     </div>
 
     <!-- Visual del hero -->
-    <div class="relative mx-auto w-full max-w-[300px] sm:max-w-[440px] aspect-square rise" style="animation-delay:.15s" aria-hidden="true">
-      <div class="absolute inset-[3%] rounded-full bg-surface/50"></div>
-      <div class="absolute inset-[17%] rounded-full bg-surface/80"></div>
-      <div class="absolute inset-[30%] rounded-full bg-surface2/80"></div>
-      <div class="orbit absolute inset-[3%]"><span class="absolute left-1/2 -top-1.5 h-3 w-3 -ml-1.5 rounded-full bg-accent2"></span></div>
-      <div class="orbit-rev absolute inset-[17%]"><span class="absolute left-1/2 -bottom-1 h-2 w-2 -ml-1 rounded-full bg-accent"></span></div>
-      <img src="logo-mark.png" alt="" class="floaty absolute inset-[27%] w-[46%] h-[46%] object-contain" />
+    <div class="relative mx-auto w-full max-w-[320px] sm:max-w-[460px] aspect-square">
+      <div class="orbit absolute -inset-[4%]" aria-hidden="true"><span class="absolute left-1/2 -top-1.5 h-3 w-3 -ml-1.5 rounded-full bg-accent2"></span></div>
+      <div class="orbit-rev absolute -inset-[1%]" aria-hidden="true"><span class="absolute left-1/2 -bottom-1 h-2 w-2 -ml-1 rounded-full bg-accent"></span></div>
+      <div class="logo-in absolute inset-[6%]">
+        <img src="assets/nova-campuslands.webp" alt="NOVA, curso práctico para emprendedores, con Campuslands" class="floaty w-full h-full object-cover rounded-[28px]" fetchpriority="high" />
+      </div>
 
-      <div class="floaty-2 hidden sm:flex absolute top-[5%] -left-[8%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
+      <div class="floaty-2 hidden sm:flex absolute top-[8%] -left-[12%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
         <i class="ph ph-lightbulb text-xl text-accent2"></i><span class="text-[15px] font-semibold">Emprender</span>
       </div>
-      <div class="floaty-3 hidden sm:flex absolute top-[45%] -right-[10%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
+      <div class="floaty-3 hidden sm:flex absolute top-[28%] -right-[14%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
         <i class="ph ph-storefront text-xl text-accent2"></i><span class="text-[15px] font-semibold">Mejorar tu negocio</span>
       </div>
-      <div class="floaty hidden sm:flex absolute bottom-[3%] left-[0%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
+      <div class="floaty hidden sm:flex absolute bottom-[2%] -left-[6%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
         <i class="ph ph-briefcase text-xl text-accent2"></i><span class="text-[15px] font-semibold">Potenciar tu trabajo</span>
       </div>
     </div>
@@ -280,6 +315,52 @@
         <dd class="mt-2 text-[15px] sm:text-base text-soft">COP por participante</dd>
       </div>
     </dl>
+  </div>
+</section>
+
+<!-- ================= FORMACIÓN A CARGO DE CAMPUSLANDS ================= -->
+<section class="px-5 sm:px-8 pt-4" aria-label="Formación a cargo de Campuslands">
+  <div class="reveal max-w-page mx-auto rounded-card bg-surface px-6 py-6 sm:px-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
+    <p class="text-soft text-lg">Formación a cargo de</p>
+    <img src="assets/campuslands-blanco.webp" alt="Campuslands" class="h-9 sm:h-11 w-auto" loading="lazy" />
+  </div>
+</section>
+
+<!-- ================= MASTER CLASS GRATUITA ================= -->
+<!-- Se oculta sola al terminar el evento (ver MASTERCLASS en el script). -->
+<section id="masterclass" class="section px-5 sm:px-8">
+  <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-center">
+    <div class="reveal order-2 lg:order-1 max-w-[380px] w-full mx-auto">
+      <img src="assets/masterclass.webp" alt="Afiche de la master class gratuita: aprende y aplica IA a tu negocio, viernes 30 de octubre a las 6:30 p. m." class="poster w-full rounded-card" loading="lazy" />
+    </div>
+
+    <div class="order-1 lg:order-2">
+      <p id="mc-live" class="reveal inline-flex items-center gap-2 font-semibold text-accent2" hidden><span class="live-dot h-2.5 w-2.5 rounded-full bg-[#3DDC84]"></span> En vivo ahora</p>
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Master class gratuita: IA para tu negocio.</h2>
+      <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[52ch]">Una sesión en vivo con Campuslands para que veas cómo aplicar la IA y resuelvas tus dudas sobre el programa. Es 100% gratuita.</p>
+
+      <dl class="reveal mt-8 grid grid-cols-2 gap-3 max-w-md">
+        <div class="rounded-2xl bg-surface p-5"><dt class="text-[15px] text-soft">Fecha</dt><dd id="mc-date" class="mt-1 font-heading font-bold text-xl">Viernes 30 de octubre</dd></div>
+        <div class="rounded-2xl bg-surface p-5"><dt class="text-[15px] text-soft">Hora (Colombia)</dt><dd class="mt-1 font-heading font-bold text-xl">6:30 p. m.</dd></div>
+      </dl>
+
+      <div id="mc-countdown" class="reveal mt-8 flex gap-6 sm:gap-8" role="timer" aria-label="Tiempo para la master class">
+        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden"><span id="mc-d" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">días</p></div>
+        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden"><span id="mc-h" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">horas</p></div>
+        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden"><span id="mc-m" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">min</p></div>
+        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden text-accent2"><span id="mc-s" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">seg</p></div>
+      </div>
+
+      <div class="reveal mt-10 flex flex-col sm:flex-row gap-3">
+        <a id="mc-wa" href="https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC" target="_blank" rel="noopener" class="btn btn-wa inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap">
+          <i class="ph-fill ph-whatsapp-logo text-xl"></i> Unirme al grupo
+        </a>
+        <a id="mc-cal" href="#" target="_blank" rel="noopener" class="btn btn-ghost inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold whitespace-nowrap">
+          <i class="ph ph-calendar-plus text-xl"></i> Agregar a mi calendario
+        </a>
+      </div>
+      <p class="reveal mt-4 text-[15px] text-soft">Únete al grupo de WhatsApp y recibe ahí el enlace de conexión para asistir.</p>
+    </div>
   </div>
 </section>
 
@@ -495,24 +576,21 @@
 </section>
 
 <!-- ================= FORMADOR ================= -->
-<!-- PENDIENTE: confirmar asignación definitiva, credenciales, autorización de fotografía y enlace de LinkedIn. -->
 <section id="formador" class="section px-5 sm:px-8 bg-night2">
-  <div class="max-w-page mx-auto grid md:grid-cols-[.85fr_1.15fr] gap-10 lg:gap-16 items-center">
-    <div class="reveal max-w-[400px] w-full mx-auto md:mx-0">
-      <img src="foto.jpg" alt="Javier Cuadros Picón" class="w-full aspect-[4/5] object-cover rounded-card" loading="lazy" />
+  <div class="max-w-page mx-auto grid md:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-16 items-center">
+    <div class="reveal rounded-card bg-surface aspect-square max-w-[440px] w-full mx-auto md:mx-0 grid place-items-center p-12 sm:p-16">
+      <img src="assets/campuslands-blanco-vertical.webp" alt="Campuslands" class="floaty-2 w-full max-w-[280px] h-auto" loading="lazy" />
     </div>
 
     <div>
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Conoce a tu formador.</h2>
-      <p class="reveal mt-5 font-heading font-bold text-2xl">Javier Cuadros Picón</p>
-      <p class="reveal mt-1 font-heading font-semibold text-xl text-accent2">MSc. Big Data, AI &amp; BI</p>
-      <p class="reveal mt-6 text-lg text-soft max-w-[54ch]">Combina tecnología, datos e inteligencia artificial para llevar la IA a aplicaciones prácticas en negocios y actividades profesionales. En cada sesión verás demostraciones en vivo y harás ejercicios aplicados.</p>
+      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Tus formadores: Campuslands.</h2>
+      <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[54ch]">Campuslands está a cargo de la formación: imparte las 8 sesiones en vivo con sus docentes y entrega la certificación del programa. NOVA ACADEMY te acompaña con la mentoría, la comunidad y el canal de apoyo.</p>
 
-      <blockquote class="reveal mt-10 font-heading font-semibold text-2xl sm:text-3xl tracking-[-0.02em] leading-snug max-w-[24ch]">“Tecnología, datos y visión que transforman.”</blockquote>
-
-      <a href="https://www.linkedin.com/in/javier-humberto-c-ab725416b/" target="_blank" rel="noopener" class="reveal link-arrow mt-8 inline-flex items-center gap-2 font-semibold text-accent2 hover:text-ink transition">
-        <i class="ph-fill ph-linkedin-logo text-xl"></i> Ver perfil de LinkedIn
-      </a>
+      <ul class="mt-10 space-y-6">
+        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-accent text-white grid place-items-center"><i class="ph ph-chalkboard-teacher text-2xl"></i></span><div><h3 class="font-heading font-bold text-xl">Clases con docentes de Campuslands</h3><p class="mt-1 text-soft">16 horas en vivo, con demostraciones y ejercicios aplicados.</p></div></li>
+        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-certificate text-2xl"></i></span><div><h3 class="font-heading font-bold text-xl">Certificación de Campuslands</h3><p class="mt-1 text-soft">Conforme a los requisitos académicos del programa.</p></div></li>
+        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-users-three text-2xl"></i></span><div><h3 class="font-heading font-bold text-xl">Acompañamiento de NOVA ACADEMY</h3><p class="mt-1 text-soft">Mentoría grupal semanal, comunidad y canal de apoyo.</p></div></li>
+      </ul>
     </div>
   </div>
 </section>
@@ -540,7 +618,7 @@
         <i class="ph ph-video-camera text-3xl text-white"></i>
         <p class="mt-8 font-heading font-extrabold text-6xl tracking-[-0.04em] leading-none num">16 h</p>
         <h4 class="mt-3 font-heading font-bold text-xl">de formación en vivo</h4>
-        <p class="mt-2 text-white/90">8 sesiones de 2 horas con el docente, orientadas al aprendizaje práctico de IA.</p>
+        <p class="mt-2 text-white/90">8 sesiones de 2 horas con los formadores de Campuslands, orientadas al aprendizaje práctico de IA.</p>
       </li>
       <li class="benefit reveal rounded-card bg-surface2 p-8 flex flex-col">
         <i class="ph ph-users-three text-3xl text-accent2"></i>
@@ -600,7 +678,11 @@
       </details>
       <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
         <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Cuánto dura la formación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">16 horas en vivo: 8 sesiones de 2 horas con el docente, más 2 horas semanales de mentoría grupal.</p>
+        <p class="px-6 pb-6 -mt-1 text-soft">16 horas en vivo: 8 sesiones de 2 horas con los formadores de Campuslands, más 2 horas semanales de mentoría grupal.</p>
+      </details>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Quién dicta la formación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">Campuslands: sus docentes imparten las 8 sesiones en vivo y entregan la certificación. NOVA ACADEMY acompaña con la mentoría, la comunidad y el canal de apoyo.</p>
       </details>
       <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
         <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿La formación es virtual? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
@@ -738,7 +820,7 @@
           <p>Formación práctica en inteligencia artificial.</p>
         </div>
       </div>
-      <p>Formación con respaldo académico de Campuslands.</p>
+      <div class="flex items-center gap-3"><span>Formación a cargo de</span><img src="assets/campuslands-blanco.webp" alt="Campuslands" class="h-7 w-auto" loading="lazy" /></div>
       <p>© <span id="year">2026</span> NOVA ACADEMY</p>
     </div>  </div>
 </footer>
@@ -783,13 +865,12 @@
 
   // ---- Barra CTA móvil: visible fuera del hero y del formulario ----
   const cta = document.getElementById('mobile-cta');
-  const visible = { hero: true, registro: false };
+  const visible = { hero: true, registro: false, masterclass: false };
   const ctaObs = new IntersectionObserver((entries) => {
     entries.forEach(e => { visible[e.target.id] = e.isIntersecting; });
-    cta.classList.toggle('show', !visible.hero && !visible.registro);
+    cta.classList.toggle('show', !visible.hero && !visible.registro && !visible.masterclass);
   }, { threshold: 0.05 });
-  ctaObs.observe(document.getElementById('hero'));
-  ctaObs.observe(document.getElementById('registro'));
+  ['hero', 'registro', 'masterclass'].forEach(id => ctaObs.observe(document.getElementById(id)));
 
   // ---- Pestañas de públicos ----
   const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
@@ -869,6 +950,72 @@
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
+
+  // ---- MASTER CLASS ----
+  // Viernes 30 de octubre de 2026, 6:30 p. m. hora de Colombia (UTC-5). Duración estimada: 60 min.
+  const MASTERCLASS = {
+    start: new Date('2026-10-30T18:30:00-05:00'),
+    minutes: 60,
+    whatsapp: 'https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC',
+    title: 'Master class gratuita NOVA ACADEMY: aprende y aplica IA a tu negocio',
+  };
+  (function () {
+    const start = MASTERCLASS.start.getTime();
+    const end = start + MASTERCLASS.minutes * 60000;
+    const els = { bar: document.getElementById('mc-bar'), when: document.getElementById('mc-bar-when'),
+      section: document.getElementById('masterclass'), live: document.getElementById('mc-live'),
+      countdown: document.getElementById('mc-countdown'), cal: document.getElementById('mc-cal') };
+    const parts = ['d', 'h', 'm', 's'].map(k => document.getElementById('mc-' + k));
+
+    // Enlace a Google Calendar
+    const fmt = t => new Date(t).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+    els.cal.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+      + '&text=' + encodeURIComponent(MASTERCLASS.title)
+      + '&dates=' + fmt(start) + '/' + fmt(end)
+      + '&details=' + encodeURIComponent('Únete al grupo de WhatsApp para recibir el enlace de conexión: ' + MASTERCLASS.whatsapp)
+      + '&ctz=America/Bogota';
+
+    // "Hoy" / "mañana" según el día en Colombia
+    const dayKey = t => new Date(t - 5 * 3600000).toISOString().slice(0, 10);
+    // Devuelve [texto largo, texto corto para celular]
+    function label(now) {
+      if (now >= start) return ['Master class gratuita: en vivo ahora', 'Master class: en vivo ahora'];
+      const diffDays = Math.round((Date.parse(dayKey(start)) - Date.parse(dayKey(now))) / 86400000);
+      if (diffDays === 0) return ['Master class gratuita: hoy, 6:30 p. m.', 'Master class gratis: hoy, 6:30 p. m.'];
+      if (diffDays === 1) return ['Master class gratuita: mañana viernes, 6:30 p. m.', 'Master class gratis: mañana, 6:30 p. m.'];
+      return ['Master class gratuita: viernes 30 de octubre, 6:30 p. m.', 'Master class gratis: viernes 30, 6:30 p. m.'];
+    }
+    const shortEl = document.getElementById('mc-bar-short');
+
+    const pad = v => String(v).padStart(2, '0');
+    let prev = [];
+    function tick() {
+      const now = Date.now();
+      if (now >= end) {
+        // Terminó: se retira la invitación de toda la página
+        els.bar.hidden = true; els.section.hidden = true;
+        document.querySelectorAll('[data-mc-only]').forEach(a => a.hidden = true);
+        document.documentElement.style.scrollPaddingTop = '80px';
+        document.getElementById('hero').classList.replace('pt-32', 'pt-24');
+        clearInterval(timer); return;
+      }
+      const [longText, shortText] = label(now);
+      els.when.textContent = longText; shortEl.textContent = shortText;
+      if (now >= start) { els.countdown.hidden = true; els.live.hidden = false; els.cal.hidden = true; return; }
+      const diff = start - now;
+      const vals = [Math.floor(diff / 86400000), pad(Math.floor(diff % 86400000 / 3600000)),
+                    pad(Math.floor(diff % 3600000 / 60000)), pad(Math.floor(diff % 60000 / 1000))].map(String);
+      vals.forEach((v, i) => {
+        if (v === prev[i]) return;
+        parts[i].textContent = v;
+        // Reinicia la animación solo en la cifra que cambió
+        parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick');
+      });
+      prev = vals;
+    }
+    tick();
+    const timer = setInterval(tick, 1000);
+  })();
 </script>
 </body>
 </html>

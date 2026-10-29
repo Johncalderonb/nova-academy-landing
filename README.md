@@ -16,6 +16,12 @@ La página presenta el programa, muestra el precio y lleva al visitante a un for
 | Inversión | $600.000 COP por participante |
 | Inicio previsto | 9 de noviembre de 2026 |
 
+La formación está a cargo de **Campuslands**, que imparte las sesiones con sus docentes y entrega la certificación. NOVA ACADEMY acompaña con la mentoría, la comunidad y el canal de apoyo.
+
+## Master class
+
+La página invita a la master class gratuita del viernes 30 de octubre de 2026 a las 6:30 p. m. (Colombia), con barra superior, sección propia, cuenta regresiva y enlace a Google Calendar. El acceso se entrega en el grupo de WhatsApp. Todo se oculta solo cuando termina el evento; la fecha se cambia en el objeto `MASTERCLASS` al final de `index.html` y en `CONFIG` de `gracias.html`.
+
 ## Secciones de la página
 
 1. **Portada:** mensaje principal y botón al formulario.
@@ -50,8 +56,10 @@ Es un sitio estático: un solo archivo `index.html`, sin proceso de compilación
 ├── logo-full-transparent.png  Logo completo
 ├── logo-small.jpg             Logo en formato pequeño
 ├── imagen logo.jpeg           Imagen para compartir en redes (Open Graph)
-├── foto.jpg                   Foto del formador
 └── assets/
+    ├── nova-campuslands.webp  Logo NOVA con Campuslands (portada)
+    ├── campuslands-*.webp     Logos de Campuslands (formador)
+    ├── masterclass.webp       Afiche de la master class
     ├── perfil-idea.jpg        Foto del perfil "idea de negocio"
     ├── perfil-negocio.jpg     Foto del perfil "negocio activo"
     ├── perfil-empresa.jpg     Foto del perfil "trabajo en una empresa"
