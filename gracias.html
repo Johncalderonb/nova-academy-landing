@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>¡Gracias por registrarte! · NOVA ACADEMY</title>
+<title>¡Gracias por registrarte! · NOVA</title>
 <meta name="description" content="Tu registro fue recibido. Únete a la comunidad NOVA en WhatsApp y a la master class gratuita." />
 <meta name="robots" content="noindex" />
 <meta name="theme-color" content="#0D0D1B" />
@@ -75,9 +75,9 @@
 
 <header class="px-5 sm:px-8">
   <div class="max-w-page mx-auto h-16 flex items-center justify-between gap-4">
-    <a href="./" class="flex items-center gap-2.5" aria-label="Volver a NOVA ACADEMY">
+    <a href="./" class="flex items-center gap-2.5" aria-label="Volver a NOVA">
       <img src="logo-mark.png" alt="" class="h-9 w-9 object-contain" />
-      <span class="font-heading font-bold text-base">NOVA <span class="text-soft font-medium">Academy</span></span>
+      <span class="font-heading font-bold text-base">NOVA</span>
     </a>
     <img src="assets/campuslands-blanco.webp" alt="Campuslands" class="h-7 w-auto" />
   </div>
@@ -163,7 +163,7 @@
     // PENDIENTE: pega aquí el enlace de la master class (Zoom, Meet, YouTube, etc.).
     // Mientras esté vacío, el botón no se muestra y se indica que el enlace llega por WhatsApp.
     MASTERCLASS_URL: "",
-    MASTERCLASS_TITLE: "Master class gratuita NOVA ACADEMY: aprende y aplica IA a tu negocio",
+    MASTERCLASS_TITLE: "Master class gratuita NOVA: aprende y aplica IA a tu negocio",
     // Viernes 30 de octubre de 2026, 6:30 p. m. hora de Colombia (UTC-5)
     MASTERCLASS_START: "2026-10-30T18:30:00-05:00",
     MASTERCLASS_MINUTES: 60, // duración estimada, solo para el evento de calendario
@@ -189,7 +189,7 @@
 
   // Evento de Google Calendar
   const fmt = d => d.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-  const details = 'Master class gratuita de NOVA ACADEMY.' + (CONFIG.MASTERCLASS_URL ? '\nEnlace: ' + CONFIG.MASTERCLASS_URL : '\nEl enlace de acceso se comparte en la comunidad de WhatsApp: ' + CONFIG.WHATSAPP_COMMUNITY_URL);
+  const details = 'Master class gratuita de NOVA.' + (CONFIG.MASTERCLASS_URL ? '\nEnlace: ' + CONFIG.MASTERCLASS_URL : '\nEl enlace de acceso se comparte en la comunidad de WhatsApp: ' + CONFIG.WHATSAPP_COMMUNITY_URL);
   document.getElementById('cal-link').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
     + '&text=' + encodeURIComponent(CONFIG.MASTERCLASS_TITLE)
     + '&dates=' + fmt(start) + '/' + fmt(end)
