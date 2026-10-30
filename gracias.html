@@ -151,6 +151,7 @@
   </section>
 
   <p class="max-w-page mx-auto mt-10 text-center text-[15px] text-soft">
+    <span id="promo-note" class="block mb-3 font-heading font-bold text-lg text-ink">Precio especial: $600.000 en vez de $1.000.000 pagando hasta el 10 de noviembre.</span>
     Recuerda: el registro es de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.
     <a href="./" class="ml-1 font-semibold text-accent2 hover:text-ink transition">Volver al inicio</a>
   </p>
@@ -170,6 +171,9 @@
   };
 
   document.getElementById('wa-link').href = CONFIG.WHATSAPP_COMMUNITY_URL;
+
+  // Precio especial hasta el 10 de noviembre de 2026 (hora de Colombia); luego se oculta el aviso
+  if (Date.now() > new Date('2026-11-10T23:59:59-05:00').getTime()) document.getElementById('promo-note').hidden = true;
 
   // Saludo con el primer nombre (guardado en la sesión por el formulario; nunca en la URL)
   try {

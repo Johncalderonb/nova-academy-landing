@@ -18,6 +18,10 @@ La página presenta el programa, muestra el precio y lleva al visitante a un for
 
 La formación está a cargo de **Campuslands**, que imparte las sesiones con sus docentes y entrega la certificación. NOVA ACADEMY acompaña con la mentoría, la comunidad y el canal de apoyo.
 
+## Precio y promoción
+
+El valor de la formación es $1.000.000 COP. Hay un precio especial de **$600.000 COP pagando hasta el 10 de noviembre de 2026**, que la página destaca con cuenta regresiva, barra superior y el valor regular tachado. Al vencer, la página muestra sola el precio regular y retira la promoción. La fecha se cambia en el objeto `PROMO` al final de `index.html` (y en `gracias.html`).
+
 ## Master class
 
 La página invita a la master class gratuita del viernes 30 de octubre de 2026 a las 6:30 p. m. (Colombia), con barra superior, sección propia, cuenta regresiva y enlace a Google Calendar. El acceso se entrega en el grupo de WhatsApp. Todo se oculta solo cuando termina el evento; la fecha se cambia en el objeto `MASTERCLASS` al final de `index.html` y en `CONFIG` de `gracias.html`.

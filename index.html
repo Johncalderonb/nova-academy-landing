@@ -102,6 +102,11 @@
   /* Póster de la master class: flota despacio */
   .poster { animation: float 7s ease-in-out infinite; }
 
+  /* Promoción: la línea que tacha el precio regular se dibuja al aparecer */
+  .strike::after { content: ""; position: absolute; left: -4%; right: -4%; top: 52%; height: 3px; border-radius: 2px;
+    background: #fff; transform: scaleX(0); transform-origin: left center; transition: transform .6s var(--ease) .45s; }
+  .promo.is-visible .strike::after { transform: scaleX(1); }
+
   /* Cuenta regresiva: cada cifra que cambia sube con suavidad */
   @keyframes tick { from { opacity: .3; transform: translateY(35%); } to { opacity: 1; transform: none; } }
   .tick { animation: tick .35s var(--ease) both; }
@@ -182,6 +187,7 @@
     /* Menos movimiento: se conserva el fundido, se quita el desplazamiento */
     .reveal { transform: none !important; transition: opacity .3s ease !important; }
     .rise, .panel, .logo-in, .announce, .tick { transform: none !important; animation: none !important; opacity: 1 !important; }
+    .strike::after { transform: scaleX(1) !important; transition: none !important; }
     .orbit, .orbit-rev, .floaty, .floaty-2, .floaty-3, .tl-fill, .progress, .poster, .live-dot { animation: none !important; }
     .tl-fill { transform: none; }
     .benefit:hover, .btn:hover { transform: none; }
@@ -199,6 +205,15 @@
       <i class="ph ph-presentation-chart text-lg"></i>
       <span id="mc-bar-when" class="hidden sm:inline">Master class gratuita: viernes 30 de octubre, 6:30 p. m.</span>
       <span id="mc-bar-short" class="sm:hidden">Master class gratis: viernes 30, 6:30 p. m.</span>
+      <i class="ph ph-arrow-right transition-transform"></i>
+    </a>
+  </div>
+  <!-- Barra de la promoción: aparece cuando termina la master class y hasta el 10 de noviembre -->
+  <div id="promo-bar" class="announce bg-accent text-white" hidden>
+    <a href="#inversion" class="max-w-page mx-auto px-5 sm:px-8 h-10 flex items-center justify-center gap-2 text-[14px] sm:text-[15px] font-semibold">
+      <i class="ph-fill ph-lightning text-lg"></i>
+      <span class="hidden sm:inline">Precio especial: $600.000 en vez de $1.000.000 pagando hasta el 10 de noviembre</span>
+      <span class="sm:hidden">Precio especial $600.000 hasta 10 nov.</span>
       <i class="ph ph-arrow-right transition-transform"></i>
     </a>
   </div>
@@ -310,8 +325,12 @@
         <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num text-accent2">2 h</dt>
         <dd class="mt-2 text-[15px] sm:text-base text-soft">de mentoría grupal cada semana</dd>
       </div>
-      <div class="reveal rounded-card bg-surface p-6 sm:p-8">
+      <div data-promo-only class="reveal rounded-card bg-surface2 p-6 sm:p-8">
         <dt class="font-heading font-extrabold text-[1.9rem] leading-[1.2] sm:text-5xl lg:text-[3.25rem] tracking-[-0.03em] num">$600.000</dt>
+        <dd class="mt-2 text-[15px] sm:text-base text-soft"><span class="line-through">$1.000.000</span> · precio especial hasta el 10 de noviembre</dd>
+      </div>
+      <div data-promo-after hidden class="reveal rounded-card bg-surface p-6 sm:p-8">
+        <dt class="font-heading font-extrabold text-[1.9rem] leading-[1.2] sm:text-5xl lg:text-[3.25rem] tracking-[-0.03em] num">$1.000.000</dt>
         <dd class="mt-2 text-[15px] sm:text-base text-soft">COP por participante</dd>
       </div>
     </dl>
@@ -601,12 +620,34 @@
     <h2 class="reveal font-heading font-extrabold text-[1.75rem] sm:text-[2.6rem] lg:text-[3rem] tracking-[-0.03em] leading-[1.08] max-w-[22ch] lg:max-w-[28ch]">Aprende inteligencia artificial y cuenta con apoyo para ponerla en práctica.</h2>
     <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[62ch]">Una experiencia que combina formación en vivo, acompañamiento técnico, recursos prácticos y comunidad para ayudarte a aplicar IA en tu negocio, emprendimiento o trabajo.</p>
 
-    <!-- Precio -->
-    <div class="reveal mt-12 rounded-card bg-surface p-8 sm:p-10 lg:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+    <!-- Precio con promoción (ver PROMO al final del script: se retira sola tras la fecha límite) -->
+    <div data-promo-only class="reveal promo mt-12 rounded-card overflow-hidden grid lg:grid-cols-[1.2fr_1fr]">
+      <div class="bg-accent p-8 sm:p-10 lg:p-12">
+        <p class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-bold text-[#1B3F99]"><i class="ph-fill ph-lightning text-lg"></i> Precio especial: ahorras $400.000</p>
+        <p class="mt-8 text-lg text-white/90">Valor de la formación <span class="strike relative inline-block font-heading font-bold text-2xl text-white num">$1.000.000</span></p>
+        <p class="mt-3 font-heading font-extrabold text-[3.25rem] sm:text-7xl lg:text-8xl tracking-[-0.04em] leading-none num">$600.000 <span class="text-2xl sm:text-3xl font-bold tracking-normal text-white/85">COP</span></p>
+        <p class="mt-4 font-heading font-bold text-xl sm:text-2xl">pagando hasta el 10 de noviembre</p>
+        <p class="mt-6 text-white/90">Primera cohorte, virtual en vivo. Inicio previsto: <strong>9 de noviembre de 2026</strong>.</p>
+      </div>
+      <div class="bg-surface p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+        <p class="font-heading font-bold text-xl">El precio especial termina en</p>
+        <div class="mt-5 flex gap-5 sm:gap-7" role="timer" aria-label="Tiempo restante del precio especial">
+          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-d" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">días</p></div>
+          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-h" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">horas</p></div>
+          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-m" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">min</p></div>
+          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden text-accent2"><span id="pr-s" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">seg</p></div>
+        </div>
+        <a href="#registro" class="btn btn-primary mt-8 inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
+        <p class="mt-4 text-[15px] text-soft">Después del 10 de noviembre, el valor de la formación es de $1.000.000 COP.</p>
+      </div>
+    </div>
+
+    <!-- Precio regular: se muestra solo cuando termina la promoción -->
+    <div data-promo-after hidden class="reveal mt-12 rounded-card bg-surface p-8 sm:p-10 lg:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
       <div>
-        <p class="font-heading font-extrabold text-[3.25rem] sm:text-7xl lg:text-8xl tracking-[-0.04em] leading-none num">$600.000</p>
+        <p class="font-heading font-extrabold text-[3.25rem] sm:text-7xl lg:text-8xl tracking-[-0.04em] leading-none num">$1.000.000</p>
         <p class="mt-3 font-heading font-bold text-xl sm:text-2xl text-soft">COP por participante</p>
-        <p class="mt-5 text-ink">Primera cohorte, virtual en vivo. Inicio previsto: <strong>9 de noviembre de 2026</strong>.</p>
+        <p class="mt-5 text-ink">Primera cohorte, virtual en vivo.</p>
       </div>
       <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
     </div>
@@ -695,6 +736,10 @@
       <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
         <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Tendré apoyo si tengo dudas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
         <p class="px-6 pb-6 -mt-1 text-soft">Sí. Cuentas con 2 horas semanales de mentoría grupal y un canal de apoyo para dudas sobre las clases y los ejercicios.</p>
+      </details>
+      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
+        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Hasta cuándo es el precio de $600.000? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
+        <p class="px-6 pb-6 -mt-1 text-soft">El valor de la formación es $1.000.000 COP. Si completas el pago hasta el 10 de noviembre, pagas $600.000 y ahorras $400.000.</p>
       </details>
       <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
         <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Puedo pagar en cuotas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
@@ -995,8 +1040,6 @@
         // Terminó: se retira la invitación de toda la página
         els.bar.hidden = true; els.section.hidden = true;
         document.querySelectorAll('[data-mc-only]').forEach(a => a.hidden = true);
-        document.documentElement.style.scrollPaddingTop = '80px';
-        document.getElementById('hero').classList.replace('pt-32', 'pt-24');
         clearInterval(timer); return;
       }
       const [longText, shortText] = label(now);
@@ -1009,6 +1052,49 @@
         if (v === prev[i]) return;
         parts[i].textContent = v;
         // Reinicia la animación solo en la cifra que cambió
+        parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick');
+      });
+      prev = vals;
+    }
+    tick();
+    const timer = setInterval(tick, 1000);
+  })();
+
+  // ---- PROMOCIÓN ----
+  // $600.000 en vez de $1.000.000 pagando hasta el 10 de noviembre de 2026 (fin del día, hora de Colombia).
+  // Al vencer, la página muestra sola el precio regular y retira la promoción.
+  const PROMO = { end: new Date('2026-11-10T23:59:59-05:00') };
+  (function () {
+    const end = PROMO.end.getTime();
+    const parts = ['d', 'h', 'm', 's'].map(k => document.getElementById('pr-' + k));
+    const mcBar = document.getElementById('mc-bar');
+    const promoBar = document.getElementById('promo-bar');
+    const hero = document.getElementById('hero');
+    const pad = v => String(v).padStart(2, '0');
+    let prev = [];
+
+    function setBars(promoActive) {
+      // La barra de la master class tiene prioridad; después, la de la promoción
+      promoBar.hidden = !(promoActive && mcBar.hidden);
+      const anyBar = !mcBar.hidden || !promoBar.hidden;
+      document.documentElement.style.scrollPaddingTop = anyBar ? '120px' : '80px';
+      hero.classList.toggle('pt-32', anyBar); hero.classList.toggle('pt-24', !anyBar);
+    }
+
+    function tick() {
+      const now = Date.now();
+      if (now > end) {
+        document.querySelectorAll('[data-promo-only]').forEach(el => el.hidden = true);
+        document.querySelectorAll('[data-promo-after]').forEach(el => { el.hidden = false; el.classList.add('is-visible'); });
+        setBars(false); clearInterval(timer); return;
+      }
+      setBars(true);
+      const diff = end - now;
+      const vals = [Math.floor(diff / 86400000), pad(Math.floor(diff % 86400000 / 3600000)),
+                    pad(Math.floor(diff % 3600000 / 60000)), pad(Math.floor(diff % 60000 / 1000))].map(String);
+      vals.forEach((v, i) => {
+        if (v === prev[i]) return;
+        parts[i].textContent = v;
         parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick');
       });
       prev = vals;
