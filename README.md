@@ -14,7 +14,7 @@ La página presenta el programa, muestra el precio y lleva al visitante a un for
 | Recursos | Plantillas y recursos prácticos, comunidad NOVA y canal de apoyo |
 | Certificación | Campuslands, sujeta a los requisitos académicos |
 | Inversión | $600.000 COP por participante |
-| Inicio previsto | 9 de noviembre de 2026 |
+| Inicio previsto | 18 de noviembre de 2026 |
 
 La formación está a cargo de **Campuslands**, que imparte las sesiones con sus docentes y entrega la certificación. NOVA ACADEMY acompaña con la mentoría, la comunidad y el canal de apoyo.
 
