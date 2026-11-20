@@ -6,11 +6,11 @@
 <title>¡Gracias por registrarte! · NOVA</title>
 <meta name="description" content="Tu registro fue recibido. Únete a la comunidad NOVA en WhatsApp y a la master class gratuita." />
 <meta name="robots" content="noindex" />
-<meta name="theme-color" content="#0D0D1B" />
+<meta name="theme-color" content="#f7f8fc" />
 <link rel="icon" href="assets/logo-nova.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 
@@ -20,13 +20,13 @@
     theme: {
       extend: {
         colors: {
-          night: '#0D0D1B', night2: '#121327', surface: '#191B33', surface2: '#22264A',
-          ink: '#F3F4F8', soft: '#C4C7D6', muted: '#9AA0B5', accent: '#2E66E0', accent2: '#8CACFF',
+          night: '#f7f8fc', night2: '#ffffff', surface: '#ffffff', surface2: '#efe4ff',
+          ink: '#0e1430', soft: '#5d6482', muted: '#5d6482', accent: '#1b6ef3', accent2: '#1b6ef3',
           wa: '#1F8F4E',
         },
         fontFamily: {
-          heading: ['Outfit', 'system-ui', 'sans-serif'],
-          body: ['"Work Sans"', 'system-ui', 'sans-serif'],
+          heading: ['Poppins', 'system-ui', 'sans-serif'],
+          body: ['Poppins', 'system-ui', 'sans-serif'],
         },
         fontSize: { xs: ['13px', '1.45'] },
         borderRadius: { card: '20px' },
@@ -37,8 +37,8 @@
 </script>
 
 <style>
-  :root { --accent: #2E66E0; --accent-press: #2554BE; --ease: cubic-bezier(0.23, 1, 0.32, 1); }
-  body { background: #0D0D1B; overflow-x: clip; }
+  :root { --accent: #1b6ef3; --accent-press: #1559c9; --ease: cubic-bezier(0.23, 1, 0.32, 1); }
+  body { background: #f7f8fc; color: #0e1430; overflow-x: clip; }
   [hidden] { display: none !important; }
   ::selection { background: var(--accent); color: #fff; }
   .num { font-variant-numeric: tabular-nums; }
@@ -79,16 +79,16 @@
       <img src="assets/logo-nova.png" alt="" class="h-9 w-9 object-contain" />
       <span class="font-heading font-bold text-base">NOVA</span>
     </a>
-    <img src="assets/campuslands-blanco.webp" alt="Campuslands" class="h-7 w-auto" />
+    <img src="assets/campuslands-color.webp" alt="Campuslands" class="h-8 w-auto" />
   </div>
 </header>
 
 <main class="px-5 sm:px-8 pb-24">
 
   <!-- Confirmación -->
-  <section class="relative isolate overflow-hidden max-w-page mx-auto mt-4 rounded-card bg-surface px-6 py-14 sm:px-12 sm:py-20 text-center">
-    <img src="assets/fondo-tecnologico.jpg" alt="" class="brand-bg absolute inset-0 -z-20 w-full h-full object-cover opacity-30" />
-    <div class="absolute inset-0 -z-10 bg-surface/70" aria-hidden="true"></div>
+  <section class="relative isolate overflow-hidden max-w-page mx-auto mt-4 rounded-card bg-surface border border-[#e7e9f3] px-6 py-14 sm:px-12 sm:py-20 text-center">
+    
+    
 
     <span class="pop inline-grid place-items-center h-20 w-20 rounded-full bg-accent text-white"><i class="ph ph-check text-4xl"></i></span>
     <h1 class="rise mt-8 font-heading font-extrabold text-[2.25rem] sm:text-6xl tracking-[-0.03em] leading-[1.05]" style="animation-delay:.15s">
@@ -103,7 +103,7 @@
   <section class="max-w-page mx-auto mt-4 grid lg:grid-cols-2 gap-4" aria-label="Tus siguientes pasos">
 
     <!-- Comunidad WhatsApp -->
-    <article class="rise rounded-card bg-surface p-8 sm:p-10 flex flex-col" style="animation-delay:.35s">
+    <article class="rise rounded-card bg-surface border border-[#e7e9f3] p-8 sm:p-10 flex flex-col" style="animation-delay:.35s">
       <span class="h-14 w-14 rounded-2xl bg-wa text-white grid place-items-center"><i class="ph-fill ph-whatsapp-logo text-3xl"></i></span>
       <h2 class="mt-8 font-heading font-extrabold text-[1.75rem] sm:text-4xl tracking-[-0.03em] leading-[1.1]">Únete a la comunidad NOVA</h2>
       <p class="mt-4 text-lg text-soft max-w-[42ch]">Recibe novedades del programa, contenido práctico de IA y los avisos de la master class directamente en WhatsApp.</p>
@@ -151,7 +151,7 @@
   </section>
 
   <p class="max-w-page mx-auto mt-10 text-center text-[15px] text-soft">
-    <span id="promo-note" class="block mb-3 font-heading font-bold text-lg text-ink">Precio especial: $600.000 en vez de $1.000.000 pagando hasta el 10 de noviembre.</span>
+    <span id="promo-note" class="block mb-3 font-heading font-bold text-lg text-ink">50 % de descuento: $500.000 en vez de $1.000.000 pagando hasta el 30 de noviembre.</span>
     Recuerda: el registro es de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.
     <a href="./" class="ml-1 font-semibold text-accent2 hover:text-ink transition">Volver al inicio</a>
   </p>
@@ -172,8 +172,8 @@
 
   document.getElementById('wa-link').href = CONFIG.WHATSAPP_COMMUNITY_URL;
 
-  // Precio especial hasta el 10 de noviembre de 2026 (hora de Colombia); luego se oculta el aviso
-  if (Date.now() > new Date('2026-11-10T23:59:59-05:00').getTime()) document.getElementById('promo-note').hidden = true;
+  // Precio especial hasta el 30 de noviembre de 2026 (hora de Colombia); luego se oculta el aviso
+  if (Date.now() > new Date('2026-11-30T23:59:59-05:00').getTime()) document.getElementById('promo-note').hidden = true;
 
   // Saludo con el primer nombre (guardado en la sesión por el formulario; nunca en la URL)
   try {

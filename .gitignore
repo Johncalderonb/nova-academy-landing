@@ -1,5 +1,6 @@
 # Documentos internos (no publicar)
 *.pdf
+NOVA_Acuerdos_de_Pago/
 _respaldo/
 
 # Imágenes originales sin optimizar o sin uso en la página
@@ -18,3 +19,6 @@ desktop.ini
 .taste-skill/
 _netlify/
 nova-academy-netlify.zip
+_netlify_masterclass/
+masterclass-netlify.zip
+.netlify/

@@ -3,57 +3,46 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>NOVA · Aprende a aplicar la IA en tu negocio, tu idea o tu trabajo</title>
-<meta name="description" content="Formación práctica en inteligencia artificial a cargo de Campuslands: 16 horas en vivo, mentoría grupal semanal y certificación. Para emprendedores, negocios y profesionales. Sin programar." />
-<meta name="theme-color" content="#0D0D1B" />
+<title>IA para el empresario de a pie · NOVA con Campuslands</title>
+<meta name="description" content="Formación práctica de 20 horas: vende más, organízate mejor y atiende a tus clientes con herramientas de IA gratuitas, sin pagar planes. A cargo de Campuslands." />
+<meta name="theme-color" content="#f7f8fc" />
 
-<!-- Open Graph / redes sociales -->
 <!-- Si cambias de dominio, actualiza og:url, og:image, twitter:image y canonical. -->
 <link rel="canonical" href="https://johncalderonb.github.io/nova-academy-landing/" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://johncalderonb.github.io/nova-academy-landing/" />
 <meta property="og:site_name" content="NOVA" />
 <meta property="og:locale" content="es_CO" />
-<meta property="og:title" content="NOVA · Aprende a aplicar la IA a lo que haces" />
-<meta property="og:description" content="16 horas de formación en vivo, mentoría grupal semanal y certificación de Campuslands. Inicio previsto: 18 de noviembre de 2026." />
+<meta property="og:title" content="IA para el empresario de a pie · 20 horas de formación práctica" />
+<meta property="og:description" content="Vende más, organízate mejor y atiende a tus clientes con herramientas de IA gratuitas. 20 módulos, a cargo de Campuslands. Inicio previsto: 5 de diciembre de 2026." />
 <meta property="og:image" content="https://johncalderonb.github.io/nova-academy-landing/assets/og-nova.jpg" />
 <meta property="og:image:alt" content="Logo de NOVA" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="NOVA · Aprende a aplicar la IA a lo que haces" />
-<meta name="twitter:description" content="16 horas de formación en vivo, mentoría grupal semanal y certificación de Campuslands." />
+<meta name="twitter:title" content="IA para el empresario de a pie · 20 horas de formación práctica" />
+<meta name="twitter:description" content="Vende más, organízate mejor y atiende a tus clientes con herramientas de IA gratuitas." />
 <meta name="twitter:image" content="https://johncalderonb.github.io/nova-academy-landing/assets/og-nova.jpg" />
 
 <link rel="icon" href="assets/logo-nova.png" />
-<link rel="preload" as="image" href="assets/fondo-tecnologico.jpg" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
 <link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
 
 <script src="https://cdn.tailwindcss.com"></script>
 <script>
+  // Paleta tomada de la plantilla "IA para el empresario de a pie"
   tailwind.config = {
     theme: {
       extend: {
         colors: {
-          night:    '#0D0D1B',
-          night2:   '#121327',
-          surface:  '#191B33',
-          surface2: '#22264A',
-          line:     '#30364C',
-          ink:      '#F3F4F8',
-          soft:     '#C4C7D6',
-          muted:    '#9AA0B5',
-          accent:   '#2E66E0',
-          accent2:  '#8CACFF',
+          pink: '#ff1f8e', rose: '#ffe3f1', blue: '#1b6ef3', sky: '#dcedff', violet: '#8b3dff', lav: '#efe4ff',
+          cyan: '#0fb3c9', aqua: '#d9f6fa', green: '#16a34a', mint: '#e3f9ea', amber: '#f59e0b', sun: '#fff3d6',
+          ink: '#0e1430', muted: '#5d6482', line: '#e7e9f3', paper: '#f7f8fc',
         },
-        fontFamily: {
-          heading: ['Outfit', 'system-ui', 'sans-serif'],
-          body: ['"Work Sans"', 'system-ui', 'sans-serif'],
-        },
+        fontFamily: { sans: ['Poppins', 'system-ui', '-apple-system', '"Segoe UI"', 'sans-serif'] },
         fontSize: { xs: ['13px', '1.45'] },
-        borderRadius: { card: '20px' },
+        borderRadius: { card: '22px' },
         maxWidth: { page: '1200px' },
       },
     },
@@ -61,80 +50,63 @@
 </script>
 
 <style>
-  :root { --accent: #2E66E0; --accent-press: #2554BE; --accent2: #8CACFF; --base: #0D0D1B;
-          --ease: cubic-bezier(0.23, 1, 0.32, 1); --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1); }
-  html { scroll-behavior: smooth; scroll-padding-top: 120px; }
-  body { background: var(--base); overflow-x: clip; }
+  :root { --blue: #1b6ef3; --blue-press: #1559c9; --ease: cubic-bezier(0.23, 1, 0.32, 1); }
+  html { scroll-behavior: smooth; scroll-padding-top: 124px; }
+  body { background: #f7f8fc; color: #0e1430; overflow-x: clip; }
   [hidden] { display: none !important; }
-  ::selection { background: var(--accent); color: #fff; }
-  .section { padding-block: clamp(80px, 11vw, 144px); }
+  ::selection { background: #1b6ef3; color: #fff; }
+  .section { padding-block: clamp(72px, 10vw, 128px); }
   .num { font-variant-numeric: tabular-nums; }
+  .card { background: #fff; border: 1px solid #e7e9f3; border-radius: 22px; }
 
-  /* Fondo geométrico de marca, girado hacia el azul del acento */
-  .brand-bg { filter: hue-rotate(-28deg) saturate(.85); }
-
-  /* Barra de progreso de lectura (CSS scroll-driven; sin JS) */
+  /* Barra de progreso de lectura */
   .progress { transform-origin: 0 50%; transform: scaleX(0); }
   @supports (animation-timeline: scroll()) {
     .progress { animation: grow linear both; animation-timeline: scroll(root); }
     @keyframes grow { to { transform: scaleX(1); } }
   }
 
-  /* Entrada de cada pieza al aparecer su sección */
-  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+  /* Entradas */
+  .reveal { opacity: 0; transform: translateY(22px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
   .reveal.is-visible { opacity: 1; transform: none; }
-  @keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+  @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
   .rise { animation: rise .9s var(--ease) both; }
-
-  /* Logo del hero: entra desde 0.94, nunca desde 0 */
   @keyframes logo-in { from { opacity: 0; transform: translateY(16px) scale(.94); } to { opacity: 1; transform: none; } }
   .logo-in { animation: logo-in 1s var(--ease) .15s both; }
-
-  /* Barra de la master class: baja al cargar la página */
-  @keyframes drop-in { from { transform: translateY(-100%); } to { transform: none; } }
-  .announce { animation: drop-in .5s var(--ease) .3s both; }
-  .announce a:hover .ph-arrow-right { transform: translateX(3px); }
-
-  /* Indicador "en vivo": estado real, solo visible durante el evento */
-  @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
-  .live-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
-
-  /* Póster de la master class: flota despacio */
-  .poster { animation: float 7s ease-in-out infinite; }
-
-  /* Promoción: la línea que tacha el precio regular se dibuja al aparecer */
-  .strike::after { content: ""; position: absolute; left: -4%; right: -4%; top: 52%; height: 3px; border-radius: 2px;
-    background: #fff; transform: scaleX(0); transform-origin: left center; transition: transform .6s var(--ease) .45s; }
-  .promo.is-visible .strike::after { transform: scaleX(1); }
-
-  /* Cuenta regresiva: cada cifra que cambia sube con suavidad */
-  @keyframes tick { from { opacity: .3; transform: translateY(35%); } to { opacity: 1; transform: none; } }
-  .tick { animation: tick .35s var(--ease) both; }
-
-  /* Visual del hero: discos concéntricos, punto en órbita y logo flotante */
-  @keyframes spin { to { transform: rotate(360deg); } }
-  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  .orbit { animation: spin 14s linear infinite; }
-  .orbit-rev { animation: spin 22s linear infinite reverse; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
   .floaty { animation: float 6s ease-in-out infinite; }
   .floaty-2 { animation: float 7s ease-in-out -2s infinite; }
   .floaty-3 { animation: float 8s ease-in-out -4s infinite; }
+  @keyframes tick { from { opacity: .3; transform: translateY(35%); } to { opacity: 1; transform: none; } }
+  .tick { animation: tick .35s var(--ease) both; }
+  .panel { animation: rise .5s var(--ease) both; }
 
-  /* Línea de tiempo: se llena al recorrerla */
-  .tl-fill { transform-origin: top; transform: scaleY(1); }
-  @supports (animation-timeline: view()) {
-    .tl-fill { animation: fill linear both; animation-timeline: view(); animation-range: entry 40% exit 60%; }
-    @keyframes fill { from { transform: scaleY(0); } to { transform: scaleY(1); } }
-  }
-  .tl-item .dot { transition: background-color .4s ease, color .4s ease, transform .4s var(--ease); }
-  .tl-item.is-visible .dot { background: var(--accent); color: #fff; transform: scale(1.06); }
+  /* Botones */
+  .btn { transition: transform .16s var(--ease), background-color .2s ease, border-color .2s ease; }
+  @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-2px); } .lift:hover { transform: translateY(-4px); } }
+  .btn:active { transform: scale(.97); }
+  .btn-primary { background: var(--blue); color: #fff; }
+  .btn-primary:hover { background: var(--blue-press); }
+  .btn-ghost { background: #fff; color: #0e1430; border: 1px solid #e7e9f3; }
+  .btn-ghost:hover { border-color: #1b6ef3; }
+  .btn:hover .ph-arrow-right { transform: translateX(3px); }
+  .btn .ph { transition: transform .25s var(--ease); }
+  .lift { transition: transform .25s var(--ease), box-shadow .25s ease; }
 
-  /* Pestañas de públicos */
-  .tab { transition: background-color .2s ease, color .2s ease, transform .2s var(--ease); }
-  .tab:hover { background: #22264A; color: #F3F4F8; }
-  .tab:active { transform: scale(.97); }
-  .tab[aria-selected="true"] { background: var(--accent); color: #fff; }
-  .panel { animation: rise .55s var(--ease) both; }
+  /* Tarjeta "Inversión en herramientas" (plantilla): degradado azul → violeta → rosado.
+     El rosado final es un poco más oscuro que #ff1f8e para que el texto blanco se lea bien. */
+  .zero-card { background: linear-gradient(150deg, #1b6ef3, #8b3dff 60%, #d4127a); }
+
+  /* Pestañas de bloques */
+  .blk { transition: background-color .2s ease, color .2s ease, border-color .2s ease, transform .16s var(--ease); }
+  .blk:active { transform: scale(.97); }
+  .blk[aria-selected="true"] { background: var(--c); color: #fff; border-color: var(--c); }
+  .blk[aria-selected="true"] .blk-num { background: rgba(255,255,255,.22); color: #fff; }
+
+  /* Promoción: línea que tacha el precio regular */
+  .strike::after { content: ""; position: absolute; left: -4%; right: -4%; top: 52%; height: 3px; border-radius: 2px;
+    background: #ff1f8e; transform: scaleX(0); transform-origin: left center; transition: transform .6s var(--ease) .45s; }
+  .promo.is-visible .strike::after { transform: scaleX(1); }
 
   /* Menú móvil y barra CTA */
   #mobile-menu { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .35s ease; }
@@ -147,112 +119,72 @@
   #mobile-cta { transform: translateY(110%); transition: transform .4s var(--ease); }
   #mobile-cta.show { transform: none; }
 
-  /* Botones planos: un color, respuesta al tacto */
-  .btn { transition: transform .16s var(--ease), background-color .2s ease; }
-  @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-2px); } }
-  .btn:active { transform: translateY(0) scale(.97); }
-  .btn-wa { background: #1F8F4E; color: #fff; }
-  .btn-wa:hover { background: #197A42; }
-  .btn-primary { background: var(--accent); color: #fff; }
-  .btn-primary:hover { background: var(--accent-press); }
-  .btn-ghost { background: #191B33; color: #F3F4F8; }
-  .btn-ghost:hover { background: #22264A; }
-  .btn .ph { transition: transform .25s var(--ease); }
-  .btn:hover .ph-arrow-right { transform: translateX(3px); }
-  .link-arrow .ph { transition: transform .25s var(--ease); }
-  .link-arrow:hover .ph { transform: translateX(3px); }
-
-  /* Tarjetas de beneficios: elevación suave al pasar el cursor */
-  .benefit { transition: transform .25s var(--ease), background-color .25s ease; }
-  @media (hover: hover) and (pointer: fine) { .benefit:hover { transform: translateY(-4px); } }
-
   /* FAQ */
   details summary::-webkit-details-marker { display: none; }
   details[open] .faq-icon { transform: rotate(45deg); }
-  details summary { transition: color .2s ease; }
-  details summary:hover { color: #fff; }
 
   /* Formulario */
-  .field { width: 100%; border-radius: 12px; background: #121327; border: 1px solid #30364C; padding: 12px 14px; font-size: 16px; color: #F3F4F8; transition: border-color .2s, box-shadow .2s; }
-  .field::placeholder { color: #8A90A6; }
-  .field:focus { outline: none; border-color: var(--accent2); box-shadow: 0 0 0 3px rgba(46,102,224,.35); }
-  .field:user-invalid { border-color: #F07A7A; }
-  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23C4C7D6' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
-  select.field option { background: #191B33; }
+  .field { width: 100%; border-radius: 12px; background: #fff; border: 1px solid #d5d9e8; padding: 12px 14px; font-size: 16px; color: #0e1430; transition: border-color .2s, box-shadow .2s; }
+  .field::placeholder { color: #8a90a8; }
+  .field:focus { outline: none; border-color: #1b6ef3; box-shadow: 0 0 0 3px rgba(27,110,243,.2); }
+  .field:user-invalid { border-color: #dc2626; }
+  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235d6482' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
 
-  :focus-visible { outline: 2px solid var(--accent2); outline-offset: 3px; }
+  :focus-visible { outline: 2px solid #1b6ef3; outline-offset: 3px; }
 
   @media (prefers-reduced-motion: reduce) {
     html { scroll-behavior: auto; }
-    /* Menos movimiento: se conserva el fundido, se quita el desplazamiento */
     .reveal { transform: none !important; transition: opacity .3s ease !important; }
-    .rise, .panel, .logo-in, .announce, .tick { transform: none !important; animation: none !important; opacity: 1 !important; }
+    .rise, .panel, .logo-in, .tick { transform: none !important; animation: none !important; opacity: 1 !important; }
+    .floaty, .floaty-2, .floaty-3, .progress { animation: none !important; }
     .strike::after { transform: scaleX(1) !important; transition: none !important; }
-    .orbit, .orbit-rev, .floaty, .floaty-2, .floaty-3, .tl-fill, .progress, .poster, .live-dot { animation: none !important; }
-    .tl-fill { transform: none; }
-    .benefit:hover, .btn:hover { transform: none; }
   }
 </style>
 </head>
 
-<body class="font-body text-ink antialiased">
+<body class="font-sans antialiased">
 
 <!-- ================= HEADER ================= -->
-<header id="top" class="fixed top-0 inset-x-0 z-50 bg-night">
-  <!-- Barra de la master class: se oculta sola cuando termina el evento -->
-  <div id="mc-bar" class="announce bg-accent text-white">
-    <a href="#masterclass" class="max-w-page mx-auto px-5 sm:px-8 h-10 flex items-center justify-center gap-2 text-[14px] sm:text-[15px] font-semibold">
-      <i class="ph ph-presentation-chart text-lg"></i>
-      <span id="mc-bar-when" class="hidden sm:inline">Master class gratuita: viernes 30 de octubre, 6:30 p. m.</span>
-      <span id="mc-bar-short" class="sm:hidden">Master class gratis: viernes 30, 6:30 p. m.</span>
-      <i class="ph ph-arrow-right transition-transform"></i>
-    </a>
-  </div>
-  <!-- Barra de la promoción: aparece cuando termina la master class y hasta el 10 de noviembre -->
-  <div id="promo-bar" class="announce bg-accent text-white" hidden>
-    <a href="#inversion" class="max-w-page mx-auto px-5 sm:px-8 h-10 flex items-center justify-center gap-2 text-[14px] sm:text-[15px] font-semibold">
+<header id="top" class="fixed top-0 inset-x-0 z-50 bg-white/95 border-b border-line">
+  <!-- Barra de la promoción: se oculta sola al vencer (ver PROMO en el script) -->
+  <a id="promo-bar" href="#inversion" data-promo-only class="block bg-[#d4127a] text-white">
+    <span class="max-w-page mx-auto px-5 sm:px-8 h-10 flex items-center justify-center gap-2 text-[14px] sm:text-[15px] font-semibold">
       <i class="ph-fill ph-lightning text-lg"></i>
-      <span class="hidden sm:inline">Precio especial: $600.000 en vez de $1.000.000 pagando hasta el 10 de noviembre</span>
-      <span class="sm:hidden">Precio especial $600.000 hasta 10 nov.</span>
-      <i class="ph ph-arrow-right transition-transform"></i>
-    </a>
-  </div>
-  <div class="progress absolute left-0 bottom-0 h-[2px] w-full bg-accent2"></div>
+      <span class="hidden sm:inline">50 % de descuento: $500.000 en vez de $1.000.000 pagando hasta el 30 de noviembre</span>
+      <span class="sm:hidden">50 % de descuento hasta el 30 de nov.</span>
+      <i class="ph ph-arrow-right"></i>
+    </span>
+  </a>
+  <div class="progress absolute left-0 bottom-0 h-[3px] w-full bg-blue"></div>
   <div class="max-w-page mx-auto px-5 sm:px-8 h-16 flex items-center justify-between gap-6">
     <a href="#top" class="flex items-center gap-2.5 shrink-0" aria-label="NOVA, inicio">
       <img src="assets/logo-nova.png" alt="" class="h-9 w-9 object-contain" />
-      <span class="font-heading font-bold text-base">NOVA</span>
+      <span class="font-bold text-base">NOVA</span>
     </a>
-
-    <nav class="hidden lg:flex items-center gap-8 text-[15px] text-soft" aria-label="Secciones">
-      <a href="#masterclass" data-mc-only class="hover:text-ink transition">Master class</a>
+    <nav class="hidden lg:flex items-center gap-7 text-[15px] text-muted font-medium" aria-label="Secciones">
       <a href="#para-quien" class="hover:text-ink transition">Para quién</a>
-      <a href="#programa" class="hover:text-ink transition">Programa</a>
-      <a href="#formador" class="hover:text-ink transition">Formador</a>
+      <a href="#herramientas" class="hover:text-ink transition">Herramientas</a>
+      <a href="#ruta" class="hover:text-ink transition">La ruta</a>
+      <a href="#formato" class="hover:text-ink transition">Cómo funciona</a>
       <a href="#inversion" class="hover:text-ink transition">Inversión</a>
       <a href="#preguntas" class="hover:text-ink transition">Preguntas</a>
     </nav>
-
-    <a href="#registro" class="btn btn-primary hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-semibold whitespace-nowrap">
-      Quiero conocer el programa <i class="ph ph-arrow-right"></i>
-    </a>
-
-    <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden flex flex-col justify-center gap-1.5 h-11 w-11 rounded-full bg-surface ml-auto sm:ml-0">
+    <a href="#registro" class="btn btn-primary hidden sm:inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-[15px] font-semibold whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+    <button id="menu-btn" aria-label="Abrir menú" aria-expanded="false" aria-controls="mobile-menu" class="lg:hidden flex flex-col justify-center gap-1.5 h-11 w-11 rounded-full bg-paper border border-line ml-auto sm:ml-0">
       <span class="block h-0.5 w-4 mx-auto bg-ink rounded-full"></span>
       <span class="block h-0.5 w-4 mx-auto bg-ink rounded-full"></span>
       <span class="block h-0.5 w-4 mx-auto bg-ink rounded-full"></span>
     </button>
   </div>
-
-  <nav id="mobile-menu" class="lg:hidden bg-night" aria-label="Menú móvil">
+  <nav id="mobile-menu" class="lg:hidden bg-white" aria-label="Menú móvil">
     <div>
-      <div class="px-5 sm:px-8 pt-2 pb-5 flex flex-col text-lg">
-        <a href="#masterclass" data-mc-only class="py-3 text-soft">Master class gratuita</a>
-        <a href="#para-quien" class="py-3 text-soft">Para quién</a>
-        <a href="#programa" class="py-3 text-soft">Programa</a>
-        <a href="#formador" class="py-3 text-soft">Formador</a>
-        <a href="#inversion" class="py-3 text-soft">Inversión</a>
-        <a href="#preguntas" class="py-3 text-soft">Preguntas</a>
+      <div class="px-5 sm:px-8 pt-2 pb-5 flex flex-col text-lg font-medium">
+        <a href="#para-quien" class="py-3 text-muted">Para quién</a>
+        <a href="#herramientas" class="py-3 text-muted">Herramientas</a>
+        <a href="#ruta" class="py-3 text-muted">La ruta</a>
+        <a href="#formato" class="py-3 text-muted">Cómo funciona</a>
+        <a href="#inversion" class="py-3 text-muted">Inversión</a>
+        <a href="#preguntas" class="py-3 text-muted">Preguntas</a>
         <a href="#registro" class="btn btn-primary mt-3 inline-flex justify-center items-center gap-2 rounded-full px-5 py-3.5 font-semibold">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
       </div>
     </div>
@@ -263,352 +195,265 @@
 
 <!-- ================= HERO ================= -->
 <section id="hero" class="relative isolate overflow-hidden min-h-[100dvh] flex items-center pt-32 pb-16 px-5 sm:px-8">
-  <img src="assets/fondo-tecnologico.jpg" alt="" class="brand-bg absolute inset-0 -z-20 w-full h-full object-cover opacity-50" fetchpriority="high" />
-  <div class="absolute inset-0 -z-10 bg-gradient-to-r from-night via-night/85 to-night/40" aria-hidden="true"></div>
-  <div class="absolute inset-x-0 bottom-0 h-40 -z-10 bg-gradient-to-t from-night to-transparent" aria-hidden="true"></div>
+  <div class="absolute -top-24 -right-24 h-[30rem] w-[30rem] rounded-full bg-lav -z-10" aria-hidden="true"></div>
+  <div class="absolute bottom-0 -left-32 h-[22rem] w-[22rem] rounded-full bg-rose -z-10" aria-hidden="true"></div>
 
   <div class="max-w-page mx-auto w-full grid lg:grid-cols-[1.15fr_.85fr] gap-12 lg:gap-10 items-center">
     <div>
-      <h1 class="rise font-heading font-extrabold text-[2.2rem] leading-[1.05] sm:text-6xl lg:text-[4.25rem] tracking-[-0.03em]">
-        Aprende a aplicar la IA a lo que haces.
-      </h1>
-
-      <p class="rise mt-8 text-lg sm:text-xl text-soft max-w-[36rem] leading-relaxed" style="animation-delay:.1s">
-        16 horas en vivo con los formadores de Campuslands, mentoría grupal cada semana y certificación. Primera cohorte: inicio previsto el 18 de noviembre.
+      <p class="rise inline-flex items-center gap-2 rounded-full bg-white border border-line px-4 py-2 text-[14px] font-semibold text-blue">
+        <i class="ph-fill ph-sparkle"></i> Formación práctica con IA gratuita
       </p>
-
-      <div class="rise mt-10 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4" style="animation-delay:.2s">
-        <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap">
-          Quiero conocer el programa <i class="ph ph-arrow-right"></i>
-        </a>
-        <a href="#programa" class="btn btn-ghost inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold whitespace-nowrap">
-          Ver las 8 sesiones
-        </a>
+      <h1 class="rise mt-6 font-extrabold text-[2.5rem] leading-[1.05] sm:text-6xl lg:text-[4.1rem] tracking-[-0.03em]" style="animation-delay:.08s">
+        IA para el empresario <span class="text-blue whitespace-nowrap">de a pie</span>
+      </h1>
+      <p class="rise mt-6 text-lg sm:text-xl text-muted max-w-[34rem] leading-relaxed" style="animation-delay:.16s">
+        Vende más, organízate mejor y atiende a tus clientes con herramientas gratuitas, sin pagar planes.
+      </p>
+      <div class="rise mt-9 flex flex-col sm:flex-row sm:items-center gap-3 sm:gap-4" style="animation-delay:.24s">
+        <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+        <a href="#ruta" class="btn btn-ghost inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold whitespace-nowrap">Ver los 20 módulos</a>
       </div>
+      <dl class="rise mt-10 grid grid-cols-3 gap-3 max-w-lg" style="animation-delay:.32s">
+        <div class="card p-4 sm:p-5"><dt class="sr-only">Módulos</dt><dd><span class="count block font-extrabold text-3xl sm:text-4xl text-blue num" data-to="20">20</span><span class="text-[14px] text-muted">módulos</span></dd></div>
+        <div class="card p-4 sm:p-5"><dt class="sr-only">Horas</dt><dd><span class="count block font-extrabold text-3xl sm:text-4xl text-violet num" data-to="20">20</span><span class="text-[14px] text-muted">horas</span></dd></div>
+        <div class="card p-4 sm:p-5"><dt class="sr-only">Inversión en herramientas</dt><dd><span class="block font-extrabold text-3xl sm:text-4xl text-pink num">$0</span><span class="text-[14px] text-muted">en herramientas</span></dd></div>
+      </dl>
     </div>
 
     <!-- Visual del hero -->
-    <div class="relative mx-auto w-full max-w-[320px] sm:max-w-[460px] aspect-square">
-      <div class="orbit absolute -inset-[4%]" aria-hidden="true"><span class="absolute left-1/2 -top-1.5 h-3 w-3 -ml-1.5 rounded-full bg-accent2"></span></div>
-      <div class="orbit-rev absolute -inset-[1%]" aria-hidden="true"><span class="absolute left-1/2 -bottom-1 h-2 w-2 -ml-1 rounded-full bg-accent"></span></div>
+    <div class="relative mx-auto w-full max-w-[320px] sm:max-w-[440px] aspect-square">
       <div class="logo-in absolute inset-[6%]">
         <img src="assets/nova-campuslands.webp" alt="NOVA, curso práctico para emprendedores, con Campuslands" class="floaty w-full h-full object-cover rounded-[28px]" fetchpriority="high" />
       </div>
-
-      <div class="floaty-2 hidden sm:flex absolute top-[8%] -left-[12%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
-        <i class="ph ph-lightbulb text-xl text-accent2"></i><span class="text-[15px] font-semibold">Emprender</span>
+      <div class="floaty-2 hidden sm:flex absolute top-[6%] -left-[14%] items-center gap-3 card px-4 py-3" aria-hidden="true">
+        <span class="h-9 w-9 rounded-xl bg-mint text-green grid place-items-center"><i class="ph-fill ph-chat-circle-dots text-xl"></i></span>
+        <span class="text-[14px] font-semibold leading-tight">Cliente respondido<br><span class="text-muted font-medium">en 10 segundos</span></span>
       </div>
-      <div class="floaty-3 hidden sm:flex absolute top-[28%] -right-[14%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
-        <i class="ph ph-storefront text-xl text-accent2"></i><span class="text-[15px] font-semibold">Mejorar tu negocio</span>
+      <div class="floaty-3 hidden sm:flex absolute top-[26%] -right-[16%] items-center gap-3 card px-4 py-3" aria-hidden="true">
+        <span class="h-9 w-9 rounded-xl bg-sky text-blue grid place-items-center"><i class="ph-fill ph-coins text-xl"></i></span>
+        <span class="text-[14px] font-semibold leading-tight">Caja del día: $480.000<br><span class="text-muted font-medium">agente financiero</span></span>
       </div>
-      <div class="floaty hidden sm:flex absolute bottom-[2%] -left-[6%] items-center gap-3 rounded-2xl bg-surface2 px-4 py-3">
-        <i class="ph ph-briefcase text-xl text-accent2"></i><span class="text-[15px] font-semibold">Potenciar tu trabajo</span>
+      <div class="floaty hidden sm:flex absolute bottom-[2%] -left-[6%] items-center gap-3 card px-4 py-3" aria-hidden="true">
+        <span class="h-9 w-9 rounded-xl bg-rose text-pink grid place-items-center"><i class="ph-fill ph-film-strip text-xl"></i></span>
+        <span class="text-[14px] font-semibold leading-tight">Reel listo para publicar<br><span class="text-muted font-medium">hecho con Google Flow</span></span>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- ================= DATOS CLAVE ================= -->
-<section class="px-5 sm:px-8" aria-labelledby="datos-titulo">
-  <div class="max-w-page mx-auto">
-    <h2 id="datos-titulo" class="sr-only">El programa en cifras</h2>
-    <dl class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
-      <div class="reveal rounded-card bg-accent p-6 sm:p-8">
-        <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num">16 h</dt>
-        <dd class="mt-2 text-[15px] sm:text-base text-white/90">de formación en vivo</dd>
-      </div>
-      <div class="reveal rounded-card bg-surface p-6 sm:p-8">
-        <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num">8</dt>
-        <dd class="mt-2 text-[15px] sm:text-base text-soft">sesiones de 2 horas</dd>
-      </div>
-      <div class="reveal rounded-card bg-surface p-6 sm:p-8">
-        <dt class="font-heading font-extrabold text-5xl sm:text-6xl tracking-[-0.03em] num text-accent2">2 h</dt>
-        <dd class="mt-2 text-[15px] sm:text-base text-soft">de mentoría grupal cada semana</dd>
-      </div>
-      <div data-promo-only class="reveal rounded-card bg-surface2 p-6 sm:p-8">
-        <dt class="font-heading font-extrabold text-[1.9rem] leading-[1.2] sm:text-5xl lg:text-[3.25rem] tracking-[-0.03em] num">$600.000</dt>
-        <dd class="mt-2 text-[15px] sm:text-base text-soft"><span class="line-through">$1.000.000</span> · precio especial hasta el 10 de noviembre</dd>
-      </div>
-      <div data-promo-after hidden class="reveal rounded-card bg-surface p-6 sm:p-8">
-        <dt class="font-heading font-extrabold text-[1.9rem] leading-[1.2] sm:text-5xl lg:text-[3.25rem] tracking-[-0.03em] num">$1.000.000</dt>
-        <dd class="mt-2 text-[15px] sm:text-base text-soft">COP por participante</dd>
-      </div>
-    </dl>
   </div>
 </section>
 
 <!-- ================= FORMACIÓN A CARGO DE CAMPUSLANDS ================= -->
-<section class="px-5 sm:px-8 pt-4" aria-label="Formación a cargo de Campuslands">
-  <div class="reveal max-w-page mx-auto rounded-card bg-surface px-6 py-6 sm:px-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
-    <p class="text-soft text-lg">Formación a cargo de</p>
-    <img src="assets/campuslands-blanco.webp" alt="Campuslands" class="h-9 sm:h-11 w-auto" loading="lazy" />
+<section class="px-5 sm:px-8" aria-label="Formación a cargo de Campuslands">
+  <div class="reveal max-w-page mx-auto card px-6 py-6 sm:px-10 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6 text-center">
+    <p class="text-muted text-lg">Formación a cargo de</p>
+    <img src="assets/campuslands-color.webp" alt="Campuslands" class="h-10 sm:h-12 w-auto" loading="lazy" />
   </div>
 </section>
 
-<!-- ================= MASTER CLASS GRATUITA ================= -->
-<!-- Se oculta sola al terminar el evento (ver MASTERCLASS en el script). -->
-<section id="masterclass" class="section px-5 sm:px-8">
-  <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-center">
-    <div class="reveal order-2 lg:order-1 max-w-[380px] w-full mx-auto">
-      <img src="assets/masterclass.webp" alt="Afiche de la master class gratuita: aprende y aplica IA a tu negocio, viernes 30 de octubre a las 6:30 p. m." class="poster w-full rounded-card" loading="lazy" />
-    </div>
-
-    <div class="order-1 lg:order-2">
-      <p id="mc-live" class="reveal inline-flex items-center gap-2 font-semibold text-accent2" hidden><span class="live-dot h-2.5 w-2.5 rounded-full bg-[#3DDC84]"></span> En vivo ahora</p>
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Master class gratuita: IA para tu negocio.</h2>
-      <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[52ch]">Una sesión en vivo con Campuslands para que veas cómo aplicar la IA y resuelvas tus dudas sobre el programa. Es 100% gratuita.</p>
-
-      <dl class="reveal mt-8 grid grid-cols-2 gap-3 max-w-md">
-        <div class="rounded-2xl bg-surface p-5"><dt class="text-[15px] text-soft">Fecha</dt><dd id="mc-date" class="mt-1 font-heading font-bold text-xl">Viernes 30 de octubre</dd></div>
-        <div class="rounded-2xl bg-surface p-5"><dt class="text-[15px] text-soft">Hora (Colombia)</dt><dd class="mt-1 font-heading font-bold text-xl">6:30 p. m.</dd></div>
-      </dl>
-
-      <div id="mc-countdown" class="reveal mt-8 flex gap-6 sm:gap-8" role="timer" aria-label="Tiempo para la master class">
-        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden"><span id="mc-d" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">días</p></div>
-        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden"><span id="mc-h" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">horas</p></div>
-        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden"><span id="mc-m" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">min</p></div>
-        <div><p class="font-heading font-extrabold text-5xl sm:text-6xl num leading-none overflow-hidden text-accent2"><span id="mc-s" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">seg</p></div>
-      </div>
-
-      <div class="reveal mt-10 flex flex-col sm:flex-row gap-3">
-        <a id="mc-wa" href="https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC" target="_blank" rel="noopener" class="btn btn-wa inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold whitespace-nowrap">
-          <i class="ph-fill ph-whatsapp-logo text-xl"></i> Unirme a la comunidad
-        </a>
-        <a id="mc-cal" href="#" target="_blank" rel="noopener" class="btn btn-ghost inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold whitespace-nowrap">
-          <i class="ph ph-calendar-plus text-xl"></i> Agregar a mi calendario
-        </a>
-      </div>
-      <p class="reveal mt-4 text-[15px] text-soft">Únete a la comunidad de WhatsApp y recibe ahí el enlace de conexión para asistir.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PARA QUIÉN (pestañas) ================= -->
+<!-- ================= PARA QUIÉN ================= -->
 <section id="para-quien" class="section px-5 sm:px-8">
-  <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16 items-start">
-    <div>
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Hay un lugar para ti.</h2>
-      <p class="reveal mt-6 text-lg text-soft max-w-[44ch]">Sea cual sea tu punto de partida. Elige tu situación y mira cómo te ayuda la formación.</p>
-
-      <div role="tablist" aria-label="Elige tu perfil" class="reveal mt-8 flex flex-col gap-2 max-w-sm">
-        <button role="tab" id="tab-idea" aria-controls="panel-idea" aria-selected="true" class="tab flex items-center gap-3 rounded-2xl bg-surface px-5 py-4 text-left text-base font-semibold text-soft">
-          <i class="ph ph-lightbulb text-xl"></i> Estoy empezando con una idea
-        </button>
-        <button role="tab" id="tab-negocio" aria-controls="panel-negocio" aria-selected="false" tabindex="-1" class="tab flex items-center gap-3 rounded-2xl bg-surface px-5 py-4 text-left text-base font-semibold text-soft">
-          <i class="ph ph-storefront text-xl"></i> Ya tengo un negocio
-        </button>
-        <button role="tab" id="tab-empresa" aria-controls="panel-empresa" aria-selected="false" tabindex="-1" class="tab flex items-center gap-3 rounded-2xl bg-surface px-5 py-4 text-left text-base font-semibold text-soft">
-          <i class="ph ph-briefcase text-xl"></i> Trabajo en una empresa
-        </button>
-      </div>
-    </div>
-
-    <div class="reveal rounded-card bg-surface overflow-hidden">
-      <div role="tabpanel" id="panel-idea" aria-labelledby="tab-idea" class="panel">
-        <img src="assets/perfil-idea.jpg" alt="Persona escribiendo ideas en una libreta" class="w-full aspect-[16/7] object-cover" loading="lazy" />
-        <div class="p-8 sm:p-12">
-          <h3 class="font-heading font-bold text-2xl sm:text-[2rem] tracking-[-0.02em] leading-tight">Dale estructura a tu idea</h3>
-          <p class="mt-4 text-soft text-lg leading-relaxed max-w-[52ch]">Usa la IA para investigar, validar y organizar tu propuesta antes de invertir más tiempo o dinero.</p>
-        </div>
-        <ul class="bg-surface2 p-8 sm:px-12 sm:py-10 grid sm:grid-cols-3 gap-6 text-ink">
-          <li><i class="ph ph-magnifying-glass text-2xl text-accent2"></i><p class="mt-3">Investigar tu mercado y tus clientes</p></li>
-          <li><i class="ph ph-tree-structure text-2xl text-accent2"></i><p class="mt-3">Ordenar y estructurar tu idea</p></li>
-          <li><i class="ph ph-target text-2xl text-accent2"></i><p class="mt-3">Definir tu propuesta de valor</p></li>
-        </ul>
-      </div>
-
-      <div role="tabpanel" id="panel-negocio" aria-labelledby="tab-negocio" class="panel" hidden>
-        <img src="assets/perfil-negocio.jpg" alt="Mostrador de una cafetería atendida por sus dueños" class="w-full aspect-[16/7] object-cover" loading="lazy" />
-        <div class="p-8 sm:p-12">
-          <h3 class="font-heading font-bold text-2xl sm:text-[2rem] tracking-[-0.02em] leading-tight">Impulsa tu negocio con IA</h3>
-          <p class="mt-4 text-soft text-lg leading-relaxed max-w-[52ch]">Si ya vendes, descubre cómo usar IA para crear contenido, apoyar tus ventas, atender mejor y ganar tiempo.</p>
-        </div>
-        <ul class="bg-surface2 p-8 sm:px-12 sm:py-10 grid sm:grid-cols-3 gap-6 text-ink">
-          <li><i class="ph ph-megaphone text-2xl text-accent2"></i><p class="mt-3">Crear contenido y mejores mensajes</p></li>
-          <li><i class="ph ph-handshake text-2xl text-accent2"></i><p class="mt-3">Apoyar ventas y atención al cliente</p></li>
-          <li><i class="ph ph-lightning text-2xl text-accent2"></i><p class="mt-3">Ganar tiempo en tareas repetitivas</p></li>
-        </ul>
-      </div>
-
-      <div role="tabpanel" id="panel-empresa" aria-labelledby="tab-empresa" class="panel" hidden>
-        <img src="assets/perfil-empresa.jpg" alt="Persona tomando notas junto a su portátil en la oficina" class="w-full aspect-[16/7] object-cover" loading="lazy" />
-        <div class="p-8 sm:p-12">
-          <h3 class="font-heading font-bold text-2xl sm:text-[2rem] tracking-[-0.02em] leading-tight">Mejora tu trabajo y tus procesos</h3>
-          <p class="mt-4 text-soft text-lg leading-relaxed max-w-[52ch]">Sé más productivo: usa la IA para organizar información, optimizar tareas y aportar más valor.</p>
-        </div>
-        <ul class="bg-surface2 p-8 sm:px-12 sm:py-10 grid sm:grid-cols-3 gap-6 text-ink">
-          <li><i class="ph ph-files text-2xl text-accent2"></i><p class="mt-3">Organizar y resumir información</p></li>
-          <li><i class="ph ph-chats-circle text-2xl text-accent2"></i><p class="mt-3">Comunicar con más claridad</p></li>
-          <li><i class="ph ph-gear-six text-2xl text-accent2"></i><p class="mt-3">Identificar mejoras en tus procesos</p></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ================= PROPUESTA DE VALOR ================= -->
-<section class="section px-5 sm:px-8 bg-night2">
   <div class="max-w-page mx-auto">
-    <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl lg:text-6xl tracking-[-0.03em] leading-[1.05] max-w-4xl">Aplicar la IA vale más que conocerla.</h2>
-    <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[58ch]">Internet está lleno de tutoriales. Aquí no coleccionas herramientas: aprendes a usarlas en situaciones reales de tu vida laboral.</p>
-
-    <ul class="mt-14 grid md:grid-cols-3 gap-3 sm:gap-4">
-      <li class="reveal rounded-card bg-surface p-8 sm:p-10 min-h-[200px] flex flex-col justify-between">
-        <i class="ph ph-lightbulb text-3xl text-accent2"></i>
-        <p class="mt-10 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Emprender con más claridad</p>
-      </li>
-      <li class="reveal rounded-card bg-surface2 p-8 sm:p-10 min-h-[200px] flex flex-col justify-between md:translate-y-8">
-        <i class="ph ph-storefront text-3xl text-accent2"></i>
-        <p class="mt-10 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Mejorar tu negocio</p>
-      </li>
-      <li class="reveal rounded-card bg-accent p-8 sm:p-10 min-h-[200px] flex flex-col justify-between md:translate-y-16">
-        <i class="ph ph-briefcase text-3xl text-white"></i>
-        <p class="mt-10 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Potenciar tu trabajo</p>
-      </li>
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08] max-w-3xl">Para el que tiene un negocio y lo hace todo.</h2>
+    <p class="reveal mt-5 text-lg text-muted">No necesitas saber de tecnología. Solo tener ganas de crecer.</p>
+    <ul class="mt-12 grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-sky text-blue grid place-items-center"><i class="ph-fill ph-storefront text-2xl"></i></span><p class="mt-4 font-semibold">Tienda de barrio</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-rose text-pink grid place-items-center"><i class="ph-fill ph-scissors text-2xl"></i></span><p class="mt-4 font-semibold">Peluquería y belleza</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-sun text-amber grid place-items-center"><i class="ph-fill ph-bowl-food text-2xl"></i></span><p class="mt-4 font-semibold">Restaurante y comidas</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-lav text-violet grid place-items-center"><i class="ph-fill ph-instagram-logo text-2xl"></i></span><p class="mt-4 font-semibold">Ventas por redes</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-aqua text-cyan grid place-items-center"><i class="ph-fill ph-wrench text-2xl"></i></span><p class="mt-4 font-semibold">Taller y servicios técnicos</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-sun text-amber grid place-items-center"><i class="ph-fill ph-coffee text-2xl"></i></span><p class="mt-4 font-semibold">Panadería y cafetería</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-rose text-pink grid place-items-center"><i class="ph-fill ph-t-shirt text-2xl"></i></span><p class="mt-4 font-semibold">Ropa y accesorios</p></li>
+      <li class="reveal lift card p-5 sm:p-6"><span class="h-11 w-11 rounded-xl bg-mint text-green grid place-items-center"><i class="ph-fill ph-briefcase text-2xl"></i></span><p class="mt-4 font-semibold">Servicios profesionales</p></li>
     </ul>
   </div>
 </section>
 
-<!-- ================= ¿ES PARA TI? ================= -->
-<section class="section px-5 sm:px-8">
+<!-- ================= EL CAMBIO ================= -->
+<section class="section px-5 sm:px-8 bg-white">
   <div class="max-w-page mx-auto">
-    <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">¿Es esta formación para ti?</h2>
-    <p class="reveal mt-6 text-lg text-soft max-w-[58ch]">No necesitas ser experto en tecnología. Necesitas ganas de aprender y de aplicar la IA a tus objetivos.</p>
-
-    <div class="mt-12 grid lg:grid-cols-[1.5fr_1fr] gap-4">
-      <div class="reveal grid sm:grid-cols-2 gap-x-10 gap-y-10 rounded-card bg-surface p-8 sm:p-10">
-        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Quieres desarrollar una idea</h3><p class="mt-2 text-soft">Y usar IA para investigarla, organizarla y darle estructura.</p></div>
-        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Ya tienes un emprendimiento</h3><p class="mt-2 text-soft">Y buscas aplicar IA en contenido, ventas, atención o productividad.</p></div>
-        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Trabajas en una empresa</h3><p class="mt-2 text-soft">Y quieres organizar información y mejorar procesos.</p></div>
-        <div><i class="ph-fill ph-check-circle text-3xl text-accent2"></i><h3 class="mt-3 font-heading font-bold text-xl">Quieres pasar a la práctica</h3><p class="mt-2 text-soft">Y dejar la curiosidad para usar la IA en situaciones reales.</p></div>
-      </div>
-
-      <aside class="reveal rounded-card bg-surface2 p-8 sm:p-10 flex flex-col">
-        <h3 class="font-heading font-bold text-xl">Qué necesitas para aprovecharla</h3>
-        <ul class="mt-6 space-y-5 text-ink">
-          <li class="flex gap-3"><i class="ph ph-laptop text-2xl text-accent2 shrink-0"></i>Computador, internet y conocimientos digitales básicos</li>
-          <li class="flex gap-3"><i class="ph ph-calendar-check text-2xl text-accent2 shrink-0"></i>Tiempo para asistir a las clases y hacer los ejercicios</li>
-          <li class="flex gap-3"><i class="ph ph-brain text-2xl text-accent2 shrink-0"></i>Disposición para practicar y revisar lo que produce la IA</li>
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08] max-w-3xl">De hacerlo todo solo… a tener un equipo de IA.</h2>
+    <div class="mt-12 grid md:grid-cols-2 gap-4">
+      <div class="reveal rounded-card bg-paper border border-line p-8 sm:p-10">
+        <p class="inline-flex items-center gap-2 font-bold text-muted"><i class="ph ph-hourglass-medium text-xl"></i> Hoy</p>
+        <ul class="mt-6 space-y-4 text-lg">
+          <li class="flex gap-3"><i class="ph ph-x-circle text-2xl text-muted shrink-0"></i>Respondo clientes todo el día</li>
+          <li class="flex gap-3"><i class="ph ph-x-circle text-2xl text-muted shrink-0"></i>No sé si estoy ganando</li>
+          <li class="flex gap-3"><i class="ph ph-x-circle text-2xl text-muted shrink-0"></i>Papeles y archivos regados</li>
+          <li class="flex gap-3"><i class="ph ph-x-circle text-2xl text-muted shrink-0"></i>No tengo tiempo para redes</li>
         </ul>
-        <a href="#registro" class="link-arrow mt-auto pt-8 inline-flex items-center gap-2 font-semibold text-accent2 hover:text-ink transition">Un asesor te explica todo <i class="ph ph-arrow-right"></i></a>
-      </aside>
+      </div>
+      <div class="reveal rounded-card bg-blue text-white p-8 sm:p-10">
+        <p class="inline-flex items-center gap-2 font-bold"><i class="ph-fill ph-rocket-launch text-xl"></i> Después</p>
+        <ul class="mt-6 space-y-4 text-lg">
+          <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Respuestas listas en segundos</li>
+          <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Sé cuánto vendo y cuánto gano</li>
+          <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Todo ordenado y a la mano</li>
+          <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Contenido de la semana en 1 hora</li>
+        </ul>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ================= RUTA DE 8 SESIONES ================= -->
-<!-- Ruta comercial propuesta. Debe contrastarse con el temario aprobado por Campuslands. -->
-<section id="programa" class="section px-5 sm:px-8 bg-night2">
-  <div class="max-w-page mx-auto grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-16">
-    <div class="lg:sticky lg:top-28 self-start">
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Lo que aprenderás en 8 sesiones.</h2>
-      <p class="reveal mt-6 text-lg text-soft max-w-[44ch]">Una ruta clara y progresiva para aplicar la IA a tu idea, tu negocio o tu trabajo.</p>
-      <dl class="reveal mt-8 grid grid-cols-2 gap-3 max-w-sm">
-        <div class="rounded-2xl bg-surface p-5"><dt class="font-heading font-extrabold text-3xl num">2 h</dt><dd class="text-soft text-[15px] mt-1">por sesión en vivo</dd></div>
-        <div class="rounded-2xl bg-surface p-5"><dt class="font-heading font-extrabold text-3xl num text-accent2">+2 h</dt><dd class="text-soft text-[15px] mt-1">de mentoría semanal</dd></div>
-      </dl>
-      <a href="#registro" class="btn btn-primary mt-9 hidden lg:inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
+<!-- ================= CUATRO REGLAS ================= -->
+<section class="section px-5 sm:px-8">
+  <div class="max-w-page mx-auto">
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Cuatro reglas de esta formación.</h2>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-[1.25fr_1fr_1fr_1fr] gap-4 lg:[&>*]:min-h-[320px]">
+      <!-- Igual que la plantilla: degradado azul, violeta y rosado; el monto baja de 99 a 0 cada vez que se ve -->
+      <div class="reveal zero-card rounded-card text-white p-8 sm:p-9 flex flex-col justify-between gap-6">
+        <p class="text-lg font-semibold text-white/90">Inversión en herramientas</p>
+        <p class="font-extrabold leading-none tracking-[-0.04em] text-[6.5rem] sm:text-[7.5rem] num" aria-label="0 pesos">$<span class="zero-count" aria-hidden="true">0</span></p>
+        <p class="text-lg text-white/90">Solo versiones gratuitas. Sin planes, sin tarjeta.</p>
+      </div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-sky text-blue grid place-items-center"><i class="ph-fill ph-storefront text-2xl"></i></span><h3 class="mt-6 font-bold text-xl">Con tu propio negocio</h3><p class="mt-2 text-muted">Practicas con tus productos, tus clientes y tus números.</p></div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-lav text-violet grid place-items-center"><i class="ph-fill ph-copy text-2xl"></i></span><h3 class="mt-6 font-bold text-xl">Plantillas listas</h3><p class="mt-2 text-muted">Copias, ajustas y usas. Nada empieza desde cero.</p></div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-mint text-green grid place-items-center"><i class="ph-fill ph-person-simple-run text-2xl"></i></span><h3 class="mt-6 font-bold text-xl">Autonomía total</h3><p class="mt-2 text-muted">Al terminar, lo haces solo, sin depender de nadie.</p></div>
     </div>
-
-    <ol class="relative">
-      <div class="absolute left-[21px] top-3 bottom-3 w-[2px] bg-surface2" aria-hidden="true"></div>
-      <div class="tl-fill absolute left-[21px] top-3 bottom-3 w-[2px] bg-accent" aria-hidden="true"></div>
-
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">1</span>
-        <h3 class="font-heading font-bold text-xl pt-2">IA para emprender y trabajar mejor</h3>
-        <p class="mt-2 text-soft">Cómo la IA puede ayudarte en tu negocio, en una idea o en tus actividades profesionales.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">2</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Cómo pedir mejores resultados a la IA</h3>
-        <p class="mt-2 text-soft">Instrucciones claras para obtener respuestas más precisas y alineadas con tus objetivos.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">3</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Investiga y organiza tu información</h3>
-        <p class="mt-2 text-soft">Usa IA para investigar, resumir, estructurar ideas y ordenar información importante.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">4</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Marketing y contenido con IA</h3>
-        <p class="mt-2 text-soft">Crea ideas, mejora tus mensajes y fortalece tu comunicación con clientes.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">5</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Ventas y comunicación comercial</h3>
-        <p class="mt-2 text-soft">Prepara propuestas, haz seguimiento y apoya tu proceso comercial con IA.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">6</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Procesos y oportunidades de mejora</h3>
-        <p class="mt-2 text-soft">Identifica tareas repetitivas y oportunidades para optimizarlas con IA.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16 pb-10">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">7</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Diseña tu caso práctico</h3>
-        <p class="mt-2 text-soft">Define una necesidad real, elige herramientas y estructura cómo usar la IA.</p>
-      </li>
-      <li class="tl-item reveal relative pl-16">
-        <span class="dot absolute left-0 top-0 h-11 w-11 rounded-full bg-surface2 text-accent2 font-heading font-bold grid place-items-center num">8</span>
-        <h3 class="font-heading font-bold text-xl pt-2">Presenta avances y tu siguiente paso</h3>
-        <p class="mt-2 text-soft">Revisa lo aprendido y arma una hoja de ruta para seguir aplicando la IA.</p>
-      </li>
-    </ol>
-  </div>
-  <div class="mt-14 text-center lg:hidden">
-    <a href="#registro" class="btn btn-primary inline-flex items-center gap-2 rounded-full px-8 py-4 font-semibold whitespace-nowrap">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
   </div>
 </section>
 
 <!-- ================= HERRAMIENTAS ================= -->
-<!-- Lista final pendiente de aprobación académica. -->
-<section class="section px-5 sm:px-8">
+<section id="herramientas" class="section px-5 sm:px-8 bg-white">
   <div class="max-w-page mx-auto">
-    <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Herramientas con propósito.</h2>
-    <p class="reveal mt-6 text-lg text-soft max-w-[58ch]">No se trata de conocer más herramientas, sino de saber qué hacer con ellas. Están organizadas por lo que necesitas resolver.</p>
-
-    <div class="mt-12 grid md:grid-cols-2 gap-3 sm:gap-4">
-      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
-        <h3 class="font-heading font-bold text-2xl">Crear y resolver</h3>
-        <p class="mt-2 text-soft">Ideas, redacción, planificación y apoyo para resolver tareas.</p>
-        <p class="mt-6 font-heading font-semibold text-xl text-accent2">ChatGPT, Gemini, Claude</p>
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Tus herramientas, todas gratuitas.</h2>
+    <p class="reveal mt-5 text-lg text-muted max-w-[60ch]">Lo que aprenderás a usar en tu negocio.</p>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div class="reveal lift rounded-card bg-ink text-white p-8 md:col-span-2 lg:col-span-1 lg:row-span-2 flex flex-col">
+        <span class="self-start rounded-full bg-green px-3 py-1 text-[13px] font-bold">Gratis</span>
+        <h3 class="mt-6 font-extrabold text-3xl">ChatGPT <span class="font-medium text-white/70">o</span> Claude</h3>
+        <p class="mt-3 text-white/85 text-lg">Eliges uno, según lo que necesites. Ahí viven tus proyectos y tus agentes.</p>
+        <i class="ph-fill ph-sparkle text-6xl text-violet mt-auto pt-8"></i>
       </div>
-      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
-        <h3 class="font-heading font-bold text-2xl">Investigar y aprender</h3>
-        <p class="mt-2 text-soft">Investigación, organización de documentos y análisis de información.</p>
-        <p class="mt-6 font-heading font-semibold text-xl text-accent2">NotebookLM y asistentes de IA</p>
-      </div>
-      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
-        <h3 class="font-heading font-bold text-2xl">Diseñar y comunicar</h3>
-        <p class="mt-2 text-soft">Contenido, material visual y presentaciones.</p>
-        <p class="mt-6 font-heading font-semibold text-xl text-accent2">Canva AI, Gamma</p>
-      </div>
-      <div class="reveal rounded-card bg-surface p-8 sm:p-10">
-        <h3 class="font-heading font-bold text-2xl">Organizar y optimizar</h3>
-        <p class="mt-2 text-soft">Análisis básico de datos y exploración de automatizaciones.</p>
-        <p class="mt-6 font-heading font-semibold text-xl text-accent2">Excel con IA, Make, Zapier, n8n</p>
-      </div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-rose text-pink grid place-items-center"><i class="ph-fill ph-film-slate text-2xl"></i></span><h3 class="mt-5 font-bold text-xl">Google Flow</h3><p class="mt-1 text-muted">Videos cortos e imágenes</p></div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-mint text-green grid place-items-center"><i class="ph-fill ph-whatsapp-logo text-2xl"></i></span><h3 class="mt-5 font-bold text-xl">WhatsApp Business</h3><p class="mt-1 text-muted">Catálogo y respuestas rápidas</p></div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-sky text-blue grid place-items-center"><i class="ph-fill ph-map-pin text-2xl"></i></span><h3 class="mt-5 font-bold text-xl">Perfil de Empresa en Google</h3><p class="mt-1 text-muted">Aparecer en Google Maps</p></div>
+      <div class="reveal lift card p-8"><span class="h-12 w-12 rounded-2xl bg-lav text-violet grid place-items-center"><i class="ph-fill ph-folder-open text-2xl"></i></span><h3 class="mt-5 font-bold text-xl">Proyecto local</h3><p class="mt-1 text-muted">Una carpeta en tu PC para tu landing y tus apps</p></div>
     </div>
-    <p class="reveal mt-8 text-[15px] text-muted max-w-[70ch]">Las herramientas específicas y su profundidad dependen del contenido final del programa.</p>
+    <p class="reveal mt-8 text-muted"><strong class="text-ink">De apoyo, sin clases aparte:</strong> Google Drive y Google Sheets.</p>
+    <p class="reveal mt-2 text-[14px] text-muted">Usamos los planes gratuitos. Cada herramienta pone sus propios límites de uso, y estos pueden cambiar.</p>
   </div>
 </section>
 
-<!-- ================= FORMADOR ================= -->
-<section id="formador" class="section px-5 sm:px-8 bg-night2">
-  <div class="max-w-page mx-auto grid md:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-16 items-center">
-    <div class="reveal rounded-card bg-surface aspect-square max-w-[440px] w-full mx-auto md:mx-0 grid place-items-center p-12 sm:p-16">
-      <img src="assets/campuslands-blanco-vertical.webp" alt="Campuslands" class="floaty-2 w-full max-w-[280px] h-auto" loading="lazy" />
+<!-- ================= LA RUTA: 5 BLOQUES, 20 MÓDULOS ================= -->
+<section id="ruta" class="section px-5 sm:px-8">
+  <div class="max-w-page mx-auto">
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">5 bloques, 20 módulos, 20 horas.</h2>
+    <p class="reveal mt-5 text-lg text-muted max-w-[60ch]">Elige un bloque y mira qué aprendes y qué te llevas en cada módulo de 1 hora.</p>
+
+    <div class="mt-10 grid lg:grid-cols-[.8fr_1.2fr] gap-6 items-start">
+      <div id="bloques" role="tablist" aria-label="Bloques de la ruta" class="reveal grid sm:grid-cols-2 lg:grid-cols-1 gap-2"></div>
+      <div id="bloque-panel" class="reveal card p-6 sm:p-8" role="tabpanel" aria-live="polite"></div>
     </div>
 
-    <div>
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Tus formadores: Campuslands.</h2>
-      <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[54ch]">Campuslands está a cargo de la formación: imparte las 8 sesiones en vivo con sus docentes y entrega la certificación del programa. NOVA te acompaña con la mentoría, la comunidad y el canal de apoyo.</p>
+    <noscript>
+      <ul class="mt-8 space-y-2 text-lg">
+        <li><strong>Bloque 1, Mi oficina con IA:</strong> tu asistente, prompts, carpetas y proyectos.</li>
+        <li><strong>Bloque 2, Mi equipo de agentes:</strong> finanzas, RR. HH., operación y archivos.</li>
+        <li><strong>Bloque 3, Clientes felices:</strong> respuestas, WhatsApp, quejas y cotizaciones.</li>
+        <li><strong>Bloque 4, Marketing ligero:</strong> marca, contenido, Google Flow y diseño.</li>
+        <li><strong>Bloque 5, Mi negocio en internet:</strong> landing, Google Maps, mini apps y proyecto final.</li>
+      </ul>
+    </noscript>
+  </div>
+</section>
 
-      <ul class="mt-10 space-y-6">
-        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-accent text-white grid place-items-center"><i class="ph ph-chalkboard-teacher text-2xl"></i></span><div><h3 class="font-heading font-bold text-xl">Clases con docentes de Campuslands</h3><p class="mt-1 text-soft">16 horas en vivo, con demostraciones y ejercicios aplicados.</p></div></li>
-        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-certificate text-2xl"></i></span><div><h3 class="font-heading font-bold text-xl">Certificación de Campuslands</h3><p class="mt-1 text-soft">Conforme a los requisitos académicos del programa.</p></div></li>
-        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-users-three text-2xl"></i></span><div><h3 class="font-heading font-bold text-xl">Acompañamiento de NOVA</h3><p class="mt-1 text-soft">Mentoría grupal semanal, comunidad y canal de apoyo.</p></div></li>
+<!-- ================= EQUIPO DE AGENTES ================= -->
+<section class="section px-5 sm:px-8 bg-ink text-white">
+  <div class="max-w-page mx-auto">
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08] max-w-3xl">Un equipo de IA que trabaja con tus archivos.</h2>
+    <p class="reveal mt-5 text-lg text-white/80 max-w-[60ch]"><i class="ph-fill ph-folder-open text-amber"></i> La carpeta de tu negocio, como proyecto local en tu computador. Así le pides cosas a cada agente:</p>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-5 gap-3">
+      <div class="reveal lift rounded-card bg-white/[.07] border border-white/10 p-6"><span class="h-11 w-11 rounded-xl bg-blue grid place-items-center"><i class="ph-fill ph-coins text-xl"></i></span><h3 class="mt-5 font-bold text-lg">Finanzas</h3><p class="mt-2 text-white/80 italic">“¿Cuánto vendí este mes y qué gasto puedo recortar?”</p></div>
+      <div class="reveal lift rounded-card bg-white/[.07] border border-white/10 p-6"><span class="h-11 w-11 rounded-xl bg-violet grid place-items-center"><i class="ph-fill ph-users-three text-xl"></i></span><h3 class="mt-5 font-bold text-lg">RR. HH.</h3><p class="mt-2 text-white/80 italic">“Arma los turnos de la semana para 3 personas.”</p></div>
+      <div class="reveal lift rounded-card bg-white/[.07] border border-white/10 p-6"><span class="h-11 w-11 rounded-xl bg-cyan grid place-items-center"><i class="ph-fill ph-package text-xl"></i></span><h3 class="mt-5 font-bold text-lg">Operación</h3><p class="mt-2 text-white/80 italic">“¿Qué le debo pedir al proveedor el lunes?”</p></div>
+      <div class="reveal lift rounded-card bg-white/[.07] border border-white/10 p-6"><span class="h-11 w-11 rounded-xl bg-green grid place-items-center"><i class="ph-fill ph-chat-circle-dots text-xl"></i></span><h3 class="mt-5 font-bold text-lg">Atención al cliente</h3><p class="mt-2 text-white/80 italic">“Responde a este cliente que pregunta por domicilios.”</p></div>
+      <div class="reveal lift rounded-card bg-white/[.07] border border-white/10 p-6"><span class="h-11 w-11 rounded-xl bg-pink grid place-items-center"><i class="ph-fill ph-megaphone text-xl"></i></span><h3 class="mt-5 font-bold text-lg">Marketing</h3><p class="mt-2 text-white/80 italic">“Dame 5 ideas de reels para el viernes.”</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= UN DÍA CON IA ================= -->
+<section class="section px-5 sm:px-8">
+  <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
+    <div class="lg:sticky lg:top-28 self-start">
+      <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Un día con IA: doña Marta y su tienda de barrio.</h2>
+      <p class="reveal mt-5 text-[14px] text-muted">Ejemplo ilustrativo.</p>
+    </div>
+    <ol class="space-y-4">
+      <li class="reveal lift card p-6 sm:p-7 flex gap-5"><p class="shrink-0 w-24 font-extrabold text-xl text-blue num">7:00 a. m.</p><div><h3 class="font-bold text-lg">Responde 12 pedidos de WhatsApp</h3><p class="mt-1 text-muted">Con su banco de respuestas y el catálogo listos.</p><span class="mt-3 inline-block rounded-full bg-mint px-3 py-1 text-[13px] font-semibold text-ink">Atención al cliente</span></div></li>
+      <li class="reveal lift card p-6 sm:p-7 flex gap-5"><p class="shrink-0 w-24 font-extrabold text-xl text-violet num">10:00 a. m.</p><div><h3 class="font-bold text-lg">Sabe qué pedir al proveedor</h3><p class="mt-1 text-muted">El agente revisa el inventario y arma el pedido.</p><span class="mt-3 inline-block rounded-full bg-aqua px-3 py-1 text-[13px] font-semibold text-ink">Operación</span></div></li>
+      <li class="reveal lift card p-6 sm:p-7 flex gap-5"><p class="shrink-0 w-24 font-extrabold text-xl text-pink num">3:00 p. m.</p><div><h3 class="font-bold text-lg">Publica un reel de la promo</h3><p class="mt-1 text-muted">Hecho en Google Flow en 15 minutos.</p><span class="mt-3 inline-block rounded-full bg-rose px-3 py-1 text-[13px] font-semibold text-ink">Marketing</span></div></li>
+      <li class="reveal lift card p-6 sm:p-7 flex gap-5"><p class="shrink-0 w-24 font-extrabold text-xl text-green num">8:00 p. m.</p><div><h3 class="font-bold text-lg">Cierra la caja del día</h3><p class="mt-1 text-muted">Ve cuánto vendió y cuánto ganó.</p><span class="mt-3 inline-block rounded-full bg-sky px-3 py-1 text-[13px] font-semibold text-ink">Finanzas</span></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ================= QUÉ TE LLEVAS ================= -->
+<section class="section px-5 sm:px-8 bg-white">
+  <div class="max-w-page mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-16 items-center">
+    <div>
+      <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">¿Qué te llevas al terminar?</h2>
+      <p class="reveal mt-8 font-extrabold text-8xl sm:text-9xl text-violet num leading-none"><span class="count" data-to="20">20</span></p>
+      <p class="reveal mt-3 text-xl font-semibold">entregables listos para usar</p>
+      <p class="reveal mt-2 text-muted text-lg">Uno por módulo, hechos con tu negocio.</p>
+    </div>
+    <ul class="grid sm:grid-cols-2 gap-3">
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-sky px-5 py-4 font-semibold"><i class="ph-fill ph-folder-open text-2xl text-blue"></i>Oficina digital ordenada</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-lav px-5 py-4 font-semibold"><i class="ph-fill ph-robot text-2xl text-violet"></i>5 agentes para tu negocio</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-rose px-5 py-4 font-semibold"><i class="ph-fill ph-chats text-2xl text-pink"></i>30 respuestas para clientes</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-mint px-5 py-4 font-semibold"><i class="ph-fill ph-whatsapp-logo text-2xl text-green"></i>WhatsApp Business configurado</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-sun px-5 py-4 font-semibold"><i class="ph-fill ph-palette text-2xl text-amber"></i>Mini manual de marca</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-aqua px-5 py-4 font-semibold"><i class="ph-fill ph-calendar-check text-2xl text-cyan"></i>Contenido para 30 días</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-rose px-5 py-4 font-semibold"><i class="ph-fill ph-film-strip text-2xl text-pink"></i>3 videos con Google Flow</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-sky px-5 py-4 font-semibold"><i class="ph-fill ph-globe text-2xl text-blue"></i>Landing page publicada</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-lav px-5 py-4 font-semibold"><i class="ph-fill ph-app-window text-2xl text-violet"></i>Tu propia mini app</li>
+      <li class="reveal flex items-center gap-3 rounded-2xl bg-mint px-5 py-4 font-semibold"><i class="ph-fill ph-flag-checkered text-2xl text-green"></i>Plan de 90 días</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= CÓMO FUNCIONA ================= -->
+<section id="formato" class="section px-5 sm:px-8">
+  <div class="max-w-page mx-auto">
+    <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Cómo funciona.</h2>
+    <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div class="reveal card p-7"><i class="ph-fill ph-clock text-3xl text-blue"></i><p class="mt-4 text-muted">Duración</p><p class="mt-1 font-bold text-xl">20 horas · 20 módulos</p></div>
+      <div class="reveal card p-7"><i class="ph-fill ph-calendar-dots text-3xl text-violet"></i><p class="mt-4 text-muted">Sesiones</p><p class="mt-1 font-bold text-xl">10 de 2 h o 20 de 1 h</p></div>
+      <div class="reveal card p-7"><i class="ph-fill ph-monitor-play text-3xl text-pink"></i><p class="mt-4 text-muted">Modalidad</p><p class="mt-1 font-bold text-xl">Virtual o presencial</p></div>
+      <div class="reveal card p-7"><i class="ph-fill ph-plant text-3xl text-green"></i><p class="mt-4 text-muted">Nivel</p><p class="mt-1 font-bold text-xl">Desde cero, sin saber de tecnología</p></div>
+    </div>
+    <div class="reveal mt-4 grid lg:grid-cols-[1.2fr_1fr] gap-4">
+      <div class="rounded-card bg-violet text-white p-8 sm:p-10">
+        <h3 class="font-extrabold text-2xl sm:text-3xl">Aprender haciendo</h3>
+        <div class="mt-6 flex h-4 rounded-full overflow-hidden bg-white/25" role="img" aria-label="20 % explicación, 80 % práctica"><span class="w-[20%] bg-white/60"></span><span class="w-[80%] bg-white"></span></div>
+        <p class="mt-4 text-lg"><strong>20 %</strong> explicación · <strong>80 %</strong> práctica</p>
+      </div>
+      <div class="card p-8 sm:p-10">
+        <h3 class="font-bold text-xl">Solo necesitas</h3>
+        <ul class="mt-5 space-y-3 text-lg">
+          <li class="flex gap-3"><i class="ph-fill ph-laptop text-2xl text-blue"></i>Computador</li>
+          <li class="flex gap-3"><i class="ph-fill ph-wifi-high text-2xl text-blue"></i>Internet</li>
+          <li class="flex gap-3"><i class="ph-fill ph-google-logo text-2xl text-blue"></i>Cuenta de Google</li>
+        </ul>
+      </div>
+    </div>
+    <p class="reveal mt-6 text-muted">Inicio previsto de la primera cohorte: <strong class="text-ink">5 de diciembre de 2026</strong>.</p>
+  </div>
+</section>
+
+<!-- ================= FORMADORES ================= -->
+<section id="formador" class="section px-5 sm:px-8 bg-white">
+  <div class="max-w-page mx-auto grid md:grid-cols-[.9fr_1.1fr] gap-10 lg:gap-16 items-center">
+    <div class="reveal rounded-card bg-paper border border-line aspect-[4/3] grid place-items-center p-10 sm:p-14">
+      <img src="assets/campuslands-color.webp" alt="Campuslands" class="w-full max-w-[380px] h-auto" loading="lazy" />
+    </div>
+    <div>
+      <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Tus formadores: Campuslands.</h2>
+      <p class="reveal mt-6 text-lg text-muted max-w-[54ch]">Campuslands está a cargo de la formación: imparte los 20 módulos con sus docentes y entrega la certificación del programa. NOVA te acompaña con la mentoría, la comunidad y el canal de apoyo.</p>
+      <ul class="mt-8 space-y-5">
+        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-blue text-white grid place-items-center"><i class="ph-fill ph-chalkboard-teacher text-2xl"></i></span><div><h3 class="font-bold text-lg">Clases con docentes de Campuslands</h3><p class="text-muted">20 horas con demostraciones y práctica sobre tu negocio.</p></div></li>
+        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-lav text-violet grid place-items-center"><i class="ph-fill ph-certificate text-2xl"></i></span><div><h3 class="font-bold text-lg">Certificación de Campuslands</h3><p class="text-muted">Conforme a los requisitos académicos del programa.</p></div></li>
+        <li class="reveal flex gap-4"><span class="h-12 w-12 shrink-0 rounded-2xl bg-rose text-pink grid place-items-center"><i class="ph-fill ph-users-three text-2xl"></i></span><div><h3 class="font-bold text-lg">Acompañamiento de NOVA</h3><p class="text-muted">Mentoría grupal semanal, comunidad y canal de apoyo.</p></div></li>
       </ul>
     </div>
   </div>
@@ -617,138 +462,67 @@
 <!-- ================= INVERSIÓN ================= -->
 <section id="inversion" class="section px-5 sm:px-8">
   <div class="max-w-page mx-auto">
-    <h2 class="reveal font-heading font-extrabold text-[1.75rem] sm:text-[2.6rem] lg:text-[3rem] tracking-[-0.03em] leading-[1.08] max-w-[22ch] lg:max-w-[28ch]">Aprende inteligencia artificial y cuenta con apoyo para ponerla en práctica.</h2>
-    <p class="reveal mt-6 text-lg sm:text-xl text-soft max-w-[62ch]">Una experiencia que combina formación en vivo, acompañamiento técnico, recursos prácticos y comunidad para ayudarte a aplicar IA en tu negocio, emprendimiento o trabajo.</p>
+    <h2 class="reveal font-extrabold text-[1.9rem] sm:text-5xl tracking-[-0.03em] leading-[1.08] max-w-[24ch]">Invierte en tu negocio, no en planes de herramientas.</h2>
+    <p class="reveal mt-5 text-lg text-muted max-w-[60ch]">Formación en vivo, acompañamiento, plantillas y comunidad para que tu negocio trabaje contigo.</p>
 
-    <!-- Precio con promoción (ver PROMO al final del script: se retira sola tras la fecha límite) -->
-    <div data-promo-only class="reveal promo mt-12 rounded-card overflow-hidden grid lg:grid-cols-[1.2fr_1fr]">
-      <div class="bg-accent p-8 sm:p-10 lg:p-12">
-        <p class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-bold text-[#1B3F99]"><i class="ph-fill ph-lightning text-lg"></i> Precio especial: ahorras $400.000</p>
-        <p class="mt-8 text-lg text-white/90">Valor de la formación <span class="strike relative inline-block font-heading font-bold text-2xl text-white num">$1.000.000</span></p>
-        <p class="mt-3 font-heading font-extrabold text-[3.25rem] sm:text-7xl lg:text-8xl tracking-[-0.04em] leading-none num">$600.000 <span class="text-2xl sm:text-3xl font-bold tracking-normal text-white/85">COP</span></p>
-        <p class="mt-4 font-heading font-bold text-xl sm:text-2xl">pagando hasta el 10 de noviembre</p>
-        <p class="mt-6 text-white/90">Primera cohorte, virtual en vivo. Inicio previsto: <strong>18 de noviembre de 2026</strong>.</p>
+    <!-- Precio con promoción (ver PROMO en el script: se retira sola tras la fecha límite) -->
+    <div data-promo-only class="reveal promo mt-12 rounded-card overflow-hidden grid lg:grid-cols-[1.2fr_1fr] border border-line">
+      <div class="bg-blue text-white p-8 sm:p-10 lg:p-12">
+        <p class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-bold text-blue"><i class="ph-fill ph-lightning text-lg"></i> 50 % de descuento: ahorras $500.000</p>
+        <p class="mt-8 text-lg text-white/90">Valor de la formación <span class="strike relative inline-block font-bold text-2xl text-white num">$1.000.000</span></p>
+        <p class="mt-3 font-extrabold text-[3.1rem] sm:text-7xl tracking-[-0.04em] leading-none num">$500.000 <span class="text-2xl font-bold tracking-normal text-white/85">COP</span></p>
+        <p class="mt-4 font-bold text-xl">pagando hasta el 30 de noviembre</p>
       </div>
-      <div class="bg-surface p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
-        <p class="font-heading font-bold text-xl">El precio especial termina en</p>
-        <div class="mt-5 flex gap-5 sm:gap-7" role="timer" aria-label="Tiempo restante del precio especial">
-          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-d" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">días</p></div>
-          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-h" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">horas</p></div>
-          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-m" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">min</p></div>
-          <div><p class="font-heading font-extrabold text-5xl num leading-none overflow-hidden text-accent2"><span id="pr-s" class="inline-block">--</span></p><p class="mt-2 text-[15px] text-soft">seg</p></div>
+      <div class="bg-white p-8 sm:p-10 lg:p-12 flex flex-col justify-center">
+        <p class="font-bold text-xl">El precio especial termina en</p>
+        <div class="mt-5 flex gap-5 sm:gap-7" role="timer">
+          <div><p class="font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-d" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-muted">días</p></div>
+          <div><p class="font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-h" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-muted">horas</p></div>
+          <div><p class="font-extrabold text-5xl num leading-none overflow-hidden"><span id="pr-m" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-muted">min</p></div>
+          <div><p class="font-extrabold text-5xl num leading-none overflow-hidden text-blue"><span id="pr-s" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-muted">seg</p></div>
         </div>
         <a href="#registro" class="btn btn-primary mt-8 inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
-        <p class="mt-4 text-[15px] text-soft">Después del 10 de noviembre, el valor de la formación es de $1.000.000 COP.</p>
       </div>
     </div>
 
-    <!-- Precio regular: se muestra solo cuando termina la promoción -->
-    <div data-promo-after hidden class="reveal mt-12 rounded-card bg-surface p-8 sm:p-10 lg:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
+    <!-- Precio regular: se muestra cuando no hay promoción vigente -->
+    <div data-promo-after hidden class="reveal mt-12 rounded-card bg-blue text-white p-8 sm:p-10 lg:p-12 grid lg:grid-cols-[1fr_auto] gap-8 items-center">
       <div>
-        <p class="font-heading font-extrabold text-[3.25rem] sm:text-7xl lg:text-8xl tracking-[-0.04em] leading-none num">$1.000.000</p>
-        <p class="mt-3 font-heading font-bold text-xl sm:text-2xl text-soft">COP por participante</p>
-        <p class="mt-5 text-ink">Primera cohorte, virtual en vivo.</p>
+        <p class="text-lg text-white/90">Valor de la formación</p>
+        <p class="mt-2 font-extrabold text-[3.1rem] sm:text-7xl tracking-[-0.04em] leading-none num">$1.000.000 <span class="text-2xl font-bold tracking-normal text-white/85">COP</span></p>
+        <p class="mt-4 text-white/90">Por participante. Primera cohorte, inicio previsto el 5 de diciembre de 2026.</p>
       </div>
-      <a href="#registro" class="btn btn-primary inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
+      <a href="#registro" class="btn inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap bg-white text-blue hover:bg-sky">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
     </div>
 
-    <!-- Beneficios -->
-    <h3 class="reveal mt-20 font-heading font-bold text-2xl sm:text-3xl tracking-[-0.02em]">Todo lo que incluye tu inversión</h3>
-    <ul class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4">
-      <li class="benefit reveal rounded-card bg-accent p-8 flex flex-col">
-        <i class="ph ph-video-camera text-3xl text-white"></i>
-        <p class="mt-8 font-heading font-extrabold text-6xl tracking-[-0.04em] leading-none num">16 h</p>
-        <h4 class="mt-3 font-heading font-bold text-xl">de formación en vivo</h4>
-        <p class="mt-2 text-white/90">8 sesiones de 2 horas con los formadores de Campuslands, orientadas al aprendizaje práctico de IA.</p>
-      </li>
-      <li class="benefit reveal rounded-card bg-surface2 p-8 flex flex-col">
-        <i class="ph ph-users-three text-3xl text-accent2"></i>
-        <p class="mt-8 font-heading font-extrabold text-6xl tracking-[-0.04em] leading-none num text-accent2">2 h</p>
-        <h4 class="mt-3 font-heading font-bold text-xl">semanales de mentoría grupal</h4>
-        <p class="mt-2 text-soft">Acompañamiento técnico para resolver dudas, recibir orientación y avanzar en lo aprendido.</p>
-      </li>
-      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
-        <i class="ph ph-certificate text-3xl text-accent2"></i>
-        <h4 class="mt-8 font-heading font-bold text-xl">Certificación de Campuslands</h4>
-        <p class="mt-2 text-soft">Certificación académica conforme a los requisitos establecidos para el programa.</p>
-      </li>
-      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
-        <i class="ph ph-files text-3xl text-accent2"></i>
-        <h4 class="mt-8 font-heading font-bold text-xl">Plantillas y recursos prácticos</h4>
-        <p class="mt-2 text-soft">Materiales base para estructurar instrucciones de IA y empezar a diseñar asistentes o agentes a tu medida.</p>
-      </li>
-      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
-        <i class="ph ph-users text-3xl text-accent2"></i>
-        <h4 class="mt-8 font-heading font-bold text-xl">Acceso a la comunidad NOVA</h4>
-        <p class="mt-2 text-soft">Un espacio de intercambio y aprendizaje compartido entre participantes.</p>
-      </li>
-      <li class="benefit reveal rounded-card bg-surface p-8 flex flex-col">
-        <i class="ph ph-chats-teardrop text-3xl text-accent2"></i>
-        <h4 class="mt-8 font-heading font-bold text-xl">Canal de apoyo durante la formación</h4>
-        <p class="mt-2 text-soft">Un espacio grupal para plantear inquietudes sobre las clases y los ejercicios.</p>
-      </li>
+    <h3 class="reveal mt-16 font-bold text-2xl sm:text-3xl">Todo lo que incluye tu inversión</h3>
+    <ul class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <li class="reveal lift rounded-card bg-violet text-white p-8"><i class="ph-fill ph-video-camera text-3xl"></i><p class="mt-6 font-extrabold text-6xl leading-none num">20 h</p><h4 class="mt-3 font-bold text-xl">de formación práctica</h4><p class="mt-2 text-white/90">20 módulos de 1 hora con los formadores de Campuslands.</p></li>
+      <li class="reveal lift rounded-card bg-sky p-8"><i class="ph-fill ph-users-three text-3xl text-blue"></i><p class="mt-6 font-extrabold text-6xl leading-none num text-blue">2 h</p><h4 class="mt-3 font-bold text-xl">semanales de mentoría grupal</h4><p class="mt-2 text-muted">Acompañamiento para resolver dudas y avanzar en lo aprendido.</p></li>
+      <li class="reveal lift card p-8"><i class="ph-fill ph-certificate text-3xl text-violet"></i><h4 class="mt-6 font-bold text-xl">Certificación de Campuslands</h4><p class="mt-2 text-muted">Conforme a los requisitos establecidos para el programa.</p></li>
+      <li class="reveal lift card p-8"><i class="ph-fill ph-copy text-3xl text-pink"></i><h4 class="mt-6 font-bold text-xl">20 entregables y plantillas</h4><p class="mt-2 text-muted">Prompts, agentes, respuestas, marca, contenido, landing y mini app.</p></li>
+      <li class="reveal lift card p-8"><i class="ph-fill ph-users text-3xl text-green"></i><h4 class="mt-6 font-bold text-xl">Acceso a la comunidad NOVA</h4><p class="mt-2 text-muted">Intercambio y aprendizaje compartido entre participantes.</p></li>
+      <li class="reveal lift card p-8"><i class="ph-fill ph-chats-teardrop text-3xl text-cyan"></i><h4 class="mt-6 font-bold text-xl">Canal de apoyo</h4><p class="mt-2 text-muted">Un espacio grupal para tus dudas sobre las clases y los ejercicios.</p></li>
     </ul>
-
-    <!-- Frase destacada y cierre -->
-    <div class="reveal mt-20 rounded-card bg-surface2 p-8 sm:p-12 lg:p-16 grid lg:grid-cols-[1.4fr_1fr] gap-10 items-center">
-      <div>
-        <p class="font-heading font-extrabold text-2xl sm:text-[2rem] lg:text-4xl tracking-[-0.03em] leading-[1.15]">No tienes que aprenderlo todo por tu cuenta.</p>
-        <p class="mt-5 text-lg text-soft max-w-[48ch]">Aprende con un docente, practica con recursos y cuenta con un espacio de apoyo para avanzar.</p>
-      </div>
-      <div class="lg:justify-self-end w-full lg:w-auto">
-        <a href="#registro" class="btn btn-primary w-full lg:w-auto inline-flex justify-center items-center gap-2 rounded-full px-10 py-5 text-lg font-semibold whitespace-nowrap">Quiero inscribirme <i class="ph ph-arrow-right"></i></a>
-        <p class="mt-4 text-[15px] text-soft max-w-[34ch]">El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
-      </div>
-    </div>
   </div>
 </section>
 
 <!-- ================= PREGUNTAS FRECUENTES ================= -->
-<section id="preguntas" class="section px-5 sm:px-8 bg-night2">
+<section id="preguntas" class="section px-5 sm:px-8 bg-white">
   <div class="max-w-page mx-auto grid lg:grid-cols-[.8fr_1.2fr] gap-10 lg:gap-16">
     <div>
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Preguntas frecuentes.</h2>
-      <p class="reveal mt-6 text-lg text-soft">¿Tienes otra duda? Un asesor te la resuelve.</p>
-      <a href="#registro" class="reveal link-arrow mt-6 inline-flex items-center gap-2 font-semibold text-accent2 hover:text-ink transition">Ir al formulario <i class="ph ph-arrow-right"></i></a>
+      <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Preguntas frecuentes.</h2>
+      <p class="reveal mt-5 text-lg text-muted">¿Tienes otra duda? Un asesor te la resuelve.</p>
     </div>
-
     <div class="space-y-3">
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Necesito conocimientos de programación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">No necesitas saber programar. Se recomienda contar con conocimientos digitales básicos.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Cuánto dura la formación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">16 horas en vivo: 8 sesiones de 2 horas con los formadores de Campuslands, más 2 horas semanales de mentoría grupal.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Quién dicta la formación? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">Campuslands: sus docentes imparten las 8 sesiones en vivo y entregan la certificación. NOVA acompaña con la mentoría, la comunidad y el canal de apoyo.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿La formación es virtual? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">Sí. Las sesiones se desarrollan en modalidad virtual en vivo.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Recibiré certificado? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">Sí. Campuslands entrega la certificación conforme a los requisitos académicos establecidos.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Tendré apoyo si tengo dudas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">Sí. Cuentas con 2 horas semanales de mentoría grupal y un canal de apoyo para dudas sobre las clases y los ejercicios.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Hasta cuándo es el precio de $600.000? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">El valor de la formación es $1.000.000 COP. Si completas el pago hasta el 10 de noviembre, pagas $600.000 y ahorras $400.000.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Puedo pagar en cuotas? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">Consulta con un asesor las condiciones de pago vigentes.</p>
-      </details>
-      <details class="faq reveal group rounded-2xl bg-surface open:bg-surface2 transition-colors">
-        <summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-heading font-semibold text-lg">¿Registrarme reserva mi cupo? <i class="faq-icon ph ph-plus text-accent2 text-xl shrink-0 transition-transform"></i></summary>
-        <p class="px-6 pb-6 -mt-1 text-soft">No. El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
-      </details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Necesito saber de tecnología? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">No. La formación empieza desde cero. Solo necesitas computador, internet y una cuenta de Google.</p></details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Tengo que pagar herramientas? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">No. Usamos solo versiones gratuitas, sin planes ni tarjeta. Cada herramienta pone sus propios límites de uso, y estos pueden cambiar.</p></details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Cuánto dura y cómo son las sesiones? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">20 horas en 20 módulos: 10 sesiones de 2 horas o 20 de 1 hora, en modalidad virtual o presencial. 20 % explicación y 80 % práctica.</p></details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Quién dicta la formación? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">Campuslands: sus docentes imparten los módulos y entregan la certificación. NOVA acompaña con la mentoría, la comunidad y el canal de apoyo.</p></details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Practico con mi propio negocio? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">Sí. Trabajas con tus productos, tus clientes y tus números, y cada módulo deja un entregable listo para usar.</p></details>
+      <details data-promo-only class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Hasta cuándo es el 50 % de descuento? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">El valor de la formación es $1.000.000 COP. Si completas el pago hasta el 30 de noviembre, pagas $500.000 y ahorras $500.000. La formación inicia el 5 de diciembre.</p></details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Puedo pagar en cuotas? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">Consulta con un asesor las condiciones de pago vigentes.</p></details>
+      <details class="faq reveal rounded-2xl bg-paper border border-line open:border-blue transition-colors"><summary class="flex justify-between items-center gap-4 cursor-pointer p-6 font-semibold text-lg">¿Registrarme reserva mi cupo? <i class="faq-icon ph ph-plus text-blue text-xl shrink-0 transition-transform"></i></summary><p class="px-6 pb-6 -mt-1 text-muted">No. El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p></details>
     </div>
   </div>
 </section>
@@ -757,96 +531,47 @@
 <section id="registro" class="section px-5 sm:px-8">
   <div class="max-w-page mx-auto grid lg:grid-cols-[.9fr_1.1fr] gap-12 lg:gap-16 items-start">
     <div>
-      <h2 class="reveal font-heading font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.05]">Tu siguiente paso comienza aquí.</h2>
-      <p class="reveal mt-6 text-lg text-soft max-w-[48ch]">Déjanos tus datos y un asesor te explicará el contenido, la inversión y cómo participar.</p>
-
-      <ol class="mt-12 space-y-7">
-        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-accent text-white grid place-items-center"><i class="ph ph-note-pencil text-xl"></i></span><div><h3 class="font-heading font-bold text-lg">Completa el formulario</h3><p class="text-soft mt-1">Toma menos de un minuto.</p></div></li>
-        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-whatsapp-logo text-xl"></i></span><div><h3 class="font-heading font-bold text-lg">Un asesor te contacta</h3><p class="text-soft mt-1">Por WhatsApp o correo, en el horario que prefieras.</p></div></li>
-        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-surface2 text-accent2 grid place-items-center"><i class="ph ph-seal-check text-xl"></i></span><div><h3 class="font-heading font-bold text-lg">Confirmas tu matrícula</h3><p class="text-soft mt-1">Te explicamos el proceso de inscripción y pago.</p></div></li>
+      <h2 class="reveal font-extrabold text-[2rem] sm:text-5xl tracking-[-0.03em] leading-[1.08]">Tu negocio, con superpoderes.</h2>
+      <p class="reveal mt-5 text-lg text-muted max-w-[46ch]">20 horas para que tu negocio trabaje contigo, no al revés. Déjanos tus datos y un asesor te explica todo.</p>
+      <div class="reveal mt-8 flex flex-wrap gap-2">
+        <span class="rounded-full bg-sky px-4 py-2 font-semibold text-ink"><i class="ph-fill ph-clock text-blue"></i> Ahorra tiempo</span>
+        <span class="rounded-full bg-rose px-4 py-2 font-semibold text-ink"><i class="ph-fill ph-trend-up text-pink"></i> Vende más</span>
+        <span class="rounded-full bg-lav px-4 py-2 font-semibold text-ink"><i class="ph-fill ph-chart-bar text-violet"></i> Decide con datos</span>
+      </div>
+      <ol class="mt-10 space-y-6">
+        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-blue text-white grid place-items-center"><i class="ph ph-note-pencil text-xl"></i></span><div><h3 class="font-bold text-lg">Completa el formulario</h3><p class="text-muted">Toma menos de un minuto.</p></div></li>
+        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-mint text-green grid place-items-center"><i class="ph ph-whatsapp-logo text-xl"></i></span><div><h3 class="font-bold text-lg">Un asesor te contacta</h3><p class="text-muted">Por WhatsApp o correo, en el horario que prefieras.</p></div></li>
+        <li class="reveal flex gap-4 items-start"><span class="h-12 w-12 shrink-0 rounded-full bg-lav text-violet grid place-items-center"><i class="ph ph-seal-check text-xl"></i></span><div><h3 class="font-bold text-lg">Confirmas tu matrícula</h3><p class="text-muted">Te explicamos el proceso de inscripción y pago.</p></div></li>
       </ol>
     </div>
 
     <div class="reveal">
       <!-- Envía los datos a Google Sheets mediante Google Apps Script.
            Los atributos name existentes se conservan para no romper las columnas ya mapeadas. -->
-      <form id="lead-form" novalidate class="rounded-card bg-surface p-6 sm:p-10 space-y-5">
-        <div>
-          <label for="f-nombre" class="block text-[15px] font-medium text-soft mb-2">Nombre completo *</label>
-          <input id="f-nombre" type="text" name="nombre" required autocomplete="name" class="field" />
-        </div>
-
+      <form id="lead-form" novalidate class="card p-6 sm:p-10 space-y-5">
+        <div><label for="f-nombre" class="block text-[15px] font-medium text-muted mb-2">Nombre completo *</label><input id="f-nombre" type="text" name="nombre" required autocomplete="name" class="field" /></div>
         <div class="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label for="f-whatsapp" class="block text-[15px] font-medium text-soft mb-2">WhatsApp *</label>
-            <input id="f-whatsapp" type="tel" name="whatsapp" required autocomplete="tel" inputmode="tel" pattern="[\d\s\+\(\)\-]{7,}" placeholder="300 123 4567" class="field" />
-          </div>
-          <div>
-            <label for="f-correo" class="block text-[15px] font-medium text-soft mb-2">Correo electrónico *</label>
-            <input id="f-correo" type="email" name="correo" required autocomplete="email" placeholder="tucorreo@ejemplo.com" class="field" />
-          </div>
+          <div><label for="f-whatsapp" class="block text-[15px] font-medium text-muted mb-2">WhatsApp *</label><input id="f-whatsapp" type="tel" name="whatsapp" required autocomplete="tel" inputmode="tel" pattern="[\d\s\+\(\)\-]{7,}" placeholder="300 123 4567" class="field" /></div>
+          <div><label for="f-correo" class="block text-[15px] font-medium text-muted mb-2">Correo electrónico *</label><input id="f-correo" type="email" name="correo" required autocomplete="email" placeholder="tucorreo@ejemplo.com" class="field" /></div>
         </div>
-
-        <div>
-          <label for="f-etapa" class="block text-[15px] font-medium text-soft mb-2">¿Cuál es tu situación actual? *</label>
-          <select id="f-etapa" name="etapa" required class="field">
-            <option value="">Selecciona una opción</option>
-            <option>Tengo una idea de negocio</option>
-            <option>Tengo un negocio activo</option>
-            <option>Trabajo en una empresa</option>
-            <option>Otra situación</option>
-          </select>
-        </div>
-
-        <div>
-          <label for="f-negocio" class="block text-[15px] font-medium text-soft mb-2">Cuéntanos brevemente tu idea, negocio o cargo</label>
-          <input id="f-negocio" type="text" name="negocio" placeholder="Ej.: tienda online, consultoría, analista de ventas" class="field" />
-        </div>
-
+        <div><label for="f-etapa" class="block text-[15px] font-medium text-muted mb-2">¿Cuál es tu situación actual? *</label>
+          <select id="f-etapa" name="etapa" required class="field"><option value="">Selecciona una opción</option><option>Tengo un negocio activo</option><option>Tengo una idea de negocio</option><option>Trabajo en una empresa</option><option>Otra situación</option></select></div>
+        <div><label for="f-negocio" class="block text-[15px] font-medium text-muted mb-2">¿Qué tipo de negocio tienes?</label><input id="f-negocio" type="text" name="negocio" placeholder="Ej.: tienda de barrio, peluquería, ventas por redes" class="field" /></div>
         <div class="grid sm:grid-cols-2 gap-5">
-          <div>
-            <label for="f-objetivo" class="block text-[15px] font-medium text-soft mb-2">¿Dónde quieres aplicar la IA?</label>
-            <select id="f-objetivo" name="objetivo" class="field">
-              <option value="">Selecciona una opción</option>
-              <option>Investigar o validar una idea</option>
-              <option>Marketing y contenido</option>
-              <option>Ventas y atención al cliente</option>
-              <option>Productividad y organización</option>
-              <option>Procesos de mi trabajo</option>
-            </select>
-          </div>
-          <!-- Se conserva name="asistencia" para no romper la columna de la hoja; ahora guarda el horario de contacto preferido. -->
-          <div>
-            <label for="f-horario" class="block text-[15px] font-medium text-soft mb-2">¿Cuándo te contactamos?</label>
-            <select id="f-horario" name="asistencia" class="field">
-              <option value="">Selecciona una opción</option>
-              <option>Mañana</option>
-              <option>Mediodía</option>
-              <option>Tarde</option>
-              <option>Noche (después de las 6 p. m.)</option>
-            </select>
-          </div>
+          <div><label for="f-objetivo" class="block text-[15px] font-medium text-muted mb-2">¿Qué quieres mejorar primero?</label>
+            <select id="f-objetivo" name="objetivo" class="field"><option value="">Selecciona una opción</option><option>Atender mejor a mis clientes</option><option>Vender más en redes</option><option>Organizar mis finanzas</option><option>Ordenar inventario y operación</option><option>Tener presencia en internet</option></select></div>
+          <!-- Se conserva name="asistencia" para no romper la columna de la hoja; guarda el horario de contacto preferido. -->
+          <div><label for="f-horario" class="block text-[15px] font-medium text-muted mb-2">¿Cuándo te contactamos?</label>
+            <select id="f-horario" name="asistencia" class="field"><option value="">Selecciona una opción</option><option>Mañana</option><option>Mediodía</option><option>Tarde</option><option>Noche (después de las 6 p. m.)</option></select></div>
         </div>
-
-        <!-- PENDIENTE: enlazar la política de tratamiento de datos cuando esté publicada. -->
-        <label class="flex gap-3 items-start text-[15px] text-soft cursor-pointer">
-          <input type="checkbox" name="autorizacion" value="Sí" required class="mt-0.5 h-5 w-5 shrink-0 accent-[#2E66E0]" />
+        <label class="flex gap-3 items-start text-[15px] text-muted cursor-pointer">
+          <input type="checkbox" name="autorizacion" value="Sí" required class="mt-0.5 h-5 w-5 shrink-0 accent-[#1b6ef3]" />
           <span>Autorizo a NOVA a contactarme y a tratar mis datos para enviarme información sobre el programa. *</span>
         </label>
-
-        <p id="form-error" role="alert" class="hidden rounded-xl bg-[#F07A7A]/15 px-4 py-3 text-[15px] text-[#FFC2C2]"></p>
-
-        <button type="submit" id="form-btn" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold disabled:opacity-60 disabled:pointer-events-none">
-          Enviar mis datos <i class="ph ph-paper-plane-tilt"></i>
-        </button>
-        <p class="text-[14px] text-soft text-center">El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
+        <p id="form-error" role="alert" class="hidden rounded-xl bg-[#fde8e8] px-4 py-3 text-[15px] text-[#b42318]"></p>
+        <button type="submit" id="form-btn" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold disabled:opacity-60 disabled:pointer-events-none">Enviar mis datos <i class="ph ph-paper-plane-tilt"></i></button>
+        <p class="text-[14px] text-muted text-center">El formulario es de registro de interés. La matrícula se confirma al finalizar el proceso de inscripción y pago.</p>
       </form>
-
-      <div id="form-success" class="hidden rounded-card bg-surface p-10 text-center" tabindex="-1">
-        <span class="inline-grid place-items-center h-16 w-16 rounded-full bg-accent text-white"><i class="ph ph-check text-3xl"></i></span>
-        <h3 class="mt-5 font-heading font-bold text-2xl">¡Recibimos tus datos!</h3>
-        <p class="mt-3 text-soft max-w-[40ch] mx-auto">Un asesor te contactará por WhatsApp o correo para explicarte el programa y el proceso de matrícula.</p>
-      </div>
     </div>
   </div>
 </section>
@@ -854,24 +579,22 @@
 </main>
 
 <!-- ================= FOOTER ================= -->
-<footer class="px-5 sm:px-8 pt-20 pb-32 sm:pb-14 bg-night2 overflow-hidden">
+<footer class="px-5 sm:px-8 pt-20 pb-32 sm:pb-14 bg-ink text-white overflow-hidden">
   <div class="max-w-page mx-auto">
-    <p class="font-heading font-extrabold tracking-[-0.04em] leading-[.9] text-[17vw] lg:text-[12.5rem] text-surface2 select-none" aria-hidden="true">NOVA</p>
-    <div class="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-6 text-[15px] text-soft">
+    <p class="font-extrabold tracking-[-0.04em] leading-[.9] text-[17vw] lg:text-[12.5rem] text-white/10 select-none" aria-hidden="true">NOVA</p>
+    <div class="mt-10 flex flex-col md:flex-row md:items-end justify-between gap-6 text-[15px] text-white/75">
       <div class="flex items-center gap-3">
         <img src="assets/logo-nova.png" alt="" class="h-10 w-10 object-contain" />
-        <div>
-          <p class="font-heading font-bold text-ink text-lg">NOVA</p>
-          <p>Formación práctica en inteligencia artificial.</p>
-        </div>
+        <div><p class="font-bold text-white text-lg">NOVA</p><p>IA para el empresario de a pie.</p></div>
       </div>
       <div class="flex items-center gap-3"><span>Formación a cargo de</span><img src="assets/campuslands-blanco.webp" alt="Campuslands" class="h-7 w-auto" loading="lazy" /></div>
       <p>© <span id="year">2026</span> NOVA</p>
-    </div>  </div>
+    </div>
+  </div>
 </footer>
 
 <!-- Barra CTA fija en móvil -->
-<div id="mobile-cta" class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-night px-5 py-3">
+<div id="mobile-cta" class="sm:hidden fixed bottom-0 inset-x-0 z-40 bg-white border-t border-line px-5 py-3">
   <a href="#registro" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-6 py-3.5 font-semibold">Quiero conocer el programa <i class="ph ph-arrow-right"></i></a>
 </div>
 
@@ -880,227 +603,194 @@
   const CONFIG = {
     GOOGLE_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbwcQAzPrJ8IPu59U9z1uU1YT9HVudC116q8fXAEvXuDsYzS9M5Gc81X2W9L9dXSsAH1/exec",
   };
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // ---- LA RUTA: 5 bloques, 20 módulos (contenido de la plantilla) ----
+  const RUTA = [
+    { n: 1, titulo: 'Mi oficina con IA', resumen: 'Tu asistente, prompts, carpetas y proyectos', color: '#1b6ef3', claro: '#dcedff', icono: 'ph-desktop', modulos: [
+      ['IA gratis para mi negocio', 'Qué puede hacer por ti, qué no, y si te sirve más ChatGPT o Claude.', 'Tu asistente elegido y listo'],
+      ['Pedirle bien a la IA', 'La fórmula: rol + contexto + tarea + formato.', 'Tu libreta de 25 prompts'],
+      ['Mi oficina digital ordenada', 'La carpeta de tu negocio en el PC, con una estructura estándar.', 'Las carpetas de tu negocio'],
+      ['Proyectos que conocen mi negocio', 'Instrucciones + archivos + carpetas = un asistente que sabe quién eres.', 'Ficha del negocio y proyecto creado'] ] },
+    { n: 2, titulo: 'Mi equipo de agentes', resumen: 'Finanzas, RR. HH., operación y archivos', color: '#8b3dff', claro: '#efe4ff', icono: 'ph-robot', modulos: [
+      ['Agente financiero', 'Ventas, gastos, precios y flujo de caja, con una plantilla lista.', 'Tablero de caja mensual'],
+      ['Agente de RR. HH.', 'Perfiles de cargo, turnos, inducción y comunicados.', 'Kit para contratar y organizar turnos'],
+      ['Agente de operación', 'Inventario, pedidos y proveedores bajo control.', 'Control de inventario y pedidos'],
+      ['Agentes conectados a tus archivos', 'Asistentes que leen las carpetas de tu negocio y responden por ti.', 'Un agente conectado a tu carpeta'] ] },
+    { n: 3, titulo: 'Clientes felices', resumen: 'Respuestas, WhatsApp, quejas y cotizaciones', color: '#d4127a', claro: '#ffe3f1', icono: 'ph-smiley', modulos: [
+      ['Respuestas que venden', 'Un banco de respuestas para WhatsApp, Instagram y Facebook.', '30 respuestas listas para copiar'],
+      ['WhatsApp Business al máximo', 'Catálogo, respuestas rápidas, bienvenida, ausencia y etiquetas.', 'Tu WhatsApp configurado'],
+      ['Quejas, reseñas y posventa', 'Responder con calma y convertir una queja en un cliente fiel.', 'Protocolo para quejas y reseñas'],
+      ['Cotizaciones en minutos', 'Cotizaciones y propuestas con tu marca, sin empezar de cero.', 'Plantilla de cotización lista'] ] },
+    { n: 4, titulo: 'Marketing ligero', resumen: 'Marca, contenido, Google Flow y diseño', color: '#0a8ea0', claro: '#d9f6fa', icono: 'ph-megaphone', modulos: [
+      ['Mi marca en un día', 'Voz, colores, eslogan y un logo sencillo.', 'Mini manual de marca'],
+      ['Contenido para 30 días', 'Ideas, textos y hashtags para un mes, en una hora.', 'Calendario de redes del mes'],
+      ['Videos con Google Flow', 'Clips cortos para reels e historias, a partir de una idea.', '3 videos de tu negocio'],
+      ['Fotos y piezas gráficas', 'Fotos de producto mejoradas e imágenes para publicar.', 'Pack de 10 piezas'] ] },
+    { n: 5, titulo: 'Mi negocio en internet', resumen: 'Landing, Google Maps, mini apps y proyecto final', color: '#16a34a', claro: '#e3f9ea', icono: 'ph-globe', modulos: [
+      ['Landing page prediseñada', 'Una plantilla lista que la IA llena con tu negocio, en tu proyecto local.', 'Tu página publicada'],
+      ['Que me encuentren', 'Perfil de Empresa en Google, botón de WhatsApp y link en la bio.', 'Tu negocio en Google Maps'],
+      ['Mini apps para mi negocio', 'Calculadora de precios, registro de pedidos o agenda de citas, en tu carpeta local.', 'Tu primera app propia'],
+      ['Mi sistema de IA', 'Proyecto final: todo conectado, una demostración y tu plan a seguir.', 'Tu sistema funcionando y un plan de 90 días'] ] },
+  ];
+  (function () {
+    const lista = document.getElementById('bloques');
+    const panel = document.getElementById('bloque-panel');
+    const pad = v => String(v).padStart(2, '0');
+    lista.innerHTML = RUTA.map((b, i) => `
+      <button role="tab" id="blk-${b.n}" aria-controls="bloque-panel" aria-selected="${i === 0}" tabindex="${i === 0 ? 0 : -1}"
+        class="blk flex items-center gap-4 rounded-2xl bg-white border border-line px-4 py-4 text-left" style="--c:${b.color}">
+        <span class="blk-num h-11 w-11 shrink-0 rounded-xl grid place-items-center" style="background:${b.claro};color:${b.color}"><i class="ph-fill ${b.icono} text-xl"></i></span>
+        <span><span class="block text-[13px] font-semibold opacity-80">Bloque ${b.n} · M${(b.n - 1) * 4 + 1}–M${b.n * 4}</span><span class="block font-bold text-lg leading-tight">${b.titulo}</span></span>
+      </button>`).join('');
+    function show(i) {
+      const b = RUTA[i];
+      panel.setAttribute('aria-labelledby', 'blk-' + b.n);
+      panel.innerHTML = `<div class="panel">
+        <p class="font-semibold" style="color:${b.color}">Bloque ${b.n} · Módulos ${(b.n - 1) * 4 + 1} a ${b.n * 4} · 4 horas</p>
+        <h3 class="mt-1 font-extrabold text-2xl sm:text-3xl">${b.titulo}</h3>
+        <ul class="mt-6 grid sm:grid-cols-2 gap-3">${b.modulos.map((m, k) => `
+          <li class="rounded-2xl p-5" style="background:${b.claro}">
+            <p class="font-extrabold text-sm num" style="color:${b.color}">${pad((b.n - 1) * 4 + k + 1)} · 1 h</p>
+            <h4 class="mt-1 font-bold text-lg leading-snug">${m[0]}</h4>
+            <p class="mt-1 text-[15px] text-muted">${m[1]}</p>
+            <p class="mt-3 text-[15px] font-semibold"><i class="ph-fill ph-gift" style="color:${b.color}"></i> Te llevas: ${m[2]}</p>
+          </li>`).join('')}
+        </ul></div>`;
+    }
+    const tabs = Array.from(lista.querySelectorAll('[role="tab"]'));
+    function select(i, focus) {
+      tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === i)); t.tabIndex = k === i ? 0 : -1; });
+      show(i); if (focus) tabs[i].focus();
+    }
+    tabs.forEach((t, i) => {
+      t.addEventListener('click', () => select(i));
+      t.addEventListener('keydown', e => {
+        const k = { ArrowDown: 1, ArrowRight: 1, ArrowUp: -1, ArrowLeft: -1 }[e.key];
+        if (!k) return; e.preventDefault(); select((i + k + tabs.length) % tabs.length, true);
+      });
+    });
+    show(0);
+  })();
 
   // ---- Menú móvil ----
   const menuBtn = document.getElementById('menu-btn');
   const menu = document.getElementById('mobile-menu');
-  function setMenu(open) {
-    menu.classList.toggle('open', open);
-    menuBtn.classList.toggle('open', open);
-    menuBtn.setAttribute('aria-expanded', String(open));
-  }
+  function setMenu(open) { menu.classList.toggle('open', open); menuBtn.classList.toggle('open', open); menuBtn.setAttribute('aria-expanded', String(open)); }
   menuBtn.addEventListener('click', () => setMenu(!menu.classList.contains('open')));
   menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
 
-  // ---- Entrada escalonada al aparecer cada sección ----
+  // ---- Entrada escalonada y contadores ----
+  function countUp(el) {
+    const to = +el.dataset.to; if (reduceMotion || !to) return;
+    const t0 = performance.now(), dur = 900;
+    const step = now => { const p = Math.min(1, (now - t0) / dur); el.textContent = Math.round(to * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(step); };
+    requestAnimationFrame(step);
+  }
   const reveals = document.querySelectorAll('.reveal');
-  if (!('IntersectionObserver' in window)) {
-    reveals.forEach(el => el.classList.add('is-visible'));
-  } else {
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); } });
+  if (!('IntersectionObserver' in window)) { reveals.forEach(el => el.classList.add('is-visible')); }
+  else {
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-visible'); e.target.querySelectorAll('.count').forEach(countUp); if (e.target.classList.contains('count')) countUp(e.target); io.unobserve(e.target); } });
     }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-    reveals.forEach((el) => {
-      const section = el.closest('section') || document.body;
-      const group = Array.from(section.querySelectorAll('.reveal'));
-      el.style.transitionDelay = Math.min(group.indexOf(el) % 6, 5) * 0.07 + 's';
+    reveals.forEach(el => {
+      const group = Array.from((el.closest('section') || document.body).querySelectorAll('.reveal'));
+      el.style.transitionDelay = Math.min(group.indexOf(el) % 6, 5) * 0.06 + 's';
       io.observe(el);
     });
   }
+  document.querySelectorAll('#hero .count').forEach(el => setTimeout(() => countUp(el), 400));
+
+  // ---- "$0 en herramientas": cuenta rápida de 99 a 0 cada vez que la tarjeta entra en pantalla ----
+  (function () {
+    const card = document.querySelector('.zero-card');
+    const el = card && card.querySelector('.zero-count');
+    if (!el || reduceMotion || !('IntersectionObserver' in window)) return;
+    let raf = 0;
+    function run() {
+      cancelAnimationFrame(raf);
+      const t0 = performance.now(), dur = 900, from = 99;
+      const step = now => {
+        const p = Math.min(1, (now - t0) / dur);
+        const eased = p === 1 ? 1 : 1 - Math.pow(2, -10 * p);   // easeOutExpo, como en la plantilla
+        el.textContent = Math.round(from * (1 - eased));
+        if (p < 1) raf = requestAnimationFrame(step);
+      };
+      el.textContent = from;
+      raf = requestAnimationFrame(step);
+    }
+    new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) run();
+      else { cancelAnimationFrame(raf); el.textContent = '99'; }  // lista para la próxima pasada
+    }), { threshold: 0.5 }).observe(card);
+  })();
 
   // ---- Barra CTA móvil: visible fuera del hero y del formulario ----
   const cta = document.getElementById('mobile-cta');
-  const visible = { hero: true, registro: false, masterclass: false };
-  const ctaObs = new IntersectionObserver((entries) => {
+  const visible = { hero: true, registro: false };
+  const ctaObs = new IntersectionObserver(entries => {
     entries.forEach(e => { visible[e.target.id] = e.isIntersecting; });
-    cta.classList.toggle('show', !visible.hero && !visible.registro && !visible.masterclass);
+    cta.classList.toggle('show', !visible.hero && !visible.registro);
   }, { threshold: 0.05 });
-  ['hero', 'registro', 'masterclass'].forEach(id => ctaObs.observe(document.getElementById(id)));
+  ['hero', 'registro'].forEach(id => ctaObs.observe(document.getElementById(id)));
 
-  // ---- Pestañas de públicos ----
-  const tabs = Array.from(document.querySelectorAll('[role="tab"]'));
-  function selectTab(tab) {
-    tabs.forEach(t => {
-      const on = t === tab;
-      t.setAttribute('aria-selected', String(on));
-      t.tabIndex = on ? 0 : -1;
-      document.getElementById(t.getAttribute('aria-controls')).hidden = !on;
-    });
-  }
-  tabs.forEach((tab, i) => {
-    tab.addEventListener('click', () => selectTab(tab));
-    tab.addEventListener('keydown', (e) => {
-      const keys = ['ArrowDown', 'ArrowRight', 'ArrowUp', 'ArrowLeft'];
-      if (!keys.includes(e.key)) return;
-      e.preventDefault();
-      const step = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : tabs.length - 1;
-      const next = tabs[(i + step) % tabs.length];
-      selectTab(next); next.focus();
-    });
-  });
-
-  // ---- FAQ: solo una pregunta abierta a la vez ----
-  document.querySelectorAll('details.faq').forEach(d => {
-    d.addEventListener('toggle', () => {
-      if (d.open) document.querySelectorAll('details.faq').forEach(o => { if (o !== d) o.open = false; });
-    });
-  });
+  // ---- FAQ: una pregunta abierta a la vez ----
+  document.querySelectorAll('details.faq').forEach(d => d.addEventListener('toggle', () => {
+    if (d.open) document.querySelectorAll('details.faq').forEach(o => { if (o !== d) o.open = false; });
+  }));
 
   // ---- Formulario ----
   const form = document.getElementById('lead-form');
   const errorEl = document.getElementById('form-error');
   const btn = document.getElementById('form-btn');
   const btnLabel = btn.innerHTML;
-
   function showError(msg) { errorEl.textContent = msg; errorEl.classList.remove('hidden'); }
-
-  form.addEventListener('submit', (event) => {
+  form.addEventListener('submit', event => {
     event.preventDefault();
     errorEl.classList.add('hidden');
-
     if (!form.checkValidity()) {
       const first = form.querySelector(':invalid');
-      const msgs = {
-        nombre: 'Escribe tu nombre completo.',
-        whatsapp: 'Escribe un número de WhatsApp válido.',
-        correo: 'Escribe un correo electrónico válido.',
-        etapa: 'Selecciona tu situación actual.',
-        autorizacion: 'Necesitamos tu autorización para poder contactarte.',
-      };
-      showError(msgs[first.name] || 'Revisa los campos marcados.');
-      first.focus();
-      return;
+      const msgs = { nombre: 'Escribe tu nombre completo.', whatsapp: 'Escribe un número de WhatsApp válido.', correo: 'Escribe un correo electrónico válido.', etapa: 'Selecciona tu situación actual.', autorizacion: 'Necesitamos tu autorización para poder contactarte.' };
+      showError(msgs[first.name] || 'Revisa los campos marcados.'); first.focus(); return;
     }
-
-    btn.disabled = true;
-    btn.textContent = 'Enviando…';
-
+    btn.disabled = true; btn.textContent = 'Enviando…';
     const data = Object.fromEntries(new FormData(form).entries());
     data.fecha = new Date().toISOString();
-
-    // Apps Script no responde con cabeceras CORS: la respuesta es opaca.
-    // Se asume éxito si no hay error de red.
+    // Apps Script no responde con cabeceras CORS: la respuesta es opaca. Se asume éxito si no hay error de red.
     fetch(CONFIG.GOOGLE_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) })
-      .then(() => {
-        // Lleva a la página de gracias (comunidad de WhatsApp y master class).
-        // El nombre se guarda solo en la sesión del navegador, nunca en la URL.
-        try { sessionStorage.setItem('nova_nombre', data.nombre || ''); } catch (e) {}
-        window.location.href = 'gracias.html';
-      })
-      .catch(() => {
-        showError('No pudimos enviar tus datos. Verifica tu conexión e inténtalo de nuevo.');
-        btn.disabled = false;
-        btn.innerHTML = btnLabel;
-      });
+      .then(() => { try { sessionStorage.setItem('nova_nombre', data.nombre || ''); } catch (e) {} window.location.href = 'gracias.html'; })
+      .catch(() => { showError('No pudimos enviar tus datos. Verifica tu conexión e inténtalo de nuevo.'); btn.disabled = false; btn.innerHTML = btnLabel; });
   });
 
   document.getElementById('year').textContent = new Date().getFullYear();
 
-  // ---- MASTER CLASS ----
-  // Viernes 30 de octubre de 2026, 6:30 p. m. hora de Colombia (UTC-5). Duración estimada: 60 min.
-  const MASTERCLASS = {
-    start: new Date('2026-10-30T18:30:00-05:00'),
-    minutes: 60,
-    whatsapp: 'https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC',
-    title: 'Master class gratuita NOVA: aprende y aplica IA a tu negocio',
-  };
-  (function () {
-    const start = MASTERCLASS.start.getTime();
-    const end = start + MASTERCLASS.minutes * 60000;
-    const els = { bar: document.getElementById('mc-bar'), when: document.getElementById('mc-bar-when'),
-      section: document.getElementById('masterclass'), live: document.getElementById('mc-live'),
-      countdown: document.getElementById('mc-countdown'), cal: document.getElementById('mc-cal') };
-    const parts = ['d', 'h', 'm', 's'].map(k => document.getElementById('mc-' + k));
-
-    // Enlace a Google Calendar
-    const fmt = t => new Date(t).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
-    els.cal.href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
-      + '&text=' + encodeURIComponent(MASTERCLASS.title)
-      + '&dates=' + fmt(start) + '/' + fmt(end)
-      + '&details=' + encodeURIComponent('Únete a la comunidad de WhatsApp para recibir el enlace de conexión: ' + MASTERCLASS.whatsapp)
-      + '&ctz=America/Bogota';
-
-    // "Hoy" / "mañana" según el día en Colombia
-    const dayKey = t => new Date(t - 5 * 3600000).toISOString().slice(0, 10);
-    // Devuelve [texto largo, texto corto para celular]
-    function label(now) {
-      if (now >= start) return ['Master class gratuita: en vivo ahora', 'Master class: en vivo ahora'];
-      const diffDays = Math.round((Date.parse(dayKey(start)) - Date.parse(dayKey(now))) / 86400000);
-      if (diffDays === 0) return ['Master class gratuita: hoy, 6:30 p. m.', 'Master class gratis: hoy, 6:30 p. m.'];
-      if (diffDays === 1) return ['Master class gratuita: mañana viernes, 6:30 p. m.', 'Master class gratis: mañana, 6:30 p. m.'];
-      return ['Master class gratuita: viernes 30 de octubre, 6:30 p. m.', 'Master class gratis: viernes 30, 6:30 p. m.'];
-    }
-    const shortEl = document.getElementById('mc-bar-short');
-
-    const pad = v => String(v).padStart(2, '0');
-    let prev = [];
-    function tick() {
-      const now = Date.now();
-      if (now >= end) {
-        // Terminó: se retira la invitación de toda la página
-        els.bar.hidden = true; els.section.hidden = true;
-        document.querySelectorAll('[data-mc-only]').forEach(a => a.hidden = true);
-        clearInterval(timer); return;
-      }
-      const [longText, shortText] = label(now);
-      els.when.textContent = longText; shortEl.textContent = shortText;
-      if (now >= start) { els.countdown.hidden = true; els.live.hidden = false; els.cal.hidden = true; return; }
-      const diff = start - now;
-      const vals = [Math.floor(diff / 86400000), pad(Math.floor(diff % 86400000 / 3600000)),
-                    pad(Math.floor(diff % 3600000 / 60000)), pad(Math.floor(diff % 60000 / 1000))].map(String);
-      vals.forEach((v, i) => {
-        if (v === prev[i]) return;
-        parts[i].textContent = v;
-        // Reinicia la animación solo en la cifra que cambió
-        parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick');
-      });
-      prev = vals;
-    }
-    tick();
-    const timer = setInterval(tick, 1000);
-  })();
 
   // ---- PROMOCIÓN ----
-  // $600.000 en vez de $1.000.000 pagando hasta el 10 de noviembre de 2026 (fin del día, hora de Colombia).
-  // Al vencer, la página muestra sola el precio regular y retira la promoción.
-  const PROMO = { end: new Date('2026-11-10T23:59:59-05:00') };
+  // 50 %: $500.000 en vez de $1.000.000 pagando hasta esta fecha (fin del día, hora de Colombia).
+  // Al vencer, la página muestra sola el precio regular. Para una nueva promoción, cambia la fecha.
+  const PROMO = { end: new Date('2026-11-30T23:59:59-05:00') };
   (function () {
     const end = PROMO.end.getTime();
     const parts = ['d', 'h', 'm', 's'].map(k => document.getElementById('pr-' + k));
-    const mcBar = document.getElementById('mc-bar');
-    const promoBar = document.getElementById('promo-bar');
-    const hero = document.getElementById('hero');
     const pad = v => String(v).padStart(2, '0');
     let prev = [];
-
-    function setBars(promoActive) {
-      // La barra de la master class tiene prioridad; después, la de la promoción
-      promoBar.hidden = !(promoActive && mcBar.hidden);
-      const anyBar = !mcBar.hidden || !promoBar.hidden;
-      document.documentElement.style.scrollPaddingTop = anyBar ? '120px' : '80px';
-      hero.classList.toggle('pt-32', anyBar); hero.classList.toggle('pt-24', !anyBar);
-    }
-
     function tick() {
       const now = Date.now();
       if (now > end) {
         document.querySelectorAll('[data-promo-only]').forEach(el => el.hidden = true);
         document.querySelectorAll('[data-promo-after]').forEach(el => { el.hidden = false; el.classList.add('is-visible'); });
-        setBars(false); clearInterval(timer); return;
+        // Sin barra de promoción, el encabezado vuelve a su altura normal
+        document.documentElement.style.scrollPaddingTop = '84px';
+        document.getElementById('hero').classList.replace('pt-32', 'pt-24');
+        clearInterval(timer); return;
       }
-      setBars(true);
       const diff = end - now;
-      const vals = [Math.floor(diff / 86400000), pad(Math.floor(diff % 86400000 / 3600000)),
-                    pad(Math.floor(diff % 3600000 / 60000)), pad(Math.floor(diff % 60000 / 1000))].map(String);
-      vals.forEach((v, i) => {
-        if (v === prev[i]) return;
-        parts[i].textContent = v;
-        parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick');
-      });
+      const vals = [Math.floor(diff / 86400000), pad(Math.floor(diff % 86400000 / 3600000)), pad(Math.floor(diff % 3600000 / 60000)), pad(Math.floor(diff % 60000 / 1000))].map(String);
+      vals.forEach((v, i) => { if (v === prev[i]) return; parts[i].textContent = v; parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick'); });
       prev = vals;
     }
-    tick();
     const timer = setInterval(tick, 1000);
+    tick();
   })();
 </script>
 </body>

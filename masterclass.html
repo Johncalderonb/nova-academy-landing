@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Master class gratuita · IA para el empresario de a pie · NOVA</title>
+<meta name="description" content="Inscríbete gratis a la master class de NOVA: aprende a usar IA gratuita para vender más y organizar tu negocio. Viernes 20 de noviembre, 7:00 p. m. (Colombia)." />
+<meta name="theme-color" content="#f7f8fc" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://johncalderonb.github.io/nova-academy-landing/masterclass.html" />
+<meta property="og:title" content="Master class gratuita: IA para tu negocio · Viernes 20 de noviembre, 7:00 p. m." />
+<meta property="og:description" content="Inscríbete gratis y recibe el enlace de conexión en la comunidad de WhatsApp." />
+<meta property="og:site_name" content="NOVA" />
+<meta property="og:locale" content="es_CO" />
+<meta property="og:image" content="https://johncalderonb.github.io/nova-academy-landing/assets/og-masterclass.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Master class gratuita: aprende y aplica IA a tu negocio. Viernes 20 de noviembre, 7:00 p. m." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Master class gratuita: IA para tu negocio" />
+<meta name="twitter:description" content="Viernes 20 de noviembre, 7:00 p. m. (Colombia). Inscríbete gratis." />
+<meta name="twitter:image" content="https://johncalderonb.github.io/nova-academy-landing/assets/og-masterclass.png" />
+<link rel="icon" href="assets/logo-nova.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+<link rel="stylesheet" href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+  tailwind.config = { theme: { extend: {
+    colors: { pink: '#ff1f8e', rose: '#ffe3f1', blue: '#1b6ef3', sky: '#dcedff', violet: '#8b3dff', lav: '#efe4ff',
+      green: '#16a34a', mint: '#e3f9ea', ink: '#0e1430', muted: '#5d6482', line: '#e7e9f3', paper: '#f7f8fc' },
+    fontFamily: { sans: ['Poppins', 'system-ui', 'sans-serif'] },
+    borderRadius: { card: '22px' }, maxWidth: { page: '1200px' } } } };
+</script>
+<style>
+  :root { --ease: cubic-bezier(0.23, 1, 0.32, 1); }
+  html { scroll-behavior: smooth; scroll-padding-top: 16px; }
+  body { background: #f7f8fc; color: #0e1430; overflow-x: clip; }
+  [hidden] { display: none !important; }
+  .num { font-variant-numeric: tabular-nums; }
+  .card { background: #fff; border: 1px solid #e7e9f3; border-radius: 22px; }
+  .hero-card { background: linear-gradient(150deg, #1b6ef3, #8b3dff 60%, #d4127a); }
+  @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
+  .rise { animation: rise .8s var(--ease) both; }
+  @keyframes tick { from { opacity: .3; transform: translateY(35%); } to { opacity: 1; transform: none; } }
+  .tick { animation: tick .35s var(--ease) both; }
+  @keyframes pulse-dot { 0%,100% { opacity: 1; } 50% { opacity: .35; } }
+  .live-dot { animation: pulse-dot 1.4s ease-in-out infinite; }
+  .btn { transition: transform .16s var(--ease), background-color .2s ease; }
+  @media (hover: hover) and (pointer: fine) { .btn:hover { transform: translateY(-2px); } }
+  .btn:active { transform: scale(.97); }
+  .btn-primary { background: #1b6ef3; color: #fff; } .btn-primary:hover { background: #1559c9; }
+  .btn-wa { background: #1F8F4E; color: #fff; } .btn-wa:hover { background: #197A42; }
+  .field { width: 100%; border-radius: 12px; background: #fff; border: 1px solid #d5d9e8; padding: 12px 14px; font-size: 16px; color: #0e1430; transition: border-color .2s, box-shadow .2s; }
+  .field::placeholder { color: #8a90a8; }
+  .field:focus { outline: none; border-color: #1b6ef3; box-shadow: 0 0 0 3px rgba(27,110,243,.2); }
+  .field:user-invalid { border-color: #dc2626; }
+  select.field { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235d6482' stroke-width='1.6' fill='none'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+  :focus-visible { outline: 2px solid #1b6ef3; outline-offset: 3px; }
+  @media (prefers-reduced-motion: reduce) { .rise, .tick, .live-dot { animation: none !important; opacity: 1 !important; transform: none !important; } .btn:hover { transform: none; } }
+</style>
+</head>
+<body class="font-sans antialiased">
+
+<header class="px-5 sm:px-8 bg-white border-b border-line">
+  <div class="max-w-page mx-auto h-16 flex items-center justify-between gap-4">
+    <div class="flex items-center gap-2.5">
+      <img src="assets/logo-nova.png" alt="" class="h-9 w-9 object-contain" />
+      <span class="font-bold">NOVA</span>
+    </div>
+    <button type="button" data-share-native class="btn inline-flex items-center gap-2 rounded-full bg-paper border border-line px-4 py-2 text-[15px] font-semibold"><i class="ph ph-share-network text-lg"></i> Compartir</button>
+  </div>
+</header>
+
+<main class="px-5 sm:px-8 py-10 sm:py-16">
+  <div class="max-w-page mx-auto grid lg:grid-cols-[1.05fr_.95fr] gap-6 lg:gap-10 items-start">
+
+    <!-- Información de la master class -->
+    <section class="rise hero-card rounded-card text-white p-8 sm:p-12">
+      <p id="mc-badge" class="inline-flex items-center gap-2 rounded-full bg-white/20 px-4 py-2 text-[15px] font-semibold"><i class="ph-fill ph-gift"></i> Master class 100% gratuita</p>
+      <p id="mc-live" class="inline-flex items-center gap-2 rounded-full bg-white px-4 py-2 text-[15px] font-bold text-ink" hidden><span class="live-dot h-2.5 w-2.5 rounded-full bg-green"></span> En vivo ahora</p>
+      <h1 class="mt-6 font-extrabold text-[1.95rem] sm:text-5xl leading-[1.08] tracking-[-0.03em]">Aprende y aplica IA a tu negocio.</h1>
+      <p class="mt-5 text-lg sm:text-xl text-white/90 max-w-[42ch]">Una sesión en vivo para que veas cómo vender más, organizarte mejor y atender a tus clientes con herramientas de IA gratuitas.</p>
+
+      <dl class="mt-8 grid grid-cols-2 gap-3">
+        <div class="rounded-2xl p-4" style="background:rgba(255,255,255,.14)"><dt class="text-[14px] text-white/85">Fecha</dt><dd id="mc-day" class="mt-1 font-bold text-lg">Viernes 20 de noviembre</dd></div>
+        <div class="rounded-2xl p-4" style="background:rgba(255,255,255,.14)"><dt class="text-[14px] text-white/85">Hora (Colombia)</dt><dd class="mt-1 font-bold text-lg">7:00 p. m.</dd></div>
+      </dl>
+
+      <div id="countdown" class="mt-8 flex gap-6" role="timer" aria-label="Tiempo para la master class">
+        <div><p class="font-extrabold text-5xl num leading-none overflow-hidden"><span id="cd-h" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-white/85">horas</p></div>
+        <div><p class="font-extrabold text-5xl num leading-none overflow-hidden"><span id="cd-m" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-white/85">min</p></div>
+        <div><p class="font-extrabold text-5xl num leading-none overflow-hidden"><span id="cd-s" class="inline-block">--</span></p><p class="mt-2 text-[14px] text-white/85">seg</p></div>
+      </div>
+
+      <a href="#mc-form" class="btn lg:hidden mt-8 w-full inline-flex justify-center items-center gap-2 rounded-full bg-white px-8 py-4 text-[17px] font-semibold text-blue">Inscribirme gratis <i class="ph ph-arrow-down"></i></a>
+      <ul class="mt-8 space-y-3 text-[17px]">
+        <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Qué puede hacer la IA gratuita por tu negocio</li>
+        <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Ejemplos reales para responder clientes, organizar tus números y crear contenido</li>
+        <li class="flex gap-3"><i class="ph-fill ph-check-circle text-2xl shrink-0"></i>Espacio para tus preguntas sobre la formación</li>
+      </ul>
+    </section>
+
+    <!-- Formulario -->
+    <section class="rise" style="animation-delay:.1s">
+      <form id="mc-form" novalidate class="card p-6 sm:p-9 space-y-5">
+        <div>
+          <h2 class="font-extrabold text-2xl sm:text-3xl tracking-[-0.02em]">Inscríbete gratis</h2>
+          <p class="mt-2 text-muted">Te toma menos de un minuto. Después te invitamos a la comunidad de WhatsApp, donde compartimos el enlace de conexión.</p>
+        </div>
+        <div><label for="m-nombre" class="block text-[15px] font-medium text-muted mb-2">Nombre completo *</label><input id="m-nombre" name="nombre" type="text" required autocomplete="name" class="field" /></div>
+        <div class="grid sm:grid-cols-2 gap-5">
+          <div><label for="m-whatsapp" class="block text-[15px] font-medium text-muted mb-2">WhatsApp *</label><input id="m-whatsapp" name="whatsapp" type="tel" required autocomplete="tel" inputmode="tel" pattern="[\d\s\+\(\)\-]{7,}" placeholder="300 123 4567" class="field" /></div>
+          <div><label for="m-correo" class="block text-[15px] font-medium text-muted mb-2">Correo electrónico *</label><input id="m-correo" name="correo" type="email" required autocomplete="email" placeholder="tucorreo@ejemplo.com" class="field" /></div>
+        </div>
+        <div><label for="m-negocio" class="block text-[15px] font-medium text-muted mb-2">¿Qué tipo de negocio tienes?</label><input id="m-negocio" name="negocio" type="text" placeholder="Ej.: tienda de barrio, peluquería, ventas por redes" class="field" /></div>
+        <div><label for="m-fuente" class="block text-[15px] font-medium text-muted mb-2">¿Cómo te enteraste?</label>
+          <select id="m-fuente" name="fuente" class="field"><option value="">Selecciona una opción</option><option>WhatsApp</option><option>Instagram</option><option>Facebook</option><option>TikTok</option><option>Me lo recomendaron</option><option>Otro</option></select></div>
+        <label class="flex gap-3 items-start text-[15px] text-muted cursor-pointer">
+          <input type="checkbox" name="autorizacion" value="Sí" required class="mt-0.5 h-5 w-5 shrink-0 accent-[#1b6ef3]" />
+          <span>Autorizo a NOVA a contactarme y a tratar mis datos para enviarme información sobre la master class y el programa. *</span>
+        </label>
+        <p id="m-error" role="alert" class="hidden rounded-xl bg-[#fde8e8] px-4 py-3 text-[15px] text-[#b42318]"></p>
+        <button id="m-btn" type="submit" class="btn btn-primary w-full inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold disabled:opacity-60 disabled:pointer-events-none">Inscribirme gratis <i class="ph ph-arrow-right"></i></button>
+      </form>
+
+      <!-- Inscripción exitosa -->
+      <div id="mc-ok" class="card p-8 sm:p-10 text-center" tabindex="-1" hidden>
+        <span class="inline-grid place-items-center h-16 w-16 rounded-full bg-blue text-white"><i class="ph ph-check text-3xl"></i></span>
+        <h2 class="mt-5 font-extrabold text-2xl sm:text-3xl">¡Listo<span id="ok-nombre"></span>, quedaste inscrito!</h2>
+        <p class="mt-3 text-muted text-lg max-w-[38ch] mx-auto">Último paso: únete a la comunidad de WhatsApp. Ahí compartimos el enlace de conexión antes de empezar.</p>
+        <a id="wa-btn" href="#" target="_blank" rel="noopener" class="btn btn-wa mt-7 w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 text-[17px] font-semibold"><i class="ph-fill ph-whatsapp-logo text-xl"></i> Unirme a la comunidad</a>
+        <a id="cal-btn" href="#" target="_blank" rel="noopener" class="btn mt-3 w-full sm:w-auto inline-flex justify-center items-center gap-2 rounded-full px-7 py-4 text-[17px] font-semibold bg-paper border border-line"><i class="ph ph-calendar-plus text-xl"></i> Agregar a mi calendario</a>
+        <div class="mt-8 pt-7 border-t border-line">
+          <p class="font-bold text-lg">¿Conoces a alguien con negocio? Invítalo</p>
+          <p class="mt-1 mb-4 text-muted">La master class es gratuita y el cupo es abierto.</p>
+        <div class="flex flex-wrap gap-2 justify-center">
+          <a data-share="whatsapp" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-[#1F8F4E] text-white px-5 py-3 font-semibold"><i class="ph-fill ph-whatsapp-logo text-xl"></i> WhatsApp</a>
+          <a data-share="facebook" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-[#1565d8] text-white px-5 py-3 font-semibold"><i class="ph-fill ph-facebook-logo text-xl"></i> Facebook</a>
+          <a data-share="x" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-3 font-semibold"><i class="ph-fill ph-x-logo text-xl"></i> X</a>
+          <a data-share="linkedin" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-[#0a66c2] text-white px-5 py-3 font-semibold"><i class="ph-fill ph-linkedin-logo text-xl"></i> LinkedIn</a>
+          <button type="button" data-share="copy" class="btn inline-flex items-center gap-2 rounded-full bg-paper border border-line px-5 py-3 font-semibold"><i class="ph ph-link text-xl"></i> <span>Copiar enlace</span></button>
+        </div>
+        </div>
+      </div>
+
+      <!-- Evento terminado -->
+      <div id="mc-ended" class="card p-8 sm:p-10 text-center" hidden>
+        <i class="ph-fill ph-calendar-x text-5xl text-violet"></i>
+        <h2 class="mt-4 font-extrabold text-2xl">Esta master class ya terminó</h2>
+        <p class="mt-3 text-muted text-lg">Únete a la comunidad de WhatsApp para enterarte de la próxima.</p>
+        <a href="https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC" target="_blank" rel="noopener" class="btn btn-wa mt-7 inline-flex justify-center items-center gap-2 rounded-full px-8 py-4 font-semibold"><i class="ph-fill ph-whatsapp-logo text-xl"></i> Unirme a la comunidad</a>
+      </div>
+    </section>
+  </div>
+
+  <!-- Compartir en redes -->
+  <section class="max-w-page mx-auto mt-6 card p-7 sm:p-10 text-center" aria-labelledby="share-title">
+    <span class="inline-grid place-items-center h-14 w-14 rounded-2xl bg-lav text-violet"><i class="ph-fill ph-megaphone text-3xl"></i></span>
+    <h2 id="share-title" class="mt-4 font-extrabold text-2xl sm:text-3xl tracking-[-0.02em]">Invita a más personas</h2>
+    <p class="mt-2 mb-6 text-muted text-lg">Comparte esta master class gratuita con emprendedores y dueños de negocio.</p>
+    <div class="flex flex-wrap gap-2 justify-center">
+          <a data-share="whatsapp" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-[#1F8F4E] text-white px-5 py-3 font-semibold"><i class="ph-fill ph-whatsapp-logo text-xl"></i> WhatsApp</a>
+          <a data-share="facebook" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-[#1565d8] text-white px-5 py-3 font-semibold"><i class="ph-fill ph-facebook-logo text-xl"></i> Facebook</a>
+          <a data-share="x" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-ink text-white px-5 py-3 font-semibold"><i class="ph-fill ph-x-logo text-xl"></i> X</a>
+          <a data-share="linkedin" target="_blank" rel="noopener" class="btn inline-flex items-center gap-2 rounded-full bg-[#0a66c2] text-white px-5 py-3 font-semibold"><i class="ph-fill ph-linkedin-logo text-xl"></i> LinkedIn</a>
+          <button type="button" data-share="copy" class="btn inline-flex items-center gap-2 rounded-full bg-paper border border-line px-5 py-3 font-semibold"><i class="ph ph-link text-xl"></i> <span>Copiar enlace</span></button>
+        </div>
+  </section>
+</main>
+
+<script>
+  // ---- CONFIGURACIÓN ----
+  const CONFIG = {
+    // URL /exec del Apps Script de la hoja "Inscritos Master Class NOVA - 20 nov 2026"
+    // (código en apps-script/masterclass.gs).
+    MASTERCLASS_SCRIPT_URL: "https://script.google.com/macros/s/AKfycbyLCWMyx5wBmASYQXv-V7CKln1z-oIu-v0J29iwXTtIJQZ5WNzm-zS0Q2X5dw1IeNJA/exec",
+    WHATSAPP_COMMUNITY_URL: "https://chat.whatsapp.com/BsJj35nm0iDB0No5YRw5oC",
+    START: new Date('2026-11-20T19:00:00-05:00'),   // viernes 20 de noviembre, 7:00 p. m. Colombia
+    MINUTES: 60,                                     // duración estimada
+    TITLE: 'Master class gratuita NOVA: aprende y aplica IA a tu negocio',
+  };
+
+  const start = CONFIG.START.getTime(), end = start + CONFIG.MINUTES * 60000;
+  document.getElementById('wa-btn').href = CONFIG.WHATSAPP_COMMUNITY_URL;
+  const fmt = t => new Date(t).toISOString().replace(/[-:]/g, '').replace(/\.\d{3}/, '');
+  document.getElementById('cal-btn').href = 'https://calendar.google.com/calendar/render?action=TEMPLATE'
+    + '&text=' + encodeURIComponent(CONFIG.TITLE) + '&dates=' + fmt(start) + '/' + fmt(end)
+    + '&details=' + encodeURIComponent('Únete a la comunidad de WhatsApp para recibir el enlace de conexión: ' + CONFIG.WHATSAPP_COMMUNITY_URL)
+    + '&ctz=America/Bogota';
+
+  // "Hoy" cuando el evento es el mismo día en Colombia
+  const dayKey = t => new Date(t - 5 * 3600000).toISOString().slice(0, 10);
+  if (dayKey(Date.now()) === dayKey(start)) document.getElementById('mc-day').textContent = 'Hoy, viernes 20 de noviembre';
+
+  // ---- Cuenta regresiva y estados del evento ----
+  const parts = ['h', 'm', 's'].map(k => document.getElementById('cd-' + k));
+  const pad = v => String(v).padStart(2, '0');
+  let prev = [];
+  function tick() {
+    const now = Date.now();
+    if (now >= end) {
+      document.getElementById('mc-form').hidden = true;
+      document.getElementById('mc-ok').hidden = true;
+      document.getElementById('mc-ended').hidden = false;
+      document.getElementById('countdown').hidden = true;
+      clearInterval(timer); return;
+    }
+    if (now >= start) {
+      document.getElementById('countdown').hidden = true;
+      document.getElementById('mc-badge').hidden = true;
+      document.getElementById('mc-live').hidden = false;
+      return;
+    }
+    const diff = start - now;
+    const vals = [pad(Math.floor(diff / 3600000)), pad(Math.floor(diff % 3600000 / 60000)), pad(Math.floor(diff % 60000 / 1000))];
+    vals.forEach((v, i) => { if (v === prev[i]) return; parts[i].textContent = v; parts[i].classList.remove('tick'); void parts[i].offsetWidth; parts[i].classList.add('tick'); });
+    prev = vals;
+  }
+  const timer = setInterval(tick, 1000);
+  tick();
+
+  // ---- Compartir: usa siempre la dirección real de esta página (Netlify, GitHub o dominio propio) ----
+  const SHARE_URL = location.origin + location.pathname;
+  const SHARE_TEXT = 'Master class gratuita: aprende y aplica IA a tu negocio. Viernes 20 de noviembre, 7:00 p. m. (Colombia). Inscríbete gratis aquí:';
+  const enc = encodeURIComponent;
+  const shareLinks = {
+    whatsapp: 'https://wa.me/?text=' + enc(SHARE_TEXT + ' ' + SHARE_URL),
+    facebook: 'https://www.facebook.com/sharer/sharer.php?u=' + enc(SHARE_URL),
+    x: 'https://twitter.com/intent/tweet?text=' + enc(SHARE_TEXT) + '&url=' + enc(SHARE_URL),
+    linkedin: 'https://www.linkedin.com/sharing/share-offsite/?url=' + enc(SHARE_URL),
+  };
+  document.querySelectorAll('[data-share]').forEach(el => {
+    const kind = el.dataset.share;
+    if (shareLinks[kind]) { el.href = shareLinks[kind]; return; }
+    if (kind === 'copy') el.addEventListener('click', async () => {
+      const label = el.querySelector('span');
+      try { await navigator.clipboard.writeText(SHARE_URL); label.textContent = '¡Enlace copiado!'; }
+      catch (e) { window.prompt('Copia este enlace:', SHARE_URL); }
+      setTimeout(() => { label.textContent = 'Copiar enlace'; }, 2200);
+    });
+  });
+  // Botón "Compartir" del encabezado: menú nativo del celular, o baja a la tarjeta de compartir
+  document.querySelectorAll('[data-share-native]').forEach(el => el.addEventListener('click', async () => {
+    if (navigator.share) { try { await navigator.share({ title: document.title, text: SHARE_TEXT, url: SHARE_URL }); } catch (e) {} }
+    else document.getElementById('share-title').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }));
+
+  // ---- Formulario ----
+  const form = document.getElementById('mc-form');
+  const errorEl = document.getElementById('m-error');
+  const btn = document.getElementById('m-btn');
+  const btnLabel = btn.innerHTML;
+  function showError(msg) { errorEl.textContent = msg; errorEl.classList.remove('hidden'); }
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    errorEl.classList.add('hidden');
+    if (!form.checkValidity()) {
+      const first = form.querySelector(':invalid');
+      const msgs = { nombre: 'Escribe tu nombre completo.', whatsapp: 'Escribe un número de WhatsApp válido.', correo: 'Escribe un correo electrónico válido.', autorizacion: 'Necesitamos tu autorización para poder contactarte.' };
+      showError(msgs[first.name] || 'Revisa los campos marcados.'); first.focus(); return;
+    }
+    if (!CONFIG.MASTERCLASS_SCRIPT_URL) {
+      showError('Las inscripciones aún no están activas. Mientras tanto, únete directamente a la comunidad de WhatsApp: ' + CONFIG.WHATSAPP_COMMUNITY_URL);
+      return;
+    }
+    btn.disabled = true; btn.textContent = 'Inscribiendo…';
+    const data = Object.fromEntries(new FormData(form).entries());
+    data.fecha = new Date().toISOString();
+    data.evento = 'Master class 20 nov 2026, 7:00 p. m.';
+    // Apps Script no responde con cabeceras CORS: la respuesta es opaca. Se asume éxito si no hay error de red.
+    fetch(CONFIG.MASTERCLASS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', body: JSON.stringify(data) })
+      .then(() => {
+        const first = (data.nombre || '').trim().split(/\s+/)[0];
+        if (first) document.getElementById('ok-nombre').textContent = ', ' + first;
+        form.hidden = true;
+        const ok = document.getElementById('mc-ok'); ok.hidden = false; ok.focus();
+      })
+      .catch(() => { showError('No pudimos enviar tu inscripción. Verifica tu conexión e inténtalo de nuevo.'); btn.disabled = false; btn.innerHTML = btnLabel; });
+  });
+</script>
+</body>
+</html>
